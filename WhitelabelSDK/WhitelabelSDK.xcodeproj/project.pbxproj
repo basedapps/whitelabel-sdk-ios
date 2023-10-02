@@ -1,0 +1,739 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		75BE9E882ACACD2500C01064 /* WhitelabelSDKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE9E872ACACD2500C01064 /* WhitelabelSDKApp.swift */; };
+		75BE9E8A2ACACD2500C01064 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE9E892ACACD2500C01064 /* ContentView.swift */; };
+		75BE9E8C2ACACD2600C01064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BE9E8B2ACACD2600C01064 /* Assets.xcassets */; };
+		75BE9E8F2ACACD2600C01064 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BE9E8E2ACACD2600C01064 /* Preview Assets.xcassets */; };
+		75BE9EA02ACC522900C01064 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BE9E9F2ACC522900C01064 /* NetworkExtension.framework */; };
+		75BE9EA32ACC522900C01064 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE9EA22ACC522900C01064 /* PacketTunnelProvider.swift */; };
+		75BE9EA82ACC522900C01064 /* V2RayExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 75BE9E9D2ACC522900C01064 /* V2RayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		75BE9EB22ACC523600C01064 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BE9E9F2ACC522900C01064 /* NetworkExtension.framework */; };
+		75BE9EB52ACC523600C01064 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE9EB42ACC523600C01064 /* PacketTunnelProvider.swift */; };
+		75BE9EBA2ACC523600C01064 /* WireGuardExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 75BE9EB12ACC523600C01064 /* WireGuardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		75BE9EA62ACC522900C01064 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 75BE9E7C2ACACD2500C01064 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75BE9E9C2ACC522900C01064;
+			remoteInfo = V2RayExtension;
+		};
+		75BE9EB82ACC523600C01064 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 75BE9E7C2ACACD2500C01064 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75BE9EB02ACC523600C01064;
+			remoteInfo = WireGuardExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		75BE9EAC2ACC522900C01064 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				75BE9EA82ACC522900C01064 /* V2RayExtension.appex in Embed Foundation Extensions */,
+				75BE9EBA2ACC523600C01064 /* WireGuardExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		75BE9E842ACACD2500C01064 /* WhitelabelSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhitelabelSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		75BE9E872ACACD2500C01064 /* WhitelabelSDKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitelabelSDKApp.swift; sourceTree = "<group>"; };
+		75BE9E892ACACD2500C01064 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		75BE9E8B2ACACD2600C01064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		75BE9E8E2ACACD2600C01064 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		75BE9E9D2ACC522900C01064 /* V2RayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = V2RayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		75BE9E9F2ACC522900C01064 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		75BE9EA22ACC522900C01064 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		75BE9EA42ACC522900C01064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75BE9EA52ACC522900C01064 /* V2RayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = V2RayExtension.entitlements; sourceTree = "<group>"; };
+		75BE9EB12ACC523600C01064 /* WireGuardExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WireGuardExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		75BE9EB42ACC523600C01064 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		75BE9EB62ACC523600C01064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75BE9EB72ACC523600C01064 /* WireGuardExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WireGuardExtension.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		75BE9E812ACACD2500C01064 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75BE9E9A2ACC522900C01064 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75BE9EA02ACC522900C01064 /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75BE9EAE2ACC523600C01064 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75BE9EB22ACC523600C01064 /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		75BE9E7B2ACACD2500C01064 = {
+			isa = PBXGroup;
+			children = (
+				75BE9E862ACACD2500C01064 /* WhitelabelSDK */,
+				75BE9EA12ACC522900C01064 /* V2RayExtension */,
+				75BE9EB32ACC523600C01064 /* WireGuardExtension */,
+				75BE9E9E2ACC522900C01064 /* Frameworks */,
+				75BE9E852ACACD2500C01064 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		75BE9E852ACACD2500C01064 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75BE9E842ACACD2500C01064 /* WhitelabelSDK.app */,
+				75BE9E9D2ACC522900C01064 /* V2RayExtension.appex */,
+				75BE9EB12ACC523600C01064 /* WireGuardExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75BE9E862ACACD2500C01064 /* WhitelabelSDK */ = {
+			isa = PBXGroup;
+			children = (
+				75BE9E872ACACD2500C01064 /* WhitelabelSDKApp.swift */,
+				75BE9E892ACACD2500C01064 /* ContentView.swift */,
+				75BE9E8B2ACACD2600C01064 /* Assets.xcassets */,
+				75BE9E8D2ACACD2600C01064 /* Preview Content */,
+			);
+			path = WhitelabelSDK;
+			sourceTree = "<group>";
+		};
+		75BE9E8D2ACACD2600C01064 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				75BE9E8E2ACACD2600C01064 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		75BE9E9E2ACC522900C01064 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75BE9E9F2ACC522900C01064 /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		75BE9EA12ACC522900C01064 /* V2RayExtension */ = {
+			isa = PBXGroup;
+			children = (
+				75BE9EA22ACC522900C01064 /* PacketTunnelProvider.swift */,
+				75BE9EA42ACC522900C01064 /* Info.plist */,
+				75BE9EA52ACC522900C01064 /* V2RayExtension.entitlements */,
+			);
+			path = V2RayExtension;
+			sourceTree = "<group>";
+		};
+		75BE9EB32ACC523600C01064 /* WireGuardExtension */ = {
+			isa = PBXGroup;
+			children = (
+				75BE9EB42ACC523600C01064 /* PacketTunnelProvider.swift */,
+				75BE9EB62ACC523600C01064 /* Info.plist */,
+				75BE9EB72ACC523600C01064 /* WireGuardExtension.entitlements */,
+			);
+			path = WireGuardExtension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		75BE9E952ACC521200C01064 /* WireGuardGoBridge */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 75BE9E962ACC521200C01064 /* Build configuration list for PBXLegacyTarget "WireGuardGoBridge" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			dependencies = (
+			);
+			name = WireGuardGoBridge;
+			passBuildSettingsInEnvironment = 1;
+			productName = WireGuardGoBridge;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		75BE9E832ACACD2500C01064 /* WhitelabelSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75BE9E922ACACD2600C01064 /* Build configuration list for PBXNativeTarget "WhitelabelSDK" */;
+			buildPhases = (
+				75BE9E802ACACD2500C01064 /* Sources */,
+				75BE9E812ACACD2500C01064 /* Frameworks */,
+				75BE9E822ACACD2500C01064 /* Resources */,
+				75BE9EAC2ACC522900C01064 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				75BE9EA72ACC522900C01064 /* PBXTargetDependency */,
+				75BE9EB92ACC523600C01064 /* PBXTargetDependency */,
+			);
+			name = WhitelabelSDK;
+			productName = WhitelabelSDK;
+			productReference = 75BE9E842ACACD2500C01064 /* WhitelabelSDK.app */;
+			productType = "com.apple.product-type.application";
+		};
+		75BE9E9C2ACC522900C01064 /* V2RayExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75BE9EA92ACC522900C01064 /* Build configuration list for PBXNativeTarget "V2RayExtension" */;
+			buildPhases = (
+				75BE9E992ACC522900C01064 /* Sources */,
+				75BE9E9A2ACC522900C01064 /* Frameworks */,
+				75BE9E9B2ACC522900C01064 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = V2RayExtension;
+			productName = V2RayExtension;
+			productReference = 75BE9E9D2ACC522900C01064 /* V2RayExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		75BE9EB02ACC523600C01064 /* WireGuardExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75BE9EBB2ACC523600C01064 /* Build configuration list for PBXNativeTarget "WireGuardExtension" */;
+			buildPhases = (
+				75BE9EAD2ACC523600C01064 /* Sources */,
+				75BE9EAE2ACC523600C01064 /* Frameworks */,
+				75BE9EAF2ACC523600C01064 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WireGuardExtension;
+			productName = WireGuardExtension;
+			productReference = 75BE9EB12ACC523600C01064 /* WireGuardExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		75BE9E7C2ACACD2500C01064 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					75BE9E832ACACD2500C01064 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					75BE9E952ACC521200C01064 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					75BE9E9C2ACC522900C01064 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					75BE9EB02ACC523600C01064 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 75BE9E7F2ACACD2500C01064 /* Build configuration list for PBXProject "WhitelabelSDK" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 75BE9E7B2ACACD2500C01064;
+			productRefGroup = 75BE9E852ACACD2500C01064 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				75BE9E832ACACD2500C01064 /* WhitelabelSDK */,
+				75BE9E952ACC521200C01064 /* WireGuardGoBridge */,
+				75BE9E9C2ACC522900C01064 /* V2RayExtension */,
+				75BE9EB02ACC523600C01064 /* WireGuardExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		75BE9E822ACACD2500C01064 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75BE9E8F2ACACD2600C01064 /* Preview Assets.xcassets in Resources */,
+				75BE9E8C2ACACD2600C01064 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75BE9E9B2ACC522900C01064 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75BE9EAF2ACC523600C01064 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		75BE9E802ACACD2500C01064 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75BE9E8A2ACACD2500C01064 /* ContentView.swift in Sources */,
+				75BE9E882ACACD2500C01064 /* WhitelabelSDKApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75BE9E992ACC522900C01064 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75BE9EA32ACC522900C01064 /* PacketTunnelProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75BE9EAD2ACC523600C01064 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75BE9EB52ACC523600C01064 /* PacketTunnelProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		75BE9EA72ACC522900C01064 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75BE9E9C2ACC522900C01064 /* V2RayExtension */;
+			targetProxy = 75BE9EA62ACC522900C01064 /* PBXContainerItemProxy */;
+		};
+		75BE9EB92ACC523600C01064 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75BE9EB02ACC523600C01064 /* WireGuardExtension */;
+			targetProxy = 75BE9EB82ACC523600C01064 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		75BE9E902ACACD2600C01064 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		75BE9E912ACACD2600C01064 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		75BE9E932ACACD2600C01064 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WhitelabelSDK/Preview Content\"";
+				DEVELOPMENT_TEAM = 5F44M2W7F4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.basedapps.whitelabel-sdk-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		75BE9E942ACACD2600C01064 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WhitelabelSDK/Preview Content\"";
+				DEVELOPMENT_TEAM = 5F44M2W7F4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.basedapps.whitelabel-sdk-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		75BE9E972ACC521200C01064 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5F44M2W7F4;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		75BE9E982ACC521200C01064 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5F44M2W7F4;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		75BE9EAA2ACC522900C01064 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = V2RayExtension/V2RayExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5F44M2W7F4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = V2RayExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = V2RayExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.basedapps.whitelabel-sdk-ios.v2ray-ne";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		75BE9EAB2ACC522900C01064 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = V2RayExtension/V2RayExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5F44M2W7F4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = V2RayExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = V2RayExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.basedapps.whitelabel-sdk-ios.v2ray-ne";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		75BE9EBC2ACC523600C01064 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WireGuardExtension/WireGuardExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5F44M2W7F4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WireGuardExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WireGuardExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.basedapps.whitelabel-sdk-ios.wireguard-ne";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		75BE9EBD2ACC523600C01064 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WireGuardExtension/WireGuardExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5F44M2W7F4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WireGuardExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WireGuardExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.basedapps.whitelabel-sdk-ios.wireguard-ne";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		75BE9E7F2ACACD2500C01064 /* Build configuration list for PBXProject "WhitelabelSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75BE9E902ACACD2600C01064 /* Debug */,
+				75BE9E912ACACD2600C01064 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75BE9E922ACACD2600C01064 /* Build configuration list for PBXNativeTarget "WhitelabelSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75BE9E932ACACD2600C01064 /* Debug */,
+				75BE9E942ACACD2600C01064 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75BE9E962ACC521200C01064 /* Build configuration list for PBXLegacyTarget "WireGuardGoBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75BE9E972ACC521200C01064 /* Debug */,
+				75BE9E982ACC521200C01064 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75BE9EA92ACC522900C01064 /* Build configuration list for PBXNativeTarget "V2RayExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75BE9EAA2ACC522900C01064 /* Debug */,
+				75BE9EAB2ACC522900C01064 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75BE9EBB2ACC523600C01064 /* Build configuration list for PBXNativeTarget "WireGuardExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75BE9EBC2ACC523600C01064 /* Debug */,
+				75BE9EBD2ACC523600C01064 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 75BE9E7C2ACACD2500C01064 /* Project object */;
+}
