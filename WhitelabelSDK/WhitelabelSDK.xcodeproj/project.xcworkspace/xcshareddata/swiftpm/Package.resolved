@@ -1,0 +1,59 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire",
+      "state" : {
+        "revision" : "b2fa556e4e48cbf06cf8c63def138c98f4b811fa",
+        "version" : "5.8.0"
+      }
+    },
+    {
+      "identity" : "keychainaccess",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kishikawakatsumi/KeychainAccess.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "ecb18d8ce4d88277cc4fb103973352d91e18c535"
+      }
+    },
+    {
+      "identity" : "swiftybeaver",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftyBeaver/SwiftyBeaver.git",
+      "state" : {
+        "revision" : "1080914828ef1c9ca9cd2bad50667b3d847dabff",
+        "version" : "2.0.0"
+      }
+    },
+    {
+      "identity" : "tun2sockskit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/daemooon/Tun2SocksKit.git",
+      "state" : {
+        "revision" : "ffe9b93765a7c6068188ad665411a47e685b0573",
+        "version" : "2.5.3"
+      }
+    },
+    {
+      "identity" : "wireguard-apple",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lika-vorobeva/wireguard-apple",
+      "state" : {
+        "branch" : "fix-package",
+        "revision" : "66daeebc59deb20333783104ecccb509bef61326"
+      }
+    },
+    {
+      "identity" : "xraykit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/daemooon/XrayKit.git",
+      "state" : {
+        "revision" : "aeec1361874992eb7d134559ba5cb415237f44c5",
+        "version" : "0.1.62"
+      }
+    }
+  ],
+  "version" : 2
+}
