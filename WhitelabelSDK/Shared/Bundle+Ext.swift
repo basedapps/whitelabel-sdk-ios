@@ -23,7 +23,7 @@ extension Bundle {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     }
 
-    public static var providerBundleIdentifier: String {
+    public static var v2RayBundleIdentifier: String {
        appID + ".v2ray-ne"
     }
 }

@@ -14,7 +14,7 @@ import os
 
 final class PacketTunnelProvider: NEPacketTunnelProvider {
     private let instance = XrayInstance()
-    private let logger = Logger(subsystem: Bundle.providerBundleIdentifier, category: "Core")
+    private let logger = Logger(subsystem: Bundle.v2RayBundleIdentifier, category: "Core")
 
     override init() {
         super.init()
