@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		751ADB6D2ACC5E3600CC736B /* WireGuardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB6C2ACC5E3600CC736B /* WireGuardKit */; };
 		751ADB702ACC60B200CC736B /* Tun2SocksKit in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB6F2ACC60B200CC736B /* Tun2SocksKit */; };
-		751ADB732ACC60C000CC736B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB722ACC60C000CC736B /* Alamofire */; };
 		751ADB762ACC60DC00CC736B /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB752ACC60DC00CC736B /* KeychainAccess */; };
 		751ADB792ACC60F500CC736B /* XrayKit in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB782ACC60F500CC736B /* XrayKit */; };
 		751ADB7C2ACC610500CC736B /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB7B2ACC610500CC736B /* SwiftyBeaver */; };
@@ -113,6 +112,8 @@
 		75B28B5D2AD57373003BDD1D /* TunnelStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B28B5C2AD57373003BDD1D /* TunnelStatusResponse.swift */; };
 		75B28B5F2AD58802003BDD1D /* ConnectionCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B28B5E2AD58802003BDD1D /* ConnectionCredentials.swift */; };
 		75B28B612AD5881B003BDD1D /* ServerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B28B602AD5881B003BDD1D /* ServerProtocol.swift */; };
+		75B28B642AD58956003BDD1D /* ProxyRouteCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B28B632AD58956003BDD1D /* ProxyRouteCollection.swift */; };
+		75B28B672AD59B3D003BDD1D /* Request+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B28B662AD59B3D003BDD1D /* Request+Ext.swift */; };
 		75BE9E8C2ACACD2600C01064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BE9E8B2ACACD2600C01064 /* Assets.xcassets */; };
 		75BE9E8F2ACACD2600C01064 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BE9E8E2ACACD2600C01064 /* Preview Assets.xcassets */; };
 		75BE9EA02ACC522900C01064 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BE9E9F2ACC522900C01064 /* NetworkExtension.framework */; };
@@ -242,6 +243,8 @@
 		75B28B5C2AD57373003BDD1D /* TunnelStatusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelStatusResponse.swift; sourceTree = "<group>"; };
 		75B28B5E2AD58802003BDD1D /* ConnectionCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionCredentials.swift; sourceTree = "<group>"; };
 		75B28B602AD5881B003BDD1D /* ServerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerProtocol.swift; sourceTree = "<group>"; };
+		75B28B632AD58956003BDD1D /* ProxyRouteCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyRouteCollection.swift; sourceTree = "<group>"; };
+		75B28B662AD59B3D003BDD1D /* Request+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Ext.swift"; sourceTree = "<group>"; };
 		75BE9E842ACACD2500C01064 /* WhitelabelSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhitelabelSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BE9E8B2ACACD2600C01064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75BE9E8E2ACACD2600C01064 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -267,7 +270,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				751ADB732ACC60C000CC736B /* Alamofire in Frameworks */,
 				751ADB762ACC60DC00CC736B /* KeychainAccess in Frameworks */,
 				751ADB7D2ACC611C00CC736B /* NetworkExtension.framework in Frameworks */,
 				751ADB7C2ACC610500CC736B /* SwiftyBeaver in Frameworks */,
@@ -406,6 +408,7 @@
 		751ADBEA2ACC66FA00CC736B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				75B28B652AD59B33003BDD1D /* Vapor */,
 				751ADBF22ACC66FA00CC736B /* Foundation */,
 				751ADBEB2ACC66FA00CC736B /* VPN */,
 			);
@@ -538,6 +541,7 @@
 		751ADC782ACD88C300CC736B /* Collections */ = {
 			isa = PBXGroup;
 			children = (
+				75B28B622AD58870003BDD1D /* Proxy */,
 				75CFB4D02AD0288C00DC395C /* DNS */,
 				75CFB4E62AD0414B00DC395C /* Storage */,
 				75B28B582AD57177003BDD1D /* Tunnel */,
@@ -571,6 +575,22 @@
 				75B28B5C2AD57373003BDD1D /* TunnelStatusResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		75B28B622AD58870003BDD1D /* Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				75B28B632AD58956003BDD1D /* ProxyRouteCollection.swift */,
+			);
+			path = Proxy;
+			sourceTree = "<group>";
+		};
+		75B28B652AD59B33003BDD1D /* Vapor */ = {
+			isa = PBXGroup;
+			children = (
+				75B28B662AD59B3D003BDD1D /* Request+Ext.swift */,
+			);
+			path = Vapor;
 			sourceTree = "<group>";
 		};
 		75BE9E7B2ACACD2500C01064 = {
@@ -723,7 +743,6 @@
 			name = WhitelabelSDK;
 			packageProductDependencies = (
 				751ADB6C2ACC5E3600CC736B /* WireGuardKit */,
-				751ADB722ACC60C000CC736B /* Alamofire */,
 				751ADB752ACC60DC00CC736B /* KeychainAccess */,
 				751ADB7B2ACC610500CC736B /* SwiftyBeaver */,
 				751ADBE42ACC664E00CC736B /* Vapor */,
@@ -812,7 +831,6 @@
 			packageReferences = (
 				75BE9EBE2ACC539900C01064 /* XCRemoteSwiftPackageReference "wireguard-apple" */,
 				751ADB6E2ACC60B200CC736B /* XCRemoteSwiftPackageReference "Tun2SocksKit" */,
-				751ADB712ACC60C000CC736B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				751ADB742ACC60DC00CC736B /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				751ADB772ACC60F500CC736B /* XCRemoteSwiftPackageReference "XrayKit" */,
 				751ADB7A2ACC610500CC736B /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
@@ -884,6 +902,7 @@
 				751ADC5C2ACD886400CC736B /* KeychainStorageStrategy.swift in Sources */,
 				75CFB4EB2AD0418800DC395C /* LocalValue.swift in Sources */,
 				751ADBF82ACC66FA00CC736B /* NETunnelProviderManager+Ext.swift in Sources */,
+				75B28B642AD58956003BDD1D /* ProxyRouteCollection.swift in Sources */,
 				751ADBA72ACC62F400CC736B /* NETunnelProviderProtocol+Extension.swift in Sources */,
 				751ADBB82ACC62F400CC736B /* NetworkModel.swift in Sources */,
 				751ADBF92ACC66FA00CC736B /* NEVPNManager+Ext.swift in Sources */,
@@ -897,6 +916,7 @@
 				751ADC902AD0209000CC736B /* SceneDelegate.swift in Sources */,
 				751ADC5D2ACD886400CC736B /* Serializer.swift in Sources */,
 				751ADC8A2ACD92F200CC736B /* Server.swift in Sources */,
+				75B28B672AD59B3D003BDD1D /* Request+Ext.swift in Sources */,
 				75B28B612AD5881B003BDD1D /* ServerProtocol.swift in Sources */,
 				751ADC5B2ACD886400CC736B /* SettingsStorageStrategyType.swift in Sources */,
 				751ADBB72ACC62F400CC736B /* SniffingModel.swift in Sources */,
@@ -1424,14 +1444,6 @@
 				minimumVersion = 2.5.3;
 			};
 		};
-		751ADB712ACC60C000CC736B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.8.0;
-			};
-		};
 		751ADB742ACC60DC00CC736B /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
@@ -1484,11 +1496,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 751ADB6E2ACC60B200CC736B /* XCRemoteSwiftPackageReference "Tun2SocksKit" */;
 			productName = Tun2SocksKit;
-		};
-		751ADB722ACC60C000CC736B /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 751ADB712ACC60C000CC736B /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 		751ADB752ACC60DC00CC736B /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;

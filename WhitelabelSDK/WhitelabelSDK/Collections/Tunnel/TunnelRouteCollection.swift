@@ -50,7 +50,8 @@ extension TunnelRouteCollection: RouteCollection {
 
 extension TunnelRouteCollection {
     private func startDeactivationOfActiveTunnel(_ req: Request) async throws -> String {
-        try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
+        try req.validate()
+        return try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
             do {
                 guard manager.startDeactivationOfActiveTunnel() else {
                     encodeStatus(continuation: continuation)
@@ -71,7 +72,8 @@ extension TunnelRouteCollection {
     }
     
     private func createNewSession(_ req: Request) async throws -> String {
-        try await withCheckedThrowingContinuation({ [weak self] (continuation: CheckedContinuation<String, Error>) in
+        try req.validate()
+        return try await withCheckedThrowingContinuation({ [weak self] (continuation: CheckedContinuation<String, Error>) in
             guard let self = self else { return }
 
             do {
@@ -104,7 +106,8 @@ extension TunnelRouteCollection {
     }
     
     private func getConnectionStatus(_ req: Request) async throws -> String {
-        try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
+        try req.validate()
+        return try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
             encodeStatus(continuation: continuation)
         })
     }
