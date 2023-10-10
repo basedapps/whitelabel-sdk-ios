@@ -24,6 +24,7 @@ extension Server {
         Task(priority: .background) {
             do {
                 let api = app.grouped(.init(stringLiteral: ClientConstants.apiPath))
+                try api.register(collection: TunnelRouteCollection())
                 try api.register(collection: DNSRouteCollection())
                 try api.register(collection: StorageRouteCollection())
                 try app.start()

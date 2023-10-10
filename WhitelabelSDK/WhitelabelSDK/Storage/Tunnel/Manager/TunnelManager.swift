@@ -43,7 +43,7 @@ final class TunnelManager {
     }
 
     init(
-        storage: StoresTunnelsInfo,
+        storage: StoresTunnelsInfo = GeneralSettingsStorage(),
         tunnelModel: TunnelModel = TunnelModel(tunnelConfiguration: nil)
     ) {
         self.storage = storage

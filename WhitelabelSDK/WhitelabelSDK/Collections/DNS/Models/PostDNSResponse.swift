@@ -1,6 +1,6 @@
 //
 //  PostDNSResponse.swift
-//  SOLARdVPNCommunityCoreiOS
+//  WhitelabelSDK
 //
 //  Created by Lika Vorobeva on 06.10.2022.
 //

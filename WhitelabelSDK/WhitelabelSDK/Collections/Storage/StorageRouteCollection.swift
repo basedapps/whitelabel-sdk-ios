@@ -42,7 +42,7 @@ extension StorageRouteCollection: RouteCollection  {
 // MARK: - Requests
 
 extension StorageRouteCollection {
-    func getValue(_ req: Request) async throws -> String {
+    private func getValue(_ req: Request) async throws -> String {
         guard let key = req.query[String.self, at: LocalValue.CodingKeys.key.rawValue] else {
             throw Abort(.badRequest)
         }
@@ -57,7 +57,7 @@ extension StorageRouteCollection {
         })
     }
     
-    func postValue(_ req: Request) async throws -> Response {
+    private func postValue(_ req: Request) async throws -> Response {
         try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<Response, Error>) in
             do {
                 let value = try req.content.decode(LocalValue.self)
@@ -74,7 +74,7 @@ extension StorageRouteCollection {
         })
     }
     
-    func deleteValue(_ req: Request) async throws -> Response {
+    private func deleteValue(_ req: Request) async throws -> Response {
         guard let key = req.query[String.self, at: LocalValue.CodingKeys.key.rawValue] else { throw Abort(.badRequest) }
         guard deleteValue(for: key) else { throw Abort(.unauthorized) }
         

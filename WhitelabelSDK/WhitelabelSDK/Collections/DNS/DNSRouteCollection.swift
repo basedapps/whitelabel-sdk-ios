@@ -1,6 +1,6 @@
 //
 //  DNSRouteCollection.swift
-//  SOLARdVPNCommunityCoreiOS
+//  WhitelabelSDK
 //
 //  Created by Lika Vorobeva on 06.10.2022.
 //
@@ -38,7 +38,7 @@ extension DNSRouteCollection: RouteCollection  {
 // MARK: - Requests
 
 extension DNSRouteCollection {
-    func getAvailableDNS(_ req: Request) async throws -> String {
+    private func getAvailableDNS(_ req: Request) async throws -> String {
         try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
             let servers = DNSServerType.allCases.map(AvailableDNSServer.init(from:))
             let body = PostDNSResponse(servers: servers)
@@ -47,7 +47,7 @@ extension DNSRouteCollection {
         })
     }
     
-    func getSelectedDNS(_ req: Request) async throws -> String {
+    private func getSelectedDNS(_ req: Request) async throws -> String {
         try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
             let dnsServer = storage.selectedDNS
             let body = AvailableDNSServer(from: dnsServer)
@@ -56,7 +56,7 @@ extension DNSRouteCollection {
         })
     }
     
-    func putDNS(_ req: Request) throws -> Response {
+    private func putDNS(_ req: Request) throws -> Response {
         do {
             let body = try req.content.decode(PostDNSRequest.self)
             let server = body.server
