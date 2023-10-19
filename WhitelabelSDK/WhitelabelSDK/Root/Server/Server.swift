@@ -28,6 +28,7 @@ extension Server {
                 try api.register(collection: DNSRouteCollection())
                 try api.register(collection: StorageRouteCollection())
                 try api.register(collection: ProxyRouteCollection())
+                try api.register(collection: BlockchainRouteCollection())
                 try app.start()
             } catch {
                 fatalError(error.localizedDescription)

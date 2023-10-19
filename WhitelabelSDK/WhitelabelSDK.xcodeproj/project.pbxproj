@@ -114,6 +114,9 @@
 		75B28B612AD5881B003BDD1D /* ServerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B28B602AD5881B003BDD1D /* ServerProtocol.swift */; };
 		75B28B642AD58956003BDD1D /* ProxyRouteCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B28B632AD58956003BDD1D /* ProxyRouteCollection.swift */; };
 		75B28B672AD59B3D003BDD1D /* Request+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B28B662AD59B3D003BDD1D /* Request+Ext.swift */; };
+		75B89F2C2AE1A53D00B242B4 /* SentinelWallet in Frameworks */ = {isa = PBXBuildFile; productRef = 75B89F2B2AE1A53D00B242B4 /* SentinelWallet */; };
+		75B89F2F2AE1A56C00B242B4 /* BlockchainRouteCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F2E2AE1A56C00B242B4 /* BlockchainRouteCollection.swift */; };
+		75B89F322AE1A69600B242B4 /* GetNodesRequestKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F312AE1A69600B242B4 /* GetNodesRequestKeys.swift */; };
 		75BE9E8C2ACACD2600C01064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BE9E8B2ACACD2600C01064 /* Assets.xcassets */; };
 		75BE9E8F2ACACD2600C01064 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BE9E8E2ACACD2600C01064 /* Preview Assets.xcassets */; };
 		75BE9EA02ACC522900C01064 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BE9E9F2ACC522900C01064 /* NetworkExtension.framework */; };
@@ -245,6 +248,8 @@
 		75B28B602AD5881B003BDD1D /* ServerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerProtocol.swift; sourceTree = "<group>"; };
 		75B28B632AD58956003BDD1D /* ProxyRouteCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyRouteCollection.swift; sourceTree = "<group>"; };
 		75B28B662AD59B3D003BDD1D /* Request+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Ext.swift"; sourceTree = "<group>"; };
+		75B89F2E2AE1A56C00B242B4 /* BlockchainRouteCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockchainRouteCollection.swift; sourceTree = "<group>"; };
+		75B89F312AE1A69600B242B4 /* GetNodesRequestKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNodesRequestKeys.swift; sourceTree = "<group>"; };
 		75BE9E842ACACD2500C01064 /* WhitelabelSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhitelabelSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BE9E8B2ACACD2600C01064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75BE9E8E2ACACD2600C01064 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -273,6 +278,7 @@
 				751ADB762ACC60DC00CC736B /* KeychainAccess in Frameworks */,
 				751ADB7D2ACC611C00CC736B /* NetworkExtension.framework in Frameworks */,
 				751ADB7C2ACC610500CC736B /* SwiftyBeaver in Frameworks */,
+				75B89F2C2AE1A53D00B242B4 /* SentinelWallet in Frameworks */,
 				751ADBE52ACC664E00CC736B /* Vapor in Frameworks */,
 				751ADB6D2ACC5E3600CC736B /* WireGuardKit in Frameworks */,
 			);
@@ -541,6 +547,7 @@
 		751ADC782ACD88C300CC736B /* Collections */ = {
 			isa = PBXGroup;
 			children = (
+				75B89F2D2AE1A54400B242B4 /* Blockchain */,
 				75B28B622AD58870003BDD1D /* Proxy */,
 				75CFB4D02AD0288C00DC395C /* DNS */,
 				75CFB4E62AD0414B00DC395C /* Storage */,
@@ -591,6 +598,23 @@
 				75B28B662AD59B3D003BDD1D /* Request+Ext.swift */,
 			);
 			path = Vapor;
+			sourceTree = "<group>";
+		};
+		75B89F2D2AE1A54400B242B4 /* Blockchain */ = {
+			isa = PBXGroup;
+			children = (
+				75B89F302AE1A68800B242B4 /* Models */,
+				75B89F2E2AE1A56C00B242B4 /* BlockchainRouteCollection.swift */,
+			);
+			path = Blockchain;
+			sourceTree = "<group>";
+		};
+		75B89F302AE1A68800B242B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				75B89F312AE1A69600B242B4 /* GetNodesRequestKeys.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		75BE9E7B2ACACD2500C01064 = {
@@ -746,6 +770,7 @@
 				751ADB752ACC60DC00CC736B /* KeychainAccess */,
 				751ADB7B2ACC610500CC736B /* SwiftyBeaver */,
 				751ADBE42ACC664E00CC736B /* Vapor */,
+				75B89F2B2AE1A53D00B242B4 /* SentinelWallet */,
 			);
 			productName = WhitelabelSDK;
 			productReference = 75BE9E842ACACD2500C01064 /* WhitelabelSDK.app */;
@@ -835,6 +860,7 @@
 				751ADB772ACC60F500CC736B /* XCRemoteSwiftPackageReference "XrayKit" */,
 				751ADB7A2ACC610500CC736B /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 				751ADBE32ACC664E00CC736B /* XCRemoteSwiftPackageReference "vapor" */,
+				75B89F2A2AE1A53D00B242B4 /* XCRemoteSwiftPackageReference "sentinel-wallet-sdk-ios" */,
 			);
 			productRefGroup = 75BE9E852ACACD2500C01064 /* Products */;
 			projectDirPath = "";
@@ -897,6 +923,7 @@
 				751ADC542ACD886400CC736B /* DNSServerType.swift in Sources */,
 				751ADBFD2ACC66FA00CC736B /* Encodable+Ext.swift in Sources */,
 				751ADBB12ACC62F400CC736B /* Fingerprint.swift in Sources */,
+				75B89F2F2AE1A56C00B242B4 /* BlockchainRouteCollection.swift in Sources */,
 				751ADC4A2ACD886400CC736B /* GeneralSettingsStorage.swift in Sources */,
 				751ADBA62ACC62F400CC736B /* Keychain.swift in Sources */,
 				751ADC5C2ACD886400CC736B /* KeychainStorageStrategy.swift in Sources */,
@@ -938,6 +965,7 @@
 				751ADC582ACD886400CC736B /* TunnelsService.swift in Sources */,
 				751ADC572ACD886400CC736B /* TunnelsServiceStatusDelegate.swift in Sources */,
 				751ADC552ACD886400CC736B /* TunnelStatus.swift in Sources */,
+				75B89F322AE1A69600B242B4 /* GetNodesRequestKeys.swift in Sources */,
 				75B28B5D2AD57373003BDD1D /* TunnelStatusResponse.swift in Sources */,
 				751ADBBB2ACC62F400CC736B /* UserDefaults+Ext.swift in Sources */,
 				751ADC5A2ACD886400CC736B /* UserDefaultsStorageStrategy.swift in Sources */,
@@ -1476,6 +1504,14 @@
 				minimumVersion = 4.84.1;
 			};
 		};
+		75B89F2A2AE1A53D00B242B4 /* XCRemoteSwiftPackageReference "sentinel-wallet-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/solarlabsteam/sentinel-wallet-sdk-ios";
+			requirement = {
+				branch = v2.1;
+				kind = branch;
+			};
+		};
 		75BE9EBE2ACC539900C01064 /* XCRemoteSwiftPackageReference "wireguard-apple" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/lika-vorobeva/wireguard-apple";
@@ -1526,6 +1562,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 751ADBE32ACC664E00CC736B /* XCRemoteSwiftPackageReference "vapor" */;
 			productName = Vapor;
+		};
+		75B89F2B2AE1A53D00B242B4 /* SentinelWallet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 75B89F2A2AE1A53D00B242B4 /* XCRemoteSwiftPackageReference "sentinel-wallet-sdk-ios" */;
+			productName = SentinelWallet;
 		};
 		75BE9EC12ACC53FB00C01064 /* WireGuardKit */ = {
 			isa = XCSwiftPackageProductDependency;
