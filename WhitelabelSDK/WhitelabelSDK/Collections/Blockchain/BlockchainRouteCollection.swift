@@ -26,17 +26,25 @@ private let constants = Constants()
 
 struct BlockchainRouteCollection {
     private let nodesProvider: AsyncNodesProviderType
+    private let subscriptionProvider: AsynsSubscriptionsProviderType
+    
+    private let providers: [ConfigurableProvider]
+    
     private let signer: TransactionSignerServiceType
+    
     private let commonStorage: StoresGeneralInfo
     private let safeStorage: SettingsStorageStrategyType
     
     init(
-        nodesProvider: AsyncNodesProviderType = AsyncNodesProvider(),
+        nodesProvider: AsyncNodesProviderType & ConfigurableProvider = AsyncNodesProvider(),
+        subscriptionProvider: AsynsSubscriptionsProviderType & ConfigurableProvider = AsynsSubscriptionsProvider(),
         signer: TransactionSignerServiceType = TransactionSignerService(),
         commonStorage: StoresGeneralInfo = GeneralSettingsStorage(),
         safeStorage: SettingsStorageStrategyType = KeychainStorageStrategy(serviceKey: "BlockchainRouteCollection")
     ) {
         self.nodesProvider = nodesProvider
+        self.subscriptionProvider = subscriptionProvider
+        self.providers = [nodesProvider, subscriptionProvider]
         self.signer = signer
         self.commonStorage = commonStorage
         self.safeStorage = safeStorage
@@ -55,6 +63,9 @@ extension BlockchainRouteCollection: RouteCollection  {
         
         routes.get(constants.path, "wallet", use: getWalletAddress)
         routes.post(constants.path, "wallet", use: storeWallet)
+        
+        routes.get(constants.path, "wallet", ":address", "balance", use: getWalletBalance)
+        routes.get(constants.path, "wallet", ":address", "subscriptions", use: getWalletSubscriptions)
     }
 }
 
@@ -63,7 +74,7 @@ extension BlockchainRouteCollection: RouteCollection  {
 private extension BlockchainRouteCollection {
     func changeEndpoint(_ req: Request) async throws -> Response {
         let body = try req.content.decode(PostEndpointRequest.self)
-        nodesProvider.set(host: body.host, port: body.port)
+        providers.forEach { $0.set(host: body.host, port: body.port) }
         return Response(status: .ok)
     }
 }
@@ -117,6 +128,22 @@ private extension BlockchainRouteCollection {
         safeStorage.setObject(mnemonic, forKey: constants.walletKey)
         commonStorage.set(wallet: wallet)
         return .init(status: .ok)
+    }
+}
+
+// MARK: - Requests: Wallet data
+
+private extension BlockchainRouteCollection {
+    func getWalletBalance(_ req: Request) async throws -> [String] {
+        guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
+        return try await subscriptionProvider.fetchBalance(for: address)
+    }
+    
+    func getWalletSubscriptions(_ req: Request) async throws -> [String] {
+        guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
+        let limit = req.query[UInt64.self, at: PaginationKeys.limit.rawValue] ?? constants.defaultLimit
+        let offset = req.query[UInt64.self, at: PaginationKeys.offset.rawValue] ?? constants.defaultOffset
+        return try await subscriptionProvider.fetchSubscriptions(limit: limit, offset: offset, for: address)
     }
 }
 

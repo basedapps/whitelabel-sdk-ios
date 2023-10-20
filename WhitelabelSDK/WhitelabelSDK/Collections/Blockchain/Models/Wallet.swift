@@ -10,8 +10,3 @@ import Foundation
 struct WalletAddressResponse: Codable {
     let address: String
 }
-
-struct WalletBalanceResponse: Codable {
-    let balance: Int
-    let currency: String
-}
