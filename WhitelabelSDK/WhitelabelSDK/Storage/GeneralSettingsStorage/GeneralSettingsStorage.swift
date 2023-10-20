@@ -10,6 +10,7 @@ import Accessibility
 
 private enum Keys: String, CaseIterable {
     case dnsKey
+    case walletKey
 }
 
 final class GeneralSettingsStorage {
@@ -22,7 +23,15 @@ final class GeneralSettingsStorage {
 
 // MARK: - StoresGeneralInfo
 
-extension GeneralSettingsStorage: StoresGeneralInfo { }
+extension GeneralSettingsStorage: StoresGeneralInfo {
+    func set(wallet: String?) {
+        settingsStorageStrategy.setObject(wallet, forKey: Keys.walletKey.rawValue)
+    }
+    
+    var walletAddress: String? {
+        settingsStorageStrategy.object(ofType: String.self, forKey: Keys.walletKey.rawValue)
+    }
+}
 
 // MARK: - StoresTunnelsInfo
 

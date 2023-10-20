@@ -117,6 +117,9 @@
 		75B89F2C2AE1A53D00B242B4 /* SentinelWallet in Frameworks */ = {isa = PBXBuildFile; productRef = 75B89F2B2AE1A53D00B242B4 /* SentinelWallet */; };
 		75B89F2F2AE1A56C00B242B4 /* BlockchainRouteCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F2E2AE1A56C00B242B4 /* BlockchainRouteCollection.swift */; };
 		75B89F322AE1A69600B242B4 /* GetNodesRequestKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F312AE1A69600B242B4 /* GetNodesRequestKeys.swift */; };
+		75B89F342AE2A9C100B242B4 /* PostWalletRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F332AE2A9C100B242B4 /* PostWalletRequest.swift */; };
+		75B89F362AE2A9F300B242B4 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F352AE2A9F300B242B4 /* Wallet.swift */; };
+		75B89F382AE2AD2900B242B4 /* PostEndpointRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F372AE2AD2900B242B4 /* PostEndpointRequest.swift */; };
 		75BE9E8C2ACACD2600C01064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BE9E8B2ACACD2600C01064 /* Assets.xcassets */; };
 		75BE9E8F2ACACD2600C01064 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BE9E8E2ACACD2600C01064 /* Preview Assets.xcassets */; };
 		75BE9EA02ACC522900C01064 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BE9E9F2ACC522900C01064 /* NetworkExtension.framework */; };
@@ -250,6 +253,9 @@
 		75B28B662AD59B3D003BDD1D /* Request+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Ext.swift"; sourceTree = "<group>"; };
 		75B89F2E2AE1A56C00B242B4 /* BlockchainRouteCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockchainRouteCollection.swift; sourceTree = "<group>"; };
 		75B89F312AE1A69600B242B4 /* GetNodesRequestKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNodesRequestKeys.swift; sourceTree = "<group>"; };
+		75B89F332AE2A9C100B242B4 /* PostWalletRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWalletRequest.swift; sourceTree = "<group>"; };
+		75B89F352AE2A9F300B242B4 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		75B89F372AE2AD2900B242B4 /* PostEndpointRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEndpointRequest.swift; sourceTree = "<group>"; };
 		75BE9E842ACACD2500C01064 /* WhitelabelSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhitelabelSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BE9E8B2ACACD2600C01064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75BE9E8E2ACACD2600C01064 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -613,6 +619,9 @@
 			isa = PBXGroup;
 			children = (
 				75B89F312AE1A69600B242B4 /* GetNodesRequestKeys.swift */,
+				75B89F332AE2A9C100B242B4 /* PostWalletRequest.swift */,
+				75B89F352AE2A9F300B242B4 /* Wallet.swift */,
+				75B89F372AE2AD2900B242B4 /* PostEndpointRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -921,6 +930,7 @@
 				75CFB4E22AD0291B00DC395C /* DefaultEncoder.swift in Sources */,
 				75CFB4E02AD0288C00DC395C /* DNSRouteCollection.swift in Sources */,
 				751ADC542ACD886400CC736B /* DNSServerType.swift in Sources */,
+				75B89F362AE2A9F300B242B4 /* Wallet.swift in Sources */,
 				751ADBFD2ACC66FA00CC736B /* Encodable+Ext.swift in Sources */,
 				751ADBB12ACC62F400CC736B /* Fingerprint.swift in Sources */,
 				75B89F2F2AE1A56C00B242B4 /* BlockchainRouteCollection.swift in Sources */,
@@ -938,12 +948,14 @@
 				751ADBBA2ACC62F400CC736B /* NSError+Ext.swift in Sources */,
 				751ADC512ACD886400CC736B /* PeersModel.swift in Sources */,
 				75CFB4DF2AD0288C00DC395C /* PostDNSRequest.swift in Sources */,
+				75B89F382AE2AD2900B242B4 /* PostEndpointRequest.swift in Sources */,
 				75CFB4DE2AD0288C00DC395C /* PostDNSResponse.swift in Sources */,
 				751ADBB42ACC62F400CC736B /* Route.swift in Sources */,
 				751ADC902AD0209000CC736B /* SceneDelegate.swift in Sources */,
 				751ADC5D2ACD886400CC736B /* Serializer.swift in Sources */,
 				751ADC8A2ACD92F200CC736B /* Server.swift in Sources */,
 				75B28B672AD59B3D003BDD1D /* Request+Ext.swift in Sources */,
+				75B89F342AE2A9C100B242B4 /* PostWalletRequest.swift in Sources */,
 				75B28B612AD5881B003BDD1D /* ServerProtocol.swift in Sources */,
 				751ADC5B2ACD886400CC736B /* SettingsStorageStrategyType.swift in Sources */,
 				751ADBB72ACC62F400CC736B /* SniffingModel.swift in Sources */,

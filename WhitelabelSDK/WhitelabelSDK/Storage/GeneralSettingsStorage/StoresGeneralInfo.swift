@@ -7,4 +7,7 @@
 
 import Foundation
 
-protocol StoresGeneralInfo { }
+protocol StoresGeneralInfo { 
+    func set(wallet: String?)
+    var walletAddress: String? { get }
+}
