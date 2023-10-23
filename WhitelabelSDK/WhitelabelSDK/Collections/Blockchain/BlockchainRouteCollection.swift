@@ -73,6 +73,7 @@ extension BlockchainRouteCollection: RouteCollection  {
 
 private extension BlockchainRouteCollection {
     func changeEndpoint(_ req: Request) async throws -> Response {
+        try req.validate()
         let body = try req.content.decode(PostEndpointRequest.self)
         providers.forEach { $0.set(host: body.host, port: body.port) }
         return Response(status: .ok)
@@ -109,6 +110,7 @@ private extension BlockchainRouteCollection {
 
 private extension BlockchainRouteCollection {
     func getWalletAddress(_ req: Request) async throws -> String {
+        try req.validate()
         guard let address = walletAddress else { throw Abort(.notFound) }
         return try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
             DefaultEncoder.encode(model: WalletAddressResponse(address: address), continuation: continuation)
@@ -116,6 +118,7 @@ private extension BlockchainRouteCollection {
     }
     
     func storeWallet(_ req: Request) async throws -> Response {
+        try req.validate()
         let body = try req.content.decode(PostWalletRequest.self)
         let mnemonic = body.mnemonic.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")
         guard
@@ -135,11 +138,13 @@ private extension BlockchainRouteCollection {
 
 private extension BlockchainRouteCollection {
     func getWalletBalance(_ req: Request) async throws -> [String] {
+        try req.validate()
         guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
         return try await subscriptionProvider.fetchBalance(for: address)
     }
     
     func getWalletSubscriptions(_ req: Request) async throws -> [String] {
+        try req.validate()
         guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
         let limit = req.query[UInt64.self, at: PaginationKeys.limit.rawValue] ?? constants.defaultLimit
         let offset = req.query[UInt64.self, at: PaginationKeys.offset.rawValue] ?? constants.defaultOffset
