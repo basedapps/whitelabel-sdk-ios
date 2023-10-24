@@ -172,10 +172,15 @@ private extension BlockchainRouteCollection {
             let chainHeader = req.headers.first(name: constants.chainHeaderKey),
             let sender = sender(for: chainHeader)
         else {
-            throw Abort(.badRequest)
+            throw Abort(.unauthorized)
         }
         
-        guard let gasHeader = req.headers.first(name: constants.gasHeaderKey), let gas = Int(gasHeader) else { throw Abort(.badRequest) }
+        guard 
+            let gasHeader = req.headers.first(name: constants.gasHeaderKey),
+                let gas = Int(gasHeader)
+        else { 
+            throw Abort(.badRequest)
+        }
         guard let id = req.parameters.get("id", as: UInt64.self) else { throw Abort(.badRequest) }
         
         return try await transactionProvider.subscribe(sender: sender, plan: id, details: body, fee: .init(for: gas))
@@ -188,10 +193,15 @@ private extension BlockchainRouteCollection {
             let chainHeader = req.headers.first(name: constants.chainHeaderKey),
             let sender = sender(for: chainHeader)
         else {
-            throw Abort(.badRequest)
+            throw Abort(.unauthorized)
         }
         
-        guard let gasHeader = req.headers.first(name: constants.gasHeaderKey), let gas = Int(gasHeader) else { throw Abort(.badRequest) }
+        guard 
+            let gasHeader = req.headers.first(name: constants.gasHeaderKey),
+                let gas = Int(gasHeader)
+        else {
+            throw Abort(.badRequest)
+        }
         guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
         
         return try await transactionProvider.subscribe(sender: sender, node: address, details: body, fee: .init(for: gas))
@@ -204,10 +214,15 @@ private extension BlockchainRouteCollection {
             let chainHeader = req.headers.first(name: constants.chainHeaderKey),
             let sender = sender(for: chainHeader)
         else {
-            throw Abort(.badRequest)
+            throw Abort(.unauthorized)
         }
         
-        guard let gasHeader = req.headers.first(name: constants.gasHeaderKey), let gas = Int(gasHeader) else { throw Abort(.badRequest) }
+        guard 
+            let gasHeader = req.headers.first(name: constants.gasHeaderKey),
+            let gas = Int(gasHeader)
+        else {
+            throw Abort(.badRequest)
+        }
         guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
         
         return try await transactionProvider.transfer(
