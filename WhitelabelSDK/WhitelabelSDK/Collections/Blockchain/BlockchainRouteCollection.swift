@@ -12,6 +12,9 @@ import HDWallet
 // MARK: - Constants
 
 private struct Constants {
+    let chainHeaderKey = "x-chain-id"
+    let gasHeaderKey = "x-gas-prices"
+    
     let path: PathComponent = "blockchain"
     
     let walletKey = "wallet"
@@ -22,11 +25,12 @@ private struct Constants {
 }
 private let constants = Constants()
 
-// MARK: - DNSRouteCollection
+// MARK: - BlockchainRouteCollection
 
 struct BlockchainRouteCollection {
     private let nodesProvider: AsyncNodesProviderType
     private let subscriptionProvider: AsynsSubscriptionsProviderType
+    private let transactionProvider: AsyncTransactionProviderType
     
     private let providers: [ConfigurableProvider]
     
@@ -38,13 +42,15 @@ struct BlockchainRouteCollection {
     init(
         nodesProvider: AsyncNodesProviderType & ConfigurableProvider = AsyncNodesProvider(),
         subscriptionProvider: AsynsSubscriptionsProviderType & ConfigurableProvider = AsynsSubscriptionsProvider(),
+        transactionProvider: AsyncTransactionProviderType & ConfigurableProvider = AsyncTransactionProvider(),
         signer: TransactionSignerServiceType = TransactionSignerService(),
         commonStorage: StoresGeneralInfo = GeneralSettingsStorage(),
         safeStorage: SettingsStorageStrategyType = KeychainStorageStrategy(serviceKey: "BlockchainRouteCollection")
     ) {
         self.nodesProvider = nodesProvider
         self.subscriptionProvider = subscriptionProvider
-        self.providers = [nodesProvider, subscriptionProvider]
+        self.transactionProvider = transactionProvider
+        self.providers = [nodesProvider, subscriptionProvider, transactionProvider]
         self.signer = signer
         self.commonStorage = commonStorage
         self.safeStorage = safeStorage
@@ -66,6 +72,10 @@ extension BlockchainRouteCollection: RouteCollection  {
         
         routes.get(constants.path, "wallet", ":address", "balance", use: getWalletBalance)
         routes.get(constants.path, "wallet", ":address", "subscriptions", use: getWalletSubscriptions)
+        
+        routes.post(constants.path, "plans", ":id", "subscription", use: subscribeToPlan)
+        routes.post(constants.path, "nodes", ":address", "subscription", use: subscribeToNode)
+        routes.post(constants.path, "wallet", ":address", "balance", use: transfer)
     }
 }
 
@@ -152,6 +162,63 @@ private extension BlockchainRouteCollection {
     }
 }
 
+// MARK: - Requests: Transactions
+
+private extension BlockchainRouteCollection {
+    func subscribeToPlan(_ req: Request) async throws -> String {
+        try req.validate()
+        let body = try req.content.decode(PlanPaymentDetails.self)
+        guard
+            let chainHeader = req.headers.first(name: constants.chainHeaderKey),
+            let sender = sender(for: chainHeader)
+        else {
+            throw Abort(.badRequest)
+        }
+        
+        guard let gasHeader = req.headers.first(name: constants.gasHeaderKey), let gas = Int(gasHeader) else { throw Abort(.badRequest) }
+        guard let id = req.parameters.get("id", as: UInt64.self) else { throw Abort(.badRequest) }
+        
+        return try await transactionProvider.subscribe(sender: sender, plan: id, details: body, fee: .init(for: gas))
+    }
+    
+    func subscribeToNode(_ req: Request) async throws -> String {
+        try req.validate()
+        let body = try req.content.decode(NodePaymentDetails.self)
+        guard
+            let chainHeader = req.headers.first(name: constants.chainHeaderKey),
+            let sender = sender(for: chainHeader)
+        else {
+            throw Abort(.badRequest)
+        }
+        
+        guard let gasHeader = req.headers.first(name: constants.gasHeaderKey), let gas = Int(gasHeader) else { throw Abort(.badRequest) }
+        guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
+        
+        return try await transactionProvider.subscribe(sender: sender, node: address, details: body, fee: .init(for: gas))
+    }
+    
+    func transfer(_ req: Request) async throws -> String {
+        try req.validate()
+        let body = try req.content.decode(DirectPaymentDetails.self)
+        guard
+            let chainHeader = req.headers.first(name: constants.chainHeaderKey),
+            let sender = sender(for: chainHeader)
+        else {
+            throw Abort(.badRequest)
+        }
+        
+        guard let gasHeader = req.headers.first(name: constants.gasHeaderKey), let gas = Int(gasHeader) else { throw Abort(.badRequest) }
+        guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
+        
+        return try await transactionProvider.transfer(
+            sender: sender,
+            recipient: address,
+            details: body,
+            fee: .init(for: gas)
+        )
+    }
+}
+
 // MARK: - Wallet data
 
 extension BlockchainRouteCollection {
@@ -167,8 +234,7 @@ extension BlockchainRouteCollection {
     }
     
     private func loadMnemonic() -> [String]? {
-        guard let account = walletAddress else { return nil }
-        return safeStorage.object(ofType: String.self, forKey: constants.walletKey)?
+        safeStorage.object(ofType: String.self, forKey: constants.walletKey)?
             .trimmingCharacters(in: .whitespacesAndNewlines)
             .components(separatedBy: " ")
     }
