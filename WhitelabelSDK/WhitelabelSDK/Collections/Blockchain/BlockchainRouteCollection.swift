@@ -93,21 +93,21 @@ private extension BlockchainRouteCollection {
 // MARK: - Requests: Nodes
 
 private extension BlockchainRouteCollection {
-    func getAvailableNodes(_ req: Request) async throws -> [String] {
+    func getAvailableNodes(_ req: Request) async throws -> String {
         try req.validate()
         let limit = req.query[UInt64.self, at: PaginationKeys.limit.rawValue] ?? constants.defaultLimit
         let offset = req.query[UInt64.self, at: PaginationKeys.offset.rawValue] ?? constants.defaultOffset
         return try await nodesProvider.getActiveNodes(limit: limit, offset: offset)
     }   
     
-    func getAvailablePlans(_ req: Request) async throws -> [String] {
+    func getAvailablePlans(_ req: Request) async throws -> String {
         try req.validate()
         let limit = req.query[UInt64.self, at: PaginationKeys.limit.rawValue] ?? constants.defaultLimit
         let offset = req.query[UInt64.self, at: PaginationKeys.offset.rawValue] ?? constants.defaultOffset
         return try await nodesProvider.getPlans(limit: limit, offset: offset)
     }
     
-    func getAvailableNodesForPlan(_ req: Request) async throws -> [String] {
+    func getAvailableNodesForPlan(_ req: Request) async throws -> String {
         try req.validate()
         let limit = req.query[UInt64.self, at: PaginationKeys.limit.rawValue] ?? constants.defaultLimit
         let offset = req.query[UInt64.self, at: PaginationKeys.offset.rawValue] ?? constants.defaultOffset
@@ -147,13 +147,13 @@ private extension BlockchainRouteCollection {
 // MARK: - Requests: Wallet data
 
 private extension BlockchainRouteCollection {
-    func getWalletBalance(_ req: Request) async throws -> [String] {
+    func getWalletBalance(_ req: Request) async throws -> String {
         try req.validate()
         guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
         return try await subscriptionProvider.fetchBalance(for: address)
     }
     
-    func getWalletSubscriptions(_ req: Request) async throws -> [String] {
+    func getWalletSubscriptions(_ req: Request) async throws -> String {
         try req.validate()
         guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
         let limit = req.query[UInt64.self, at: PaginationKeys.limit.rawValue] ?? constants.defaultLimit
