@@ -31,7 +31,7 @@ extension ViewController {
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
         view = webView
         
-        guard let path = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "dist") else {
+        guard let path = Bundle.main.url(forResource: "index", withExtension: "html") else {
             log.error("Fail to load UI from resources")
             return
         }

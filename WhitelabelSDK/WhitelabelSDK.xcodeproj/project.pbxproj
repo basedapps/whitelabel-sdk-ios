@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22C96ACA2B03B1700010CC0D /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 22C96AC92B03B1700010CC0D /* index.html */; };
 		751ADB6D2ACC5E3600CC736B /* WireGuardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB6C2ACC5E3600CC736B /* WireGuardKit */; };
 		751ADB702ACC60B200CC736B /* Tun2SocksKit in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB6F2ACC60B200CC736B /* Tun2SocksKit */; };
 		751ADB762ACC60DC00CC736B /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB752ACC60DC00CC736B /* KeychainAccess */; };
@@ -177,6 +178,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		22C96AC92B03B1700010CC0D /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		751ADB7E2ACC616A00CC736B /* WhitelabelSDK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhitelabelSDK.entitlements; sourceTree = "<group>"; };
 		751ADB7F2ACC61B500CC736B /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		751ADB882ACC62F400CC736B /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -315,6 +317,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22C96AC82B03B1510010CC0D /* dist */ = {
+			isa = PBXGroup;
+			children = (
+				22C96AC92B03B1700010CC0D /* index.html */,
+			);
+			path = dist;
+			sourceTree = "<group>";
+		};
 		751ADB872ACC62F400CC736B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,6 +639,7 @@
 		75BE9E7B2ACACD2500C01064 = {
 			isa = PBXGroup;
 			children = (
+				22C96AC82B03B1510010CC0D /* dist */,
 				751ADB872ACC62F400CC736B /* Shared */,
 				75BE9E862ACACD2500C01064 /* WhitelabelSDK */,
 				75BE9EA12ACC522900C01064 /* V2RayExtension */,
@@ -888,6 +899,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C96ACA2B03B1700010CC0D /* index.html in Resources */,
 				75BE9E8C2ACACD2600C01064 /* Assets.xcassets in Resources */,
 				751ADCC02AD023F800CC736B /* LaunchScreen.storyboard in Resources */,
 				751ADCBD2AD023DC00CC736B /* Main.storyboard in Resources */,
