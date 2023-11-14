@@ -237,10 +237,10 @@
     {
       "identity" : "tun2sockskit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/daemooon/Tun2SocksKit.git",
+      "location" : "https://github.com/solarlabsteam/Tun2SocksKit",
       "state" : {
-        "revision" : "ffe9b93765a7c6068188ad665411a47e685b0573",
-        "version" : "2.5.3"
+        "branch" : "xcframework",
+        "revision" : "7fe08f95a28089bf90bf45acf56882a4b7a39783"
       }
     },
     {
@@ -268,15 +268,6 @@
       "state" : {
         "branch" : "fix-package",
         "revision" : "66daeebc59deb20333783104ecccb509bef61326"
-      }
-    },
-    {
-      "identity" : "xraykit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/daemooon/XrayKit.git",
-      "state" : {
-        "revision" : "aeec1361874992eb7d134559ba5cb415237f44c5",
-        "version" : "0.1.62"
       }
     }
   ],

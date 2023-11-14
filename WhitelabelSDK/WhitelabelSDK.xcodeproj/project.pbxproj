@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		22C96ACA2B03B1700010CC0D /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 22C96AC92B03B1700010CC0D /* index.html */; };
+		22C96ACC2B03BA500010CC0D /* XrayKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C96ACB2B03BA4F0010CC0D /* XrayKit.xcframework */; };
+		22C96AD02B03C7C40010CC0D /* Tun2SocksKit in Frameworks */ = {isa = PBXBuildFile; productRef = 22C96ACF2B03C7C40010CC0D /* Tun2SocksKit */; };
 		751ADB6D2ACC5E3600CC736B /* WireGuardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB6C2ACC5E3600CC736B /* WireGuardKit */; };
-		751ADB702ACC60B200CC736B /* Tun2SocksKit in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB6F2ACC60B200CC736B /* Tun2SocksKit */; };
 		751ADB762ACC60DC00CC736B /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB752ACC60DC00CC736B /* KeychainAccess */; };
-		751ADB792ACC60F500CC736B /* XrayKit in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB782ACC60F500CC736B /* XrayKit */; };
 		751ADB7C2ACC610500CC736B /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB7B2ACC610500CC736B /* SwiftyBeaver */; };
 		751ADB7D2ACC611C00CC736B /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BE9E9F2ACC522900C01064 /* NetworkExtension.framework */; };
 		751ADB802ACC61BA00CC736B /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 751ADB7F2ACC61B500CC736B /* libresolv.9.tbd */; };
@@ -179,6 +179,7 @@
 
 /* Begin PBXFileReference section */
 		22C96AC92B03B1700010CC0D /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		22C96ACB2B03BA4F0010CC0D /* XrayKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = XrayKit.xcframework; sourceTree = "<group>"; };
 		751ADB7E2ACC616A00CC736B /* WhitelabelSDK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhitelabelSDK.entitlements; sourceTree = "<group>"; };
 		751ADB7F2ACC61B500CC736B /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		751ADB882ACC62F400CC736B /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -298,9 +299,9 @@
 			files = (
 				751ADB802ACC61BA00CC736B /* libresolv.9.tbd in Frameworks */,
 				75BE9EA02ACC522900C01064 /* NetworkExtension.framework in Frameworks */,
+				22C96ACC2B03BA500010CC0D /* XrayKit.xcframework in Frameworks */,
+				22C96AD02B03C7C40010CC0D /* Tun2SocksKit in Frameworks */,
 				751ADB822ACC61C000CC736B /* SwiftyBeaver in Frameworks */,
-				751ADB702ACC60B200CC736B /* Tun2SocksKit in Frameworks */,
-				751ADB792ACC60F500CC736B /* XrayKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +688,7 @@
 		75BE9E9E2ACC522900C01064 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22C96ACB2B03BA4F0010CC0D /* XrayKit.xcframework */,
 				751ADB7F2ACC61B500CC736B /* libresolv.9.tbd */,
 				75BE9E9F2ACC522900C01064 /* NetworkExtension.framework */,
 			);
@@ -810,9 +812,8 @@
 			);
 			name = V2RayExtension;
 			packageProductDependencies = (
-				751ADB6F2ACC60B200CC736B /* Tun2SocksKit */,
-				751ADB782ACC60F500CC736B /* XrayKit */,
 				751ADB812ACC61C000CC736B /* SwiftyBeaver */,
+				22C96ACF2B03C7C40010CC0D /* Tun2SocksKit */,
 			);
 			productName = V2RayExtension;
 			productReference = 75BE9E9D2ACC522900C01064 /* V2RayExtension.appex */;
@@ -875,12 +876,11 @@
 			mainGroup = 75BE9E7B2ACACD2500C01064;
 			packageReferences = (
 				75BE9EBE2ACC539900C01064 /* XCRemoteSwiftPackageReference "wireguard-apple" */,
-				751ADB6E2ACC60B200CC736B /* XCRemoteSwiftPackageReference "Tun2SocksKit" */,
 				751ADB742ACC60DC00CC736B /* XCRemoteSwiftPackageReference "KeychainAccess" */,
-				751ADB772ACC60F500CC736B /* XCRemoteSwiftPackageReference "XrayKit" */,
 				751ADB7A2ACC610500CC736B /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 				751ADBE32ACC664E00CC736B /* XCRemoteSwiftPackageReference "vapor" */,
 				75B89F2A2AE1A53D00B242B4 /* XCRemoteSwiftPackageReference "sentinel-wallet-sdk-ios" */,
+				22C96ACE2B03C7C40010CC0D /* XCRemoteSwiftPackageReference "Tun2SocksKit" */,
 			);
 			productRefGroup = 75BE9E852ACACD2500C01064 /* Products */;
 			projectDirPath = "";
@@ -1488,12 +1488,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		751ADB6E2ACC60B200CC736B /* XCRemoteSwiftPackageReference "Tun2SocksKit" */ = {
+		22C96ACE2B03C7C40010CC0D /* XCRemoteSwiftPackageReference "Tun2SocksKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/daemooon/Tun2SocksKit.git";
+			repositoryURL = "https://github.com/solarlabsteam/Tun2SocksKit";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.5.3;
+				branch = xcframework;
+				kind = branch;
 			};
 		};
 		751ADB742ACC60DC00CC736B /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
@@ -1502,14 +1502,6 @@
 			requirement = {
 				branch = master;
 				kind = branch;
-			};
-		};
-		751ADB772ACC60F500CC736B /* XCRemoteSwiftPackageReference "XrayKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/daemooon/XrayKit.git";
-			requirement = {
-				kind = exactVersion;
-				version = 0.1.62;
 			};
 		};
 		751ADB7A2ACC610500CC736B /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
@@ -1547,25 +1539,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		22C96ACF2B03C7C40010CC0D /* Tun2SocksKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22C96ACE2B03C7C40010CC0D /* XCRemoteSwiftPackageReference "Tun2SocksKit" */;
+			productName = Tun2SocksKit;
+		};
 		751ADB6C2ACC5E3600CC736B /* WireGuardKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 75BE9EBE2ACC539900C01064 /* XCRemoteSwiftPackageReference "wireguard-apple" */;
 			productName = WireGuardKit;
 		};
-		751ADB6F2ACC60B200CC736B /* Tun2SocksKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 751ADB6E2ACC60B200CC736B /* XCRemoteSwiftPackageReference "Tun2SocksKit" */;
-			productName = Tun2SocksKit;
-		};
 		751ADB752ACC60DC00CC736B /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 751ADB742ACC60DC00CC736B /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
-		};
-		751ADB782ACC60F500CC736B /* XrayKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 751ADB772ACC60F500CC736B /* XCRemoteSwiftPackageReference "XrayKit" */;
-			productName = XrayKit;
 		};
 		751ADB7B2ACC610500CC736B /* SwiftyBeaver */ = {
 			isa = XCSwiftPackageProductDependency;
