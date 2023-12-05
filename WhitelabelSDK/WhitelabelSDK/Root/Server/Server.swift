@@ -43,5 +43,9 @@ extension Server {
     private func configure(_ app: Application) {
         app.http.server.configuration.hostname = ClientConstants.host
         app.http.server.configuration.port = ClientConstants.port
+        
+
+        let fileMiddleware = try! FileMiddleware(bundle: .main, publicDirectory: "./", defaultFile: "index.html")
+        app.middleware.use(fileMiddleware)
     }
 }

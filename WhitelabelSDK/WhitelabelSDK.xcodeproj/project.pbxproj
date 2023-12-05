@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22C96ACA2B03B1700010CC0D /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 22C96AC92B03B1700010CC0D /* index.html */; };
 		22C96ACC2B03BA500010CC0D /* XrayKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C96ACB2B03BA4F0010CC0D /* XrayKit.xcframework */; };
 		22C96AD02B03C7C40010CC0D /* Tun2SocksKit in Frameworks */ = {isa = PBXBuildFile; productRef = 22C96ACF2B03C7C40010CC0D /* Tun2SocksKit */; };
 		751ADB6D2ACC5E3600CC736B /* WireGuardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB6C2ACC5E3600CC736B /* WireGuardKit */; };
@@ -178,7 +177,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		22C96AC92B03B1700010CC0D /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		22C96ACB2B03BA4F0010CC0D /* XrayKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = XrayKit.xcframework; sourceTree = "<group>"; };
 		751ADB7E2ACC616A00CC736B /* WhitelabelSDK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhitelabelSDK.entitlements; sourceTree = "<group>"; };
 		751ADB7F2ACC61B500CC736B /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
@@ -318,14 +316,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		22C96AC82B03B1510010CC0D /* dist */ = {
-			isa = PBXGroup;
-			children = (
-				22C96AC92B03B1700010CC0D /* index.html */,
-			);
-			path = dist;
-			sourceTree = "<group>";
-		};
 		751ADB872ACC62F400CC736B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -640,7 +630,6 @@
 		75BE9E7B2ACACD2500C01064 = {
 			isa = PBXGroup;
 			children = (
-				22C96AC82B03B1510010CC0D /* dist */,
 				751ADB872ACC62F400CC736B /* Shared */,
 				75BE9E862ACACD2500C01064 /* WhitelabelSDK */,
 				75BE9EA12ACC522900C01064 /* V2RayExtension */,
@@ -899,7 +888,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22C96ACA2B03B1700010CC0D /* index.html in Resources */,
 				75BE9E8C2ACACD2600C01064 /* Assets.xcassets in Resources */,
 				751ADCC02AD023F800CC736B /* LaunchScreen.storyboard in Resources */,
 				751ADCBD2AD023DC00CC736B /* Main.storyboard in Resources */,
@@ -1223,13 +1211,14 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_ENTITLEMENTS = WhitelabelSDK/WhitelabelSDK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"WhitelabelSDK/Preview Content\"";
 				DEVELOPMENT_TEAM = 5F44M2W7F4;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhitelabelSDK/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Sentinel;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1240,7 +1229,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.basedapps.whitelabel-sdk-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1260,13 +1249,14 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_ENTITLEMENTS = WhitelabelSDK/WhitelabelSDK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"WhitelabelSDK/Preview Content\"";
 				DEVELOPMENT_TEAM = 5F44M2W7F4;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhitelabelSDK/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Sentinel;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1277,7 +1267,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.basedapps.whitelabel-sdk-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1335,7 +1325,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.basedapps.whitelabel-sdk-ios.v2ray-ne";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.sentinel.dvpnapp.v2ray-ne";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1365,7 +1355,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.basedapps.whitelabel-sdk-ios.v2ray-ne";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.sentinel.dvpnapp.v2ray-ne";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1395,7 +1385,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.basedapps.whitelabel-sdk-ios.wireguard-ne";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.sentinel.dvpnapp.wireguard-ne";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1425,7 +1415,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.basedapps.whitelabel-sdk-ios.wireguard-ne";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.sentinel.dvpnapp.wireguard-ne";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

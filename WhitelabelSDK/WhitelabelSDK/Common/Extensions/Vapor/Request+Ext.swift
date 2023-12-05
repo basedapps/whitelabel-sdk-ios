@@ -10,15 +10,15 @@ import Vapor
 // MARK: - Constants
 
 private struct Constants {
-    let key = "x-key"
+    let key = "SnLnkORrZuzYsEPb"
 }
 private let constants = Constants()
 
 extension Request {
     func validate() throws {
-        guard let key = Environment.get(constants.key), let xHeader = headers.first(name: constants.key), key == xHeader else {
+        guard let xHeader = headers.first(name: "x-key"), constants.key == xHeader else {
             throw Abort(.badRequest, reason: "Invalid env")
         }
-        headers.remove(name: constants.key)
+        headers.remove(name: "x-key")
     }
 }

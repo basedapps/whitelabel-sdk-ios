@@ -16,7 +16,11 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         
         server.start()
-        setUpWebView()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+            self?.setUpWebView()
+        }
+        
     }
 }
 
@@ -29,13 +33,14 @@ extension ViewController {
         webConfiguration.setValue(true, forKey: "_allowUniversalAccessFromFileURLs")
         
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.allowsBackForwardNavigationGestures = true
         view = webView
         
-        guard let path = Bundle.main.url(forResource: "index", withExtension: "html") else {
-            log.error("Fail to load UI from resources")
-            return
-        }
+        let urlRequest = URLRequest(
+            url: URL(string: ("http://" + ClientConstants.host + ":" + "\(ClientConstants.port)" + "/"))!,
+            cachePolicy: .reloadIgnoringLocalAndRemoteCacheData
+        )
         
-        webView.loadFileURL(path, allowingReadAccessTo: path)
+        webView.load(urlRequest)
     }
 }
