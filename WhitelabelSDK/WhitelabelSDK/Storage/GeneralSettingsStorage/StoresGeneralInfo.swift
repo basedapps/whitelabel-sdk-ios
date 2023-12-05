@@ -10,4 +10,10 @@ import Foundation
 protocol StoresGeneralInfo { 
     func set(wallet: String?)
     var walletAddress: String? { get }
+    
+    var host: String? { get }
+    func set(host: String)
+    
+    var port: Int? { get }
+    func set(port: Int)
 }

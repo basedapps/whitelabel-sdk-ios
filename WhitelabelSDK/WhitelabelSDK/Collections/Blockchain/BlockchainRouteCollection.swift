@@ -29,7 +29,7 @@ private let constants = Constants()
 
 struct BlockchainRouteCollection {
     private let nodesProvider: AsyncNodesProviderType
-    private let subscriptionProvider: AsynsSubscriptionsProviderType
+    private let subscriptionProvider: AsyncSubscriptionsProviderType
     private let transactionProvider: AsyncTransactionProviderType
     
     private let providers: [ConfigurableProvider]
@@ -41,7 +41,7 @@ struct BlockchainRouteCollection {
     
     init(
         nodesProvider: AsyncNodesProviderType & ConfigurableProvider = AsyncNodesProvider(),
-        subscriptionProvider: AsynsSubscriptionsProviderType & ConfigurableProvider = AsynsSubscriptionsProvider(),
+        subscriptionProvider: AsyncSubscriptionsProviderType & ConfigurableProvider = AsyncSubscriptionsProvider(),
         transactionProvider: AsyncTransactionProviderType & ConfigurableProvider = AsyncTransactionProvider(),
         signer: TransactionSignerServiceType = TransactionSignerService(),
         commonStorage: StoresGeneralInfo = GeneralSettingsStorage(),
@@ -54,6 +54,9 @@ struct BlockchainRouteCollection {
         self.signer = signer
         self.commonStorage = commonStorage
         self.safeStorage = safeStorage
+        
+        guard let host = commonStorage.host, let port = commonStorage.port else { return }
+        providers.forEach { $0.set(host: host, port: port) }
     }
 }
 
@@ -86,6 +89,8 @@ private extension BlockchainRouteCollection {
         try req.validate()
         let body = try req.content.decode(PostEndpointRequest.self)
         providers.forEach { $0.set(host: body.host, port: body.port) }
+        commonStorage.set(host: body.host)
+        commonStorage.set(port: body.port)
         return Response(status: .ok)
     }
 }
@@ -198,12 +203,11 @@ private extension BlockchainRouteCollection {
         
         guard 
             let gasHeader = req.headers.first(name: constants.gasHeaderKey),
-                let gas = Int(gasHeader)
+            let gas = Int(gasHeader)
         else {
             throw Abort(.badRequest)
         }
         guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
-        
         return try await transactionProvider.subscribe(sender: sender, node: address, details: body, fee: .init(for: gas))
     }
     
@@ -249,8 +253,6 @@ extension BlockchainRouteCollection {
     }
     
     private func loadMnemonic() -> [String]? {
-        safeStorage.object(ofType: String.self, forKey: constants.walletKey)?
-            .trimmingCharacters(in: .whitespacesAndNewlines)
-            .components(separatedBy: " ")
+        safeStorage.object(ofType: [String].self, forKey: constants.walletKey)
     }
 }

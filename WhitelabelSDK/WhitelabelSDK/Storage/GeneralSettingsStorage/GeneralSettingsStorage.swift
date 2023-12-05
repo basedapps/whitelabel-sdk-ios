@@ -9,6 +9,8 @@ import Foundation
 import Accessibility
 
 private enum Keys: String, CaseIterable {
+    case hostKey
+    case portKey
     case dnsKey
     case walletKey
 }
@@ -24,6 +26,22 @@ final class GeneralSettingsStorage {
 // MARK: - StoresGeneralInfo
 
 extension GeneralSettingsStorage: StoresGeneralInfo {
+    var host: String? {
+        settingsStorageStrategy.object(ofType: String.self, forKey: Keys.hostKey.rawValue)
+    }
+    
+    func set(host: String) {
+        settingsStorageStrategy.setObject(host, forKey: Keys.hostKey.rawValue)
+    }
+    
+    var port: Int? {
+        settingsStorageStrategy.object(ofType: Int.self, forKey: Keys.portKey.rawValue)
+    }
+    
+    func set(port: Int) {
+        settingsStorageStrategy.setObject(port, forKey: Keys.portKey.rawValue)
+    }
+    
     func set(wallet: String?) {
         settingsStorageStrategy.setObject(wallet, forKey: Keys.walletKey.rawValue)
     }
