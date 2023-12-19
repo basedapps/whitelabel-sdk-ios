@@ -8,6 +8,7 @@
 import Vapor
 import SentinelWallet
 import HDWallet
+import WireGuardKit
 
 // MARK: - Constants
 
@@ -82,6 +83,8 @@ extension BlockchainRouteCollection: RouteCollection  {
         
         routes.get(constants.path, "wallet", ":address", "session", use: getWalletSession)
         routes.post(constants.path, "wallet", ":address", "session", use: startSession)
+        
+        routes.get(constants.path, "wallet", ":address", ":key", "connect", ":session", use: getSignedSession)
     }
 }
 
@@ -174,6 +177,38 @@ private extension BlockchainRouteCollection {
         guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
         guard let result =  try await subscriptionProvider.fetchSessions(for: address) else { throw Abort(.notFound) }
         return result
+    }
+    
+    func getSignedSession(_ req: Request) async throws -> String {
+        try req.validate()
+        
+        guard let raw = req.parameters.get("key", as: String.self), let type = NodeProtocol(rawValue: raw) else {
+            throw Abort(.badRequest)
+        }
+        
+        guard let key = type == .v2ray ? generateXRayKey() : generateWGKey() else {
+            throw Abort(.badRequest)
+        }
+        
+        guard let address = req.parameters.get("address", as: String.self), walletAddress == address else {
+            throw Abort(.unauthorized)
+        }
+        
+        guard let session = req.parameters.get("session", as: UInt64.self) else { throw Abort(.badRequest) }
+        
+        var int = session.bigEndian
+        let sessionIdData = Data(bytes: &int, count: 8)
+
+        guard let mnemonic = loadMnemonic() else { throw Abort(.unauthorized) }
+        guard let signature = signer.generateSignature(for: sessionIdData, with: mnemonic) else {
+            throw Abort(.unauthorized)
+        }
+        
+        return try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
+            DefaultEncoder.encode(
+                model: ConnectionResponse(key: key.publicKey, signature: signature), continuation: continuation
+            )
+        })
     }
 }
 
@@ -291,5 +326,23 @@ extension BlockchainRouteCollection {
     
     private func loadMnemonic() -> [String]? {
         safeStorage.object(ofType: [String].self, forKey: constants.walletKey)
+    }
+    
+    private func generateXRayKey() -> (publicKey: String, privateKey: String)? {
+        var uid: [UInt8] = [UInt8](repeating: 0, count: 16)
+
+        guard SecRandomCopyBytes(kSecRandomDefault, uid.count, &uid) == errSecSuccess else {
+            return nil
+        }
+
+        let uuid = NSUUID(uuidBytes: uid).uuidString
+        let data = Data(uid)
+        let clientKeyData = Data([0x01]) + data
+        return (clientKeyData.base64EncodedString(), uuid)
+    }
+
+    private func generateWGKey() -> (publicKey: String, privateKey: String) {
+        let wgKey = PrivateKey()
+        return (wgKey.publicKey.base64Key, wgKey.base64Key)
     }
 }

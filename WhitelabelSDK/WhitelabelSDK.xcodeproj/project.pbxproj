@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22C216712B31BCD80023824E /* PostSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C216702B31BCD80023824E /* PostSessionRequest.swift */; };
+		22C216732B31DEC10023824E /* ConnectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C216722B31DEC10023824E /* ConnectionResponse.swift */; };
 		22C96ACC2B03BA500010CC0D /* XrayKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C96ACB2B03BA4F0010CC0D /* XrayKit.xcframework */; };
 		22C96AD02B03C7C40010CC0D /* Tun2SocksKit in Frameworks */ = {isa = PBXBuildFile; productRef = 22C96ACF2B03C7C40010CC0D /* Tun2SocksKit */; };
 		751ADB6D2ACC5E3600CC736B /* WireGuardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB6C2ACC5E3600CC736B /* WireGuardKit */; };
@@ -179,6 +180,7 @@
 
 /* Begin PBXFileReference section */
 		22C216702B31BCD80023824E /* PostSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSessionRequest.swift; sourceTree = "<group>"; };
+		22C216722B31DEC10023824E /* ConnectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionResponse.swift; sourceTree = "<group>"; };
 		22C96ACB2B03BA4F0010CC0D /* XrayKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = XrayKit.xcframework; sourceTree = "<group>"; };
 		751ADB7E2ACC616A00CC736B /* WhitelabelSDK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhitelabelSDK.entitlements; sourceTree = "<group>"; };
 		751ADB7F2ACC61B500CC736B /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
@@ -621,6 +623,7 @@
 		75B89F302AE1A68800B242B4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				22C216722B31DEC10023824E /* ConnectionResponse.swift */,
 				75B89F312AE1A69600B242B4 /* GetNodesRequestKeys.swift */,
 				75B89F372AE2AD2900B242B4 /* PostEndpointRequest.swift */,
 				22C216702B31BCD80023824E /* PostSessionRequest.swift */,
@@ -982,6 +985,7 @@
 				751ADC552ACD886400CC736B /* TunnelStatus.swift in Sources */,
 				75B89F322AE1A69600B242B4 /* GetNodesRequestKeys.swift in Sources */,
 				75B28B5D2AD57373003BDD1D /* TunnelStatusResponse.swift in Sources */,
+				22C216732B31DEC10023824E /* ConnectionResponse.swift in Sources */,
 				751ADBBB2ACC62F400CC736B /* UserDefaults+Ext.swift in Sources */,
 				751ADC5A2ACD886400CC736B /* UserDefaultsStorageStrategy.swift in Sources */,
 				751ADC922AD020BD00CC736B /* ViewController.swift in Sources */,
