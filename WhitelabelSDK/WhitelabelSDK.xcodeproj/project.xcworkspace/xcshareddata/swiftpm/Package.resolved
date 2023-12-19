@@ -104,8 +104,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/solarlabsteam/sentinel-wallet-sdk-ios",
       "state" : {
-        "branch" : "v2.1",
-        "revision" : "1f69fd38f5828e710429b6a9bc0d041147dfccd1"
+        "branch" : "develop",
+        "revision" : "a05daa85b2a5a8d2695ad86d802e45d55dc7ab33"
       }
     },
     {
@@ -221,8 +221,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-protobuf.git",
       "state" : {
-        "revision" : "07f7f26ded8df9645c072f220378879c4642e063",
-        "version" : "1.25.1"
+        "revision" : "3c54ab05249f59f2c6641dd2920b8358ea9ed127",
+        "version" : "1.24.0"
       }
     },
     {

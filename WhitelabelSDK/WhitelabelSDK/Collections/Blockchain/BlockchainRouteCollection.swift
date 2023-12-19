@@ -79,6 +79,9 @@ extension BlockchainRouteCollection: RouteCollection  {
         routes.post(constants.path, "plans", ":id", "subscription", use: subscribeToPlan)
         routes.post(constants.path, "nodes", ":address", "subscription", use: subscribeToNode)
         routes.post(constants.path, "wallet", ":address", "balance", use: transfer)
+        
+        routes.get(constants.path, "wallet", ":address", "session", use: getWalletSession)
+        routes.post(constants.path, "wallet", ":address", "session", use: startSession)
     }
 }
 
@@ -164,6 +167,13 @@ private extension BlockchainRouteCollection {
         let limit = req.query[UInt64.self, at: PaginationKeys.limit.rawValue] ?? constants.defaultLimit
         let offset = req.query[UInt64.self, at: PaginationKeys.offset.rawValue] ?? constants.defaultOffset
         return try await subscriptionProvider.fetchSubscriptions(limit: limit, offset: offset, for: address)
+    }  
+    
+    func getWalletSession(_ req: Request) async throws -> String {
+        try req.validate()
+        guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
+        guard let result =  try await subscriptionProvider.fetchSessions(for: address) else { throw Abort(.notFound) }
+        return result
     }
 }
 
@@ -233,6 +243,33 @@ private extension BlockchainRouteCollection {
             sender: sender,
             recipient: address,
             details: body,
+            fee: .init(for: gas)
+        )
+    }
+    
+    func startSession(_ req: Request) async throws -> String {
+        try req.validate()
+        let body = try req.content.decode(PostSessionRequest.self)
+        guard
+            let chainHeader = req.headers.first(name: constants.chainHeaderKey),
+            let sender = sender(for: chainHeader)
+        else {
+            throw Abort(.unauthorized)
+        }
+        
+        guard
+            let gasHeader = req.headers.first(name: constants.gasHeaderKey),
+            let gas = Int(gasHeader)
+        else {
+            throw Abort(.badRequest)
+        }
+        guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
+        
+        return try await transactionProvider.startSession(
+            sender: sender,
+            on: body.subscriptionID,
+            activeSession: body.activeSession,
+            node: body.node,
             fee: .init(for: gas)
         )
     }
