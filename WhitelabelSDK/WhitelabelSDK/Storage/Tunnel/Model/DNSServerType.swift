@@ -30,7 +30,7 @@ enum DNSServerType: String, CaseIterable {
     }
     
     static var `default`: DNSServerType {
-        return .handshake
+        .cloudflare
     }
 }
 
