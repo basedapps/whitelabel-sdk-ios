@@ -118,7 +118,7 @@
 		75B28B672AD59B3D003BDD1D /* Request+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B28B662AD59B3D003BDD1D /* Request+Ext.swift */; };
 		75B89F2C2AE1A53D00B242B4 /* SentinelWallet in Frameworks */ = {isa = PBXBuildFile; productRef = 75B89F2B2AE1A53D00B242B4 /* SentinelWallet */; };
 		75B89F2F2AE1A56C00B242B4 /* BlockchainRouteCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F2E2AE1A56C00B242B4 /* BlockchainRouteCollection.swift */; };
-		75B89F322AE1A69600B242B4 /* GetNodesRequestKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F312AE1A69600B242B4 /* GetNodesRequestKeys.swift */; };
+		75B89F322AE1A69600B242B4 /* PaginationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F312AE1A69600B242B4 /* PaginationKeys.swift */; };
 		75B89F342AE2A9C100B242B4 /* PostWalletRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F332AE2A9C100B242B4 /* PostWalletRequest.swift */; };
 		75B89F362AE2A9F300B242B4 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F352AE2A9F300B242B4 /* Wallet.swift */; };
 		75B89F382AE2AD2900B242B4 /* PostEndpointRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F372AE2AD2900B242B4 /* PostEndpointRequest.swift */; };
@@ -257,7 +257,7 @@
 		75B28B632AD58956003BDD1D /* ProxyRouteCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyRouteCollection.swift; sourceTree = "<group>"; };
 		75B28B662AD59B3D003BDD1D /* Request+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Ext.swift"; sourceTree = "<group>"; };
 		75B89F2E2AE1A56C00B242B4 /* BlockchainRouteCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockchainRouteCollection.swift; sourceTree = "<group>"; };
-		75B89F312AE1A69600B242B4 /* GetNodesRequestKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNodesRequestKeys.swift; sourceTree = "<group>"; };
+		75B89F312AE1A69600B242B4 /* PaginationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationKeys.swift; sourceTree = "<group>"; };
 		75B89F332AE2A9C100B242B4 /* PostWalletRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWalletRequest.swift; sourceTree = "<group>"; };
 		75B89F352AE2A9F300B242B4 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		75B89F372AE2AD2900B242B4 /* PostEndpointRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEndpointRequest.swift; sourceTree = "<group>"; };
@@ -624,7 +624,7 @@
 			isa = PBXGroup;
 			children = (
 				22C216722B31DEC10023824E /* ConnectionResponse.swift */,
-				75B89F312AE1A69600B242B4 /* GetNodesRequestKeys.swift */,
+				75B89F312AE1A69600B242B4 /* PaginationKeys.swift */,
 				75B89F372AE2AD2900B242B4 /* PostEndpointRequest.swift */,
 				22C216702B31BCD80023824E /* PostSessionRequest.swift */,
 				75B89F332AE2A9C100B242B4 /* PostWalletRequest.swift */,
@@ -983,7 +983,7 @@
 				751ADC582ACD886400CC736B /* TunnelsService.swift in Sources */,
 				751ADC572ACD886400CC736B /* TunnelsServiceStatusDelegate.swift in Sources */,
 				751ADC552ACD886400CC736B /* TunnelStatus.swift in Sources */,
-				75B89F322AE1A69600B242B4 /* GetNodesRequestKeys.swift in Sources */,
+				75B89F322AE1A69600B242B4 /* PaginationKeys.swift in Sources */,
 				75B28B5D2AD57373003BDD1D /* TunnelStatusResponse.swift in Sources */,
 				22C216732B31DEC10023824E /* ConnectionResponse.swift in Sources */,
 				751ADBBB2ACC62F400CC736B /* UserDefaults+Ext.swift in Sources */,

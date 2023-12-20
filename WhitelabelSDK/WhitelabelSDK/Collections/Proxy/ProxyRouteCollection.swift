@@ -21,7 +21,7 @@ extension ProxyRouteCollection: RouteCollection {
 }
 
 extension ProxyRouteCollection {
-   private func proxyRequest(_ req: Request) async throws -> ClientResponse {
+    private func proxyRequest(_ req: Request) async throws -> ClientResponse {
         try req.validate()
         
         guard let path = req.url.path.split(separator: "/").dropFirst(2).joined(separator: "/").removingPercentEncoding else {

@@ -84,7 +84,7 @@ extension BlockchainRouteCollection: RouteCollection  {
         routes.get(constants.path, "wallet", ":address", "session", use: getWalletSession)
         routes.post(constants.path, "wallet", ":address", "session", use: startSession)
         
-        routes.get(constants.path, "wallet", ":address", ":key", "connect", ":session", use: getSignedSession)
+        routes.post(constants.path, "wallet", "connect", use: fetchCredentials)
     }
 }
 
@@ -179,36 +179,46 @@ private extension BlockchainRouteCollection {
         return result
     }
     
-    func getSignedSession(_ req: Request) async throws -> String {
+    func fetchCredentials(_ req: Request) async throws -> ClientResponse {
         try req.validate()
+        let body = try req.content.decode(CredentialsRequest.self)
         
-        guard let raw = req.parameters.get("key", as: String.self), let type = NodeProtocol(rawValue: raw) else {
-            throw Abort(.badRequest)
+        guard var components = URLComponents(string: body.url) else { throw Abort(.badRequest, reason: "Invalid path") }
+        components.scheme = "http"
+        
+        guard let urlString = components.string, let url = URL(string: urlString) else {
+            throw Abort(.badRequest, reason: "Invalid path")
+        }
+        guard let host = url.host() else {
+            throw Abort(.badRequest, reason: "Invalid host in env")
+        }
+        var headers = req.headers
+        headers.replaceOrAdd(name: "Host", value: host)
+        
+        guard let type = NodeProtocol(rawValue: body.nodeProtocol) else {
+            throw Abort(.badRequest, reason: "Invalid protocol")
         }
         
         guard let key = type == .v2ray ? generateXRayKey() : generateWGKey() else {
-            throw Abort(.badRequest)
+            throw Abort(.badRequest, reason: "Invalid protocol")
         }
         
-        guard let address = req.parameters.get("address", as: String.self), walletAddress == address else {
-            throw Abort(.unauthorized)
-        }
+        guard walletAddress == body.address, let mnemonic = loadMnemonic() else { throw Abort(.unauthorized) }
         
-        guard let session = req.parameters.get("session", as: UInt64.self) else { throw Abort(.badRequest) }
-        
-        var int = session.bigEndian
+        var int = body.session.bigEndian
         let sessionIdData = Data(bytes: &int, count: 8)
 
-        guard let mnemonic = loadMnemonic() else { throw Abort(.unauthorized) }
         guard let signature = signer.generateSignature(for: sessionIdData, with: mnemonic) else {
             throw Abort(.unauthorized)
         }
         
-        return try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
-            DefaultEncoder.encode(
-                model: ConnectionResponse(key: key.publicKey, signature: signature), continuation: continuation
-            )
-        })
+        let fullURL: URI = "\(urlString)/accounts/\(body.address)/sessions/\(body.session)"
+        
+        let response =  try await req.client.send(.POST, headers: headers, to: fullURL) { clientReq in
+            try clientReq.content.encode(["key": key.publicKey, "signature": signature])
+        }
+        
+        return response
     }
 }
 
