@@ -15,12 +15,11 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        server.start()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
-            self?.setUpWebView()
+        server.start { [weak self] in
+            DispatchQueue.main.async {
+                self?.setUpWebView()
+            }
         }
-        
     }
 }
 

@@ -13,10 +13,10 @@ extension ProxyRouteCollection: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
         let proxyGroup = routes.grouped("proxy")
         
-        routes.get("**", use: proxyRequest)
-        routes.post("**", use: proxyRequest)
-        routes.put("**", use: proxyRequest)
-        routes.delete("**", use: proxyRequest)
+        proxyGroup.get("**", use: proxyRequest)
+        proxyGroup.post("**", use: proxyRequest)
+        proxyGroup.put("**", use: proxyRequest)
+        proxyGroup.delete("**", use: proxyRequest)
     }
 }
 

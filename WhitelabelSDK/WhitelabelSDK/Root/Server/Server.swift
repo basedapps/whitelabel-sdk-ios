@@ -20,7 +20,7 @@ final class Server {
 }
 
 extension Server {
-    func start() {
+    func start(completion: @escaping () -> Void) {
         Task(priority: .background) {
             do {
                 let api = app.grouped(.init(stringLiteral: ClientConstants.apiPath))
@@ -30,6 +30,8 @@ extension Server {
                 try api.register(collection: ProxyRouteCollection())
                 try api.register(collection: BlockchainRouteCollection())
                 try app.start()
+                
+                completion()
             } catch {
                 fatalError(error.localizedDescription)
             }
