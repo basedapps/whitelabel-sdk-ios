@@ -125,17 +125,11 @@ extension TunnelRouteCollection {
 // MARK: - TunnelManagerDelegate
 
 extension TunnelRouteCollection: TunnelManagerDelegate {
-    func handleTunnelUpdatingStatus() {
-        eventSubject.send(.statusUpdated)
-    }
+    func handleTunnelUpdatingStatus() {}
 
-    func handleError(_ error: Error) {
-        eventSubject.send(.error(error))
-    }
+    func handleError(_ error: Error) {}
 
-    func handleTunnelReconnection() {
-        handleTunnelUpdatingStatus()
-    }
+    func handleTunnelReconnection() {}
 
     func handleTunnelServiceCreation() {
         log.info("Tunnel service created.")

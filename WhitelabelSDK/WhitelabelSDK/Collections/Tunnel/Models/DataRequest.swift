@@ -10,7 +10,3 @@ import Foundation
 struct DataRequest<T: Decodable>: Decodable {
     let data: T
 }
-
-struct ConnectionRequest: Decodable {
-    let data: ConnectionCredentials
-}
