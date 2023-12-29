@@ -7,6 +7,13 @@
 
 import Vapor
 
+struct IPResponse: Decodable, Equatable {
+    let ip: String
+    
+    let latitude: Float64?
+    let longitude: Float64?
+}
+
 final class ProxyRouteCollection { }
 
 extension ProxyRouteCollection: RouteCollection {
@@ -14,6 +21,7 @@ extension ProxyRouteCollection: RouteCollection {
         let proxyGroup = routes.grouped("proxy")
         
         proxyGroup.get("**", use: proxyRequest)
+        proxyGroup.get("ip", use: getIP)
         proxyGroup.post("**", use: proxyRequest)
         proxyGroup.put("**", use: proxyRequest)
         proxyGroup.delete("**", use: proxyRequest)
@@ -41,5 +49,19 @@ extension ProxyRouteCollection {
         }
         
         return response
+    }
+    
+    private func getIP(_ req: Request) async throws -> String {
+        try req.validate()
+        let url = ApplicationConfiguration.shared.backendURLString + "/ip"
+        let urlString = "https://vpn-api.basedapps.co.uk/ip"
+        guard let url = URL(string: urlString) else { throw Abort(.badRequest) }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        guard let token = req.headers.first(name: "x-device-token") else { throw Abort(.unauthorized) }
+        request.addValue(token, forHTTPHeaderField: "x-device-token")
+        let (data, _) = try await URLSession.shared.data(for: request)
+        
+        return String(decoding: data, as: UTF8.self)
     }
 }
