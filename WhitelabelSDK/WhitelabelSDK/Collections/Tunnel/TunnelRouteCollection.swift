@@ -153,11 +153,11 @@ extension TunnelRouteCollection: TunnelsServiceStatusDelegate {
 
     func activationSucceeded(for tunnel: TunnelContainer) {
         log.debug("\(tunnel.name) is succesfully activated")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in eventSubject.send(.statusUpdated) }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in eventSubject.send(.statusUpdated) }
     }
 
     func deactivationSucceeded(for tunnel: TunnelContainer) {
         log.debug("\(tunnel.name) is succesfully deactivated")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in eventSubject.send(.statusUpdated) }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in eventSubject.send(.statusUpdated) }
     }
 }

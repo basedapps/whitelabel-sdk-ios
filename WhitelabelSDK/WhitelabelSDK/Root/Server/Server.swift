@@ -21,7 +21,7 @@ final class Server {
 
 extension Server {
     func start(completion: @escaping () -> Void) {
-        Task(priority: .background) {
+        Task {
             do {
                 let api = app.grouped(.init(stringLiteral: ClientConstants.apiPath))
                 try api.register(collection: TunnelRouteCollection())
@@ -29,7 +29,7 @@ extension Server {
                 try api.register(collection: StorageRouteCollection())
                 try api.register(collection: ProxyRouteCollection())
                 try api.register(collection: BlockchainRouteCollection())
-                try app.start()
+                try await app.startup()
                 
                 completion()
             } catch {

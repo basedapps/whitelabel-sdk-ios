@@ -1515,7 +1515,7 @@
 			repositoryURL = "https://github.com/vapor/vapor";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 4.84.1;
+				minimumVersion = 4.89.3;
 			};
 		};
 		75B89F2A2AE1A53D00B242B4 /* XCRemoteSwiftPackageReference "sentinel-wallet-sdk-ios" */ = {
