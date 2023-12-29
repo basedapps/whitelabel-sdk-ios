@@ -37,7 +37,7 @@ struct ConnectionCredentials: Equatable {
 
 // MARK: - Decodable
 
-extension ConnectionCredentials: Decodable {
+extension ConnectionCredentials: Codable {
     enum CodingKeys: String, CodingKey {
         case vpnProtocol = "protocol"
         case payload

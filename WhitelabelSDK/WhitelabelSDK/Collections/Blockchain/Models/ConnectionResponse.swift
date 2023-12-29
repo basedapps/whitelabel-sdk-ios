@@ -24,7 +24,6 @@ struct StartSessionRequest: Codable {
     }
 }
 
-enum NodeProtocol: String {
-    case v2ray = "V2RAY"
-    case wireguard = "WIREGUARD"
+struct StartSessionResponse: Decodable {
+     let result: String
 }

@@ -179,7 +179,7 @@ private extension BlockchainRouteCollection {
         return result
     }
     
-    func fetchCredentials(_ req: Request) async throws -> ClientResponse {
+    func fetchCredentials(_ req: Request) async throws -> String {
         try req.validate()
         let body = try req.content.decode(CredentialsRequest.self)
         
@@ -195,7 +195,7 @@ private extension BlockchainRouteCollection {
         var headers = req.headers
         headers.replaceOrAdd(name: "Host", value: host)
         
-        guard let type = NodeProtocol(rawValue: body.nodeProtocol) else {
+        guard let type = ServerProtocol(rawValue: body.nodeProtocol) else {
             throw Abort(.badRequest, reason: "Invalid protocol")
         }
         
@@ -214,11 +214,23 @@ private extension BlockchainRouteCollection {
         
         let fullURL: URI = "\(urlString)/accounts/\(body.address)/sessions/\(body.session)"
         
-        let response =  try await req.client.send(.POST, headers: headers, to: fullURL) { clientReq in
+        let response = try await req.client.send(.POST, headers: headers, to: fullURL) { clientReq in
             try clientReq.content.encode(["key": key.publicKey, "signature": signature])
         }
         
-        return response
+        let payload = try response.content.decode(StartSessionResponse.self).result
+        let creds: ConnectionCredentials
+        
+        switch type {
+        case .v2ray:
+            creds = .init(vpnProtocol: .v2ray, payload: payload, uid: key.privateKey)
+        default:
+            creds = .init(vpnProtocol: .wireguard, payload: payload, privateKey: key.privateKey)
+        }
+        
+        return try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
+            DefaultEncoder.encode(model: creds, continuation: continuation)
+        })
     }
 }
 
