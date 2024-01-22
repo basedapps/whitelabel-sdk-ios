@@ -53,8 +53,7 @@ extension ProxyRouteCollection {
     
     private func getIP(_ req: Request) async throws -> String {
         try req.validate()
-        let url = ApplicationConfiguration.shared.backendURLString + "/ip"
-        let urlString = "https://vpn-api.basedapps.co.uk/ip"
+        let urlString = ApplicationConfiguration.shared.backendURLString + "/ip"
         guard let url = URL(string: urlString) else { throw Abort(.badRequest) }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"

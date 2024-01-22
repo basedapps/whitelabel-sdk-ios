@@ -25,5 +25,11 @@ struct StartSessionRequest: Codable {
 }
 
 struct StartSessionResponse: Decodable {
-     let result: String
+    let success: Bool
+    let result: String?
+    let error: StartSessionError?
+}
+
+struct StartSessionError: Decodable {
+    let message: String?
 }

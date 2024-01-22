@@ -218,7 +218,11 @@ private extension BlockchainRouteCollection {
             try clientReq.content.encode(["key": key.publicKey, "signature": signature])
         }
         
-        let payload = try response.content.decode(StartSessionResponse.self).result
+        let result = try response.content.decode(StartSessionResponse.self)
+        guard result.success, let payload = result.result else {
+            throw Abort(response.status, reason: result.error?.message)
+        }
+        
         let creds: ConnectionCredentials
         
         switch type {
@@ -320,6 +324,7 @@ private extension BlockchainRouteCollection {
         else {
             throw Abort(.badRequest)
         }
+        
         guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
         
         return try await transactionProvider.startSession(
