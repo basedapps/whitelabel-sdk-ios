@@ -9,10 +9,7 @@ import Foundation
 
 extension Bundle {
     public static var appID: String {
-        guard let bundleIdentifier = Bundle.main.bundleIdentifier else {
-            fatalError("Unknown bundleIdentifier")
-        }
-        return bundleIdentifier
+        "co.sentinel.dvpnapp"
     }
     
     public static var suiteName: String {
