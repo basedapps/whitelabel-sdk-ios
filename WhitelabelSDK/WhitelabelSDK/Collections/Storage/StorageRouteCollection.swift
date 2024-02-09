@@ -34,6 +34,7 @@ struct StorageRouteCollection {
 extension StorageRouteCollection: RouteCollection  {
     func boot(routes: RoutesBuilder) throws {
         routes.get(constants.path, use: getValue)
+        routes.get(constants.path, "version", use: getVersion)
         routes.post(constants.path, use: postValue)
         routes.delete(constants.path, use: deleteValue)
     }
@@ -42,6 +43,11 @@ extension StorageRouteCollection: RouteCollection  {
 // MARK: - Requests
 
 extension StorageRouteCollection {
+    private func getVersion(_ req: Request) async throws -> VersionResponse {
+        try req.validate()
+        return VersionResponse(version: Bundle.appVersion)
+    }
+    
     private func getValue(_ req: Request) async throws -> String {
         try req.validate()
         

@@ -11,6 +11,7 @@
 		22C216732B31DEC10023824E /* ConnectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C216722B31DEC10023824E /* ConnectionResponse.swift */; };
 		22C96ACC2B03BA500010CC0D /* XrayKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C96ACB2B03BA4F0010CC0D /* XrayKit.xcframework */; };
 		22C96AD02B03C7C40010CC0D /* Tun2SocksKit in Frameworks */ = {isa = PBXBuildFile; productRef = 22C96ACF2B03C7C40010CC0D /* Tun2SocksKit */; };
+		22D0C7732B76761000E43752 /* VersionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C7722B76761000E43752 /* VersionResponse.swift */; };
 		751ADB6D2ACC5E3600CC736B /* WireGuardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB6C2ACC5E3600CC736B /* WireGuardKit */; };
 		751ADB762ACC60DC00CC736B /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB752ACC60DC00CC736B /* KeychainAccess */; };
 		751ADB7C2ACC610500CC736B /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 751ADB7B2ACC610500CC736B /* SwiftyBeaver */; };
@@ -182,6 +183,7 @@
 		22C216702B31BCD80023824E /* PostSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSessionRequest.swift; sourceTree = "<group>"; };
 		22C216722B31DEC10023824E /* ConnectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionResponse.swift; sourceTree = "<group>"; };
 		22C96ACB2B03BA4F0010CC0D /* XrayKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = XrayKit.xcframework; sourceTree = "<group>"; };
+		22D0C7722B76761000E43752 /* VersionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionResponse.swift; sourceTree = "<group>"; };
 		751ADB7E2ACC616A00CC736B /* WhitelabelSDK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhitelabelSDK.entitlements; sourceTree = "<group>"; };
 		751ADB7F2ACC61B500CC736B /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		751ADB882ACC62F400CC736B /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -742,6 +744,7 @@
 			isa = PBXGroup;
 			children = (
 				75CFB4EA2AD0418800DC395C /* LocalValue.swift */,
+				22D0C7722B76761000E43752 /* VersionResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -943,6 +946,7 @@
 				751ADC4A2ACD886400CC736B /* GeneralSettingsStorage.swift in Sources */,
 				751ADBA62ACC62F400CC736B /* Keychain.swift in Sources */,
 				751ADC5C2ACD886400CC736B /* KeychainStorageStrategy.swift in Sources */,
+				22D0C7732B76761000E43752 /* VersionResponse.swift in Sources */,
 				75CFB4EB2AD0418800DC395C /* LocalValue.swift in Sources */,
 				751ADBF82ACC66FA00CC736B /* NETunnelProviderManager+Ext.swift in Sources */,
 				75B28B642AD58956003BDD1D /* ProxyRouteCollection.swift in Sources */,
@@ -1219,7 +1223,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_ENTITLEMENTS = WhitelabelSDK/WhitelabelSDK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhitelabelSDK/Preview Content\"";
 				DEVELOPMENT_TEAM = 5F44M2W7F4;
 				ENABLE_PREVIEWS = YES;
@@ -1229,19 +1233,21 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Sentinel;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1257,7 +1263,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_ENTITLEMENTS = WhitelabelSDK/WhitelabelSDK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhitelabelSDK/Preview Content\"";
 				DEVELOPMENT_TEAM = 5F44M2W7F4;
 				ENABLE_PREVIEWS = YES;
@@ -1267,19 +1273,21 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Sentinel;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
