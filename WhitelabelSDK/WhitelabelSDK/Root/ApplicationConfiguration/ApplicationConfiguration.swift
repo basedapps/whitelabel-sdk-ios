@@ -21,7 +21,10 @@ final class ApplicationConfiguration {
     private(set) static var shared = ApplicationConfiguration()
 
     init() {
-        self.backendURLString = "https://vpn-api.basedapps.co.uk"
+        guard let backendURL = Environment.get("backendURL") else {
+            fatalError("Misconfigured env: missing backendURL string")
+        }
+        self.backendURLString = backendURL
     }
 }
 

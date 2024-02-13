@@ -31,6 +31,7 @@ extension ProxyRouteCollection: RouteCollection {
 extension ProxyRouteCollection {
     private func proxyRequest(_ req: Request) async throws -> ClientResponse {
         try req.validate()
+        try req.adaptForProxy()
         
         guard let path = req.url.path.split(separator: "/").dropFirst(2).joined(separator: "/").removingPercentEncoding else {
             throw Abort(.badRequest, reason: "Invalid path")
@@ -53,12 +54,18 @@ extension ProxyRouteCollection {
     
     private func getIP(_ req: Request) async throws -> String {
         try req.validate()
+        try req.adaptForProxy()
+        
         let urlString = ApplicationConfiguration.shared.backendURLString + "/ip"
         guard let url = URL(string: urlString) else { throw Abort(.badRequest) }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         guard let token = req.headers.first(name: "x-device-token") else { throw Abort(.unauthorized) }
+        guard let appToken = req.headers.first(name: "x-app-token") else { throw Abort(.unauthorized) }
+        
         request.addValue(token, forHTTPHeaderField: "x-device-token")
+        request.addValue(appToken, forHTTPHeaderField: "x-app-token")
+        
         let (data, _) = try await URLSession.shared.data(for: request)
         
         return String(decoding: data, as: UTF8.self)
