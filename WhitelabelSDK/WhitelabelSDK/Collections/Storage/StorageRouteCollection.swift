@@ -6,6 +6,7 @@
 //
 
 import Vapor
+import UIKit
 
 // MARK: - Constants
 
@@ -35,6 +36,7 @@ extension StorageRouteCollection: RouteCollection  {
     func boot(routes: RoutesBuilder) throws {
         routes.get(constants.path, use: getValue)
         routes.get(constants.path, "version", use: getVersion)
+        routes.get(constants.path, "logs", use: getLogs)
         routes.post(constants.path, use: postValue)
         routes.delete(constants.path, use: deleteValue)
     }
@@ -46,6 +48,20 @@ extension StorageRouteCollection {
     private func getVersion(_ req: Request) async throws -> VersionResponse {
         try req.validate()
         return VersionResponse(version: Bundle.appVersion)
+    }
+    
+    @MainActor
+    private func getLogs(_ req: Request) async throws -> Response {
+        try req.validate()
+        guard let url = LogsService.getPlainFileURL() else { throw Abort(.notFound) }
+        guard let vc = UIApplication.shared.windows.first?.rootViewController else { throw Abort(.forbidden) }
+        
+        let activityViewController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = vc.view
+        
+        vc.present(activityViewController, animated: true, completion: nil)
+        
+        return .init(status: .ok)
     }
     
     private func getValue(_ req: Request) async throws -> String {
