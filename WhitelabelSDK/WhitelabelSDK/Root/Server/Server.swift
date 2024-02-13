@@ -14,6 +14,7 @@ final class Server {
     init() {
         app = Application(.development)
         Config.setup()
+        LoggingSystem.bootstrap { VaporLogHandler($0) }
         
         configure(app)
     }
@@ -49,5 +50,7 @@ extension Server {
         
         let fileMiddleware = try! FileMiddleware(bundle: .main, publicDirectory: "./", defaultFile: "index.html")
         app.middleware.use(fileMiddleware)
+        
+        app.logger = .init(label: "codes.vapor.application", factory: { VaporLogHandler($0) })
     }
 }
