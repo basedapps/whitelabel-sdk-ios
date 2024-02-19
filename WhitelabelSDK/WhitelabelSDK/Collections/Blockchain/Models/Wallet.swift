@@ -10,3 +10,7 @@ import Foundation
 struct WalletAddressResponse: Codable {
     let address: String
 }
+
+struct KeywordsResponse: Codable {
+    let keywords: [String]
+}

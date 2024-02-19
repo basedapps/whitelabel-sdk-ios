@@ -72,6 +72,7 @@ extension BlockchainRouteCollection: RouteCollection  {
         routes.get(constants.path, "plans", ":id", "nodes", use: getAvailableNodesForPlan)
         
         routes.get(constants.path, "wallet", use: getWalletAddress)
+        routes.get(constants.path, "keywords", use: generateWallet)
         routes.post(constants.path, "wallet", use: storeWallet)
         
         routes.get(constants.path, "wallet", ":address", "balance", use: getWalletBalance)
@@ -135,6 +136,14 @@ private extension BlockchainRouteCollection {
         guard let address = walletAddress else { throw Abort(.notFound) }
         return try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
             DefaultEncoder.encode(model: WalletAddressResponse(address: address), continuation: continuation)
+        })
+    }
+    
+    func generateWallet(_ req: Request) async throws -> String {
+        try req.validate()
+        let keywords = try signer.generateMnemonic().get().1
+        return try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
+            DefaultEncoder.encode(model: KeywordsResponse(keywords: keywords), continuation: continuation)
         })
     }
     
