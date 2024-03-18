@@ -33,6 +33,7 @@ extension ViewController {
         
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
         webView.allowsBackForwardNavigationGestures = true
+        webView.scrollView.bounces = false
         view = webView
         
         let urlRequest = URLRequest(
