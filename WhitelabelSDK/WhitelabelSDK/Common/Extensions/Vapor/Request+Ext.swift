@@ -11,10 +11,7 @@ import Vapor
 
 private struct Constants {
     static let key = "x-key"
-    static let tokenKey = "x-app-token"
-    
     static let rawXKey = Environment.get(Constants.key)
-    static let rawTokenKey = Environment.get(Constants.tokenKey)
 }
 private let constants = Constants()
 
@@ -24,10 +21,5 @@ extension Request {
             throw Abort(.badRequest, reason: "Invalid env")
         }
         headers.remove(name: Constants.key)
-    }
-    
-    func adaptForProxy() throws {
-        guard let key = Constants.rawTokenKey else { throw Abort(.badRequest, reason: "Invalid env") }
-        headers.replaceOrAdd(name: Constants.tokenKey, value: key)
     }
 }
