@@ -6,13 +6,7 @@
 //
 
 import Vapor
-
-struct IPResponse: Decodable, Equatable {
-    let ip: String
-    
-    let latitude: Float64?
-    let longitude: Float64?
-}
+import UIKit
 
 final class ProxyRouteCollection { }
 
@@ -23,6 +17,7 @@ extension ProxyRouteCollection: RouteCollection {
         proxyGroup.get("**", use: proxyRequest)
         proxyGroup.get("ip", use: getIP)
         proxyGroup.post("**", use: proxyRequest)
+        proxyGroup.post("browser", use: openURL)
         proxyGroup.put("**", use: proxyRequest)
         proxyGroup.delete("**", use: proxyRequest)
     }
@@ -62,5 +57,16 @@ extension ProxyRouteCollection {
         let (data, _) = try await URLSession.shared.data(for: request)
         
         return String(decoding: data, as: UTF8.self)
+    }
+    
+    @MainActor 
+    private func openURL(_ req: Request) async throws -> Response {
+        try req.validate()
+        let body = try req.content.decode(OpenBrowserRequest.self)
+        guard let url = URL(string: body.url) else { throw Abort(.badRequest) }
+        if await UIApplication.shared.open(url) {
+            return Response(status: .ok)
+        }
+        throw Abort(.badRequest)
     }
 }

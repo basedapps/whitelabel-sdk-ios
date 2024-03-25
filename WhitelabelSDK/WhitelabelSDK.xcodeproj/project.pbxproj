@@ -10,6 +10,8 @@
 		228813A72B7B912C00240DEE /* LogHandler+Vapor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228813A62B7B912B00240DEE /* LogHandler+Vapor.swift */; };
 		228813AB2B7B9CAC00240DEE /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228813AA2B7B9CAC00240DEE /* LogFile.swift */; };
 		228813AD2B7B9CBA00240DEE /* LogsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228813AC2B7B9CBA00240DEE /* LogsService.swift */; };
+		22BBD7242BB16EC000229FDD /* OpenBrowserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBD7232BB16EC000229FDD /* OpenBrowserRequest.swift */; };
+		22BBD7262BB16F3900229FDD /* IPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBD7252BB16F3900229FDD /* IPResponse.swift */; };
 		22C216712B31BCD80023824E /* PostSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C216702B31BCD80023824E /* PostSessionRequest.swift */; };
 		22C216732B31DEC10023824E /* ConnectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C216722B31DEC10023824E /* ConnectionResponse.swift */; };
 		22C96ACC2B03BA500010CC0D /* XrayKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C96ACB2B03BA4F0010CC0D /* XrayKit.xcframework */; };
@@ -186,6 +188,8 @@
 		228813A62B7B912B00240DEE /* LogHandler+Vapor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogHandler+Vapor.swift"; sourceTree = "<group>"; };
 		228813AA2B7B9CAC00240DEE /* LogFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
 		228813AC2B7B9CBA00240DEE /* LogsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsService.swift; sourceTree = "<group>"; };
+		22BBD7232BB16EC000229FDD /* OpenBrowserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBrowserRequest.swift; sourceTree = "<group>"; };
+		22BBD7252BB16F3900229FDD /* IPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPResponse.swift; sourceTree = "<group>"; };
 		22C216702B31BCD80023824E /* PostSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSessionRequest.swift; sourceTree = "<group>"; };
 		22C216722B31DEC10023824E /* ConnectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionResponse.swift; sourceTree = "<group>"; };
 		22C96ACB2B03BA4F0010CC0D /* XrayKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = XrayKit.xcframework; sourceTree = "<group>"; };
@@ -335,6 +339,15 @@
 				228813AC2B7B9CBA00240DEE /* LogsService.swift */,
 			);
 			path = Logs;
+			sourceTree = "<group>";
+		};
+		22BBD7222BB16D4600229FDD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				22BBD7232BB16EC000229FDD /* OpenBrowserRequest.swift */,
+				22BBD7252BB16F3900229FDD /* IPResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		751ADB872ACC62F400CC736B /* Shared */ = {
@@ -617,6 +630,7 @@
 		75B28B622AD58870003BDD1D /* Proxy */ = {
 			isa = PBXGroup;
 			children = (
+				22BBD7222BB16D4600229FDD /* Models */,
 				75B28B632AD58956003BDD1D /* ProxyRouteCollection.swift */,
 			);
 			path = Proxy;
@@ -968,10 +982,12 @@
 				75CFB4EB2AD0418800DC395C /* LocalValue.swift in Sources */,
 				751ADBF82ACC66FA00CC736B /* NETunnelProviderManager+Ext.swift in Sources */,
 				75B28B642AD58956003BDD1D /* ProxyRouteCollection.swift in Sources */,
+				22BBD7262BB16F3900229FDD /* IPResponse.swift in Sources */,
 				228813AB2B7B9CAC00240DEE /* LogFile.swift in Sources */,
 				751ADBA72ACC62F400CC736B /* NETunnelProviderProtocol+Extension.swift in Sources */,
 				751ADBB82ACC62F400CC736B /* NetworkModel.swift in Sources */,
 				751ADBF92ACC66FA00CC736B /* NEVPNManager+Ext.swift in Sources */,
+				22BBD7242BB16EC000229FDD /* OpenBrowserRequest.swift in Sources */,
 				751ADBFB2ACC66FA00CC736B /* NEVPNStatus+Ext.swift in Sources */,
 				751ADBF72ACC66FA00CC736B /* NotificationToken.swift in Sources */,
 				751ADBBA2ACC62F400CC736B /* NSError+Ext.swift in Sources */,
@@ -1260,12 +1276,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.7;
+				MARKETING_VERSION = 1.0.16;
 				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1299,12 +1315,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.7;
+				MARKETING_VERSION = 1.0.16;
 				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
