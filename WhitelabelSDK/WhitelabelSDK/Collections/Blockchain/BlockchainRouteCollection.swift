@@ -56,7 +56,8 @@ struct BlockchainRouteCollection {
         self.commonStorage = commonStorage
         self.safeStorage = safeStorage
         
-        guard let host = commonStorage.host, let port = commonStorage.port else { return }
+        let host = commonStorage.host
+        let port = commonStorage.port
         providers.forEach { $0.set(host: host, port: port) }
     }
 }

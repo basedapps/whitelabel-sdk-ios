@@ -26,16 +26,16 @@ final class GeneralSettingsStorage {
 // MARK: - StoresGeneralInfo
 
 extension GeneralSettingsStorage: StoresGeneralInfo {
-    var host: String? {
-        settingsStorageStrategy.object(ofType: String.self, forKey: Keys.hostKey.rawValue)
+    var host: String {
+        settingsStorageStrategy.object(ofType: String.self, forKey: Keys.hostKey.rawValue) ?? "grpc.dvpn.me"
     }
     
     func set(host: String) {
         settingsStorageStrategy.setObject(host, forKey: Keys.hostKey.rawValue)
     }
     
-    var port: Int? {
-        settingsStorageStrategy.object(ofType: Int.self, forKey: Keys.portKey.rawValue)
+    var port: Int {
+        settingsStorageStrategy.object(ofType: Int.self, forKey: Keys.portKey.rawValue) ?? 9090
     }
     
     func set(port: Int) {
