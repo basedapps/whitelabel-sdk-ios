@@ -9,6 +9,7 @@ import Vapor
 import SentinelWallet
 import HDWallet
 import WireGuardKit
+import GRPC
 
 // MARK: - Constants
 
@@ -79,6 +80,7 @@ extension BlockchainRouteCollection: RouteCollection  {
         routes.get(constants.path, "wallet", ":address", "balance", use: getWalletBalance)
         routes.get(constants.path, "wallet", ":address", "subscriptions", use: getWalletSubscriptions)
         
+        routes.get(constants.path, "transactions", ":txHash", use: getTransaction)
         routes.post(constants.path, "plans", ":id", "subscription", use: subscribeToPlan)
         routes.post(constants.path, "nodes", ":address", "subscription", use: subscribeToNode)
         routes.post(constants.path, "wallet", ":address", "balance", use: transfer)
@@ -251,6 +253,19 @@ private extension BlockchainRouteCollection {
 // MARK: - Requests: Transactions
 
 private extension BlockchainRouteCollection {
+    func getTransaction(_ req: Request) async throws -> String {
+        try req.validate()
+        guard let hash = req.parameters.get("txHash", as: String.self) else { throw Abort(.badRequest) }
+        do {
+            return try await transactionProvider.getTx(by: hash)
+        } catch {
+            guard let statusError = error as? GRPCStatus, statusError.code.rawValue == 5 else {
+                throw error
+            }
+            throw Abort(.notFound)
+        }
+    }
+    
     func subscribeToPlan(_ req: Request) async throws -> String {
         try req.validate()
         let body = try req.content.decode(PlanPaymentDetails.self)
