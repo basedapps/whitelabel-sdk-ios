@@ -16,7 +16,7 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         
         server.start { [weak self] in
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self?.setUpWebView()
             }
         }

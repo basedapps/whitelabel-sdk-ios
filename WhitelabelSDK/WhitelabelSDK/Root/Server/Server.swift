@@ -12,7 +12,11 @@ final class Server {
     let app: Application
     
     init() {
+        #if DEBUG
         app = Application(.development)
+        #else
+        app = Application(.production)
+        #endif
         Config.setup()
         LoggingSystem.bootstrap { VaporLogHandler($0) }
         
@@ -30,9 +34,8 @@ extension Server {
                 try api.register(collection: StorageRouteCollection())
                 try api.register(collection: ProxyRouteCollection())
                 try api.register(collection: BlockchainRouteCollection())
-                try await app.startup()
-                
                 completion()
+                try await app.execute()
             } catch {
                 fatalError(error.localizedDescription)
             }
