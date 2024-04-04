@@ -2,15 +2,6 @@
   "originHash" : "fe402259efef3f31949f63fc4a6c5aa0c4f88b2012f8527a38b282ac7c07b708",
   "pins" : [
     {
-      "identity" : "alamofire",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Alamofire/Alamofire.git",
-      "state" : {
-        "revision" : "bc268c28fb170f494de9e9927c371b8342979ece",
-        "version" : "5.7.1"
-      }
-    },
-    {
       "identity" : "async-http-client",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swift-server/async-http-client.git",
@@ -51,8 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/grpc/grpc-swift.git",
       "state" : {
-        "revision" : "5d0cf1c7b2e641e3a8961089e7e4672f4fe8abac",
-        "version" : "1.21.1"
+        "revision" : "393b02b1c39cc82fb24e57f24fa446f43e8124c9",
+        "version" : "1.22.0"
       }
     },
     {
@@ -106,7 +97,7 @@
       "location" : "https://github.com/solarlabsteam/sentinel-wallet-sdk-ios",
       "state" : {
         "branch" : "develop",
-        "revision" : "b15cdf605f92f100e4dc7c5faa7c5a99a2e4fff7"
+        "revision" : "d47f6a5ce9069f04bc2bce4ffca3b303b833d2cd"
       }
     },
     {
@@ -141,8 +132,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-crypto.git",
       "state" : {
-        "revision" : "cc76b894169a3c86b71bac10c78a4db6beb7a9ad",
-        "version" : "3.2.0"
+        "revision" : "f0525da24dc3c6cbb2b6b338b65042bc91cbc4bb",
+        "version" : "3.3.0"
       }
     },
     {
@@ -231,8 +222,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-protobuf.git",
       "state" : {
-        "revision" : "65e8f29b2d63c4e38e736b25c27b83e012159be8",
-        "version" : "1.25.2"
+        "revision" : "9f0c76544701845ad98716f3f6a774a892152bcb",
+        "version" : "1.26.0"
       }
     },
     {
@@ -276,8 +267,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vapor/websocket-kit.git",
       "state" : {
-        "revision" : "53fe0639a98903858d0196b699720decb42aee7b",
-        "version" : "2.14.0"
+        "revision" : "4232d34efa49f633ba61afde365d3896fc7f8740",
+        "version" : "2.15.0"
       }
     },
     {

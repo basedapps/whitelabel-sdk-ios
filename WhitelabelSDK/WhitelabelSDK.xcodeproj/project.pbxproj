@@ -10,6 +10,9 @@
 		228813A72B7B912C00240DEE /* LogHandler+Vapor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228813A62B7B912B00240DEE /* LogHandler+Vapor.swift */; };
 		228813AB2B7B9CAC00240DEE /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228813AA2B7B9CAC00240DEE /* LogFile.swift */; };
 		228813AD2B7B9CBA00240DEE /* LogsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228813AC2B7B9CBA00240DEE /* LogsService.swift */; };
+		228DC9452BBF035F00EFAAB9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 228DC9442BBF035F00EFAAB9 /* PrivacyInfo.xcprivacy */; };
+		228DC9472BBF0C0D00EFAAB9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 228DC9462BBF0C0D00EFAAB9 /* PrivacyInfo.xcprivacy */; };
+		228DC9492BBF0F6900EFAAB9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 228DC9482BBF0F6900EFAAB9 /* PrivacyInfo.xcprivacy */; };
 		22BBD7242BB16EC000229FDD /* OpenBrowserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBD7232BB16EC000229FDD /* OpenBrowserRequest.swift */; };
 		22BBD7262BB16F3900229FDD /* IPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBD7252BB16F3900229FDD /* IPResponse.swift */; };
 		22C216712B31BCD80023824E /* PostSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C216702B31BCD80023824E /* PostSessionRequest.swift */; };
@@ -188,6 +191,9 @@
 		228813A62B7B912B00240DEE /* LogHandler+Vapor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogHandler+Vapor.swift"; sourceTree = "<group>"; };
 		228813AA2B7B9CAC00240DEE /* LogFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
 		228813AC2B7B9CBA00240DEE /* LogsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsService.swift; sourceTree = "<group>"; };
+		228DC9442BBF035F00EFAAB9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		228DC9462BBF0C0D00EFAAB9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		228DC9482BBF0F6900EFAAB9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		22BBD7232BB16EC000229FDD /* OpenBrowserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBrowserRequest.swift; sourceTree = "<group>"; };
 		22BBD7252BB16F3900229FDD /* IPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPResponse.swift; sourceTree = "<group>"; };
 		22C216702B31BCD80023824E /* PostSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSessionRequest.swift; sourceTree = "<group>"; };
@@ -693,13 +699,14 @@
 			children = (
 				751ADC782ACD88C300CC736B /* Collections */,
 				751ADBE62ACC66FA00CC736B /* Common */,
-				75BE9E8D2ACACD2600C01064 /* Preview Content */,
-				751ADC012ACC671000CC736B /* Resources */,
-				751ADC002ACC670400CC736B /* Root */,
-				751ADC022ACD886300CC736B /* Storage */,
 				751ADCBA2AD0236900CC736B /* Info.plist */,
 				751ADCBE2AD023F800CC736B /* LaunchScreen.storyboard */,
 				751ADCBB2AD023DC00CC736B /* Main.storyboard */,
+				75BE9E8D2ACACD2600C01064 /* Preview Content */,
+				228DC9442BBF035F00EFAAB9 /* PrivacyInfo.xcprivacy */,
+				751ADC012ACC671000CC736B /* Resources */,
+				751ADC002ACC670400CC736B /* Root */,
+				751ADC022ACD886300CC736B /* Storage */,
 				751ADB7E2ACC616A00CC736B /* WhitelabelSDK.entitlements */,
 			);
 			path = WhitelabelSDK;
@@ -730,6 +737,7 @@
 				75BE9EA42ACC522900C01064 /* Info.plist */,
 				75BE9EA22ACC522900C01064 /* PacketTunnelProvider.swift */,
 				75BE9EA52ACC522900C01064 /* V2RayExtension.entitlements */,
+				228DC9482BBF0F6900EFAAB9 /* PrivacyInfo.xcprivacy */,
 			);
 			path = V2RayExtension;
 			sourceTree = "<group>";
@@ -740,6 +748,7 @@
 				75BE9EB62ACC523600C01064 /* Info.plist */,
 				75BE9EB42ACC523600C01064 /* PacketTunnelProvider.swift */,
 				75BE9EB72ACC523600C01064 /* WireGuardExtension.entitlements */,
+				228DC9462BBF0C0D00EFAAB9 /* PrivacyInfo.xcprivacy */,
 			);
 			path = WireGuardExtension;
 			sourceTree = "<group>";
@@ -931,6 +940,7 @@
 				75BE9E8C2ACACD2600C01064 /* Assets.xcassets in Resources */,
 				751ADCC02AD023F800CC736B /* LaunchScreen.storyboard in Resources */,
 				751ADCBD2AD023DC00CC736B /* Main.storyboard in Resources */,
+				228DC9452BBF035F00EFAAB9 /* PrivacyInfo.xcprivacy in Resources */,
 				75BE9E8F2ACACD2600C01064 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -939,6 +949,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				228DC9492BBF0F6900EFAAB9 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -946,6 +957,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				228DC9472BBF0C0D00EFAAB9 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1276,7 +1288,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.20;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1315,7 +1327,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.20;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
