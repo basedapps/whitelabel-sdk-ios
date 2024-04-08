@@ -14,7 +14,6 @@
 		228DC9472BBF0C0D00EFAAB9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 228DC9462BBF0C0D00EFAAB9 /* PrivacyInfo.xcprivacy */; };
 		228DC9492BBF0F6900EFAAB9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 228DC9482BBF0F6900EFAAB9 /* PrivacyInfo.xcprivacy */; };
 		22BBD7242BB16EC000229FDD /* OpenBrowserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBD7232BB16EC000229FDD /* OpenBrowserRequest.swift */; };
-		22BBD7262BB16F3900229FDD /* IPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBD7252BB16F3900229FDD /* IPResponse.swift */; };
 		22C216712B31BCD80023824E /* PostSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C216702B31BCD80023824E /* PostSessionRequest.swift */; };
 		22C216732B31DEC10023824E /* ConnectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C216722B31DEC10023824E /* ConnectionResponse.swift */; };
 		22C96ACC2B03BA500010CC0D /* XrayKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C96ACB2B03BA4F0010CC0D /* XrayKit.xcframework */; };
@@ -195,7 +194,6 @@
 		228DC9462BBF0C0D00EFAAB9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		228DC9482BBF0F6900EFAAB9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		22BBD7232BB16EC000229FDD /* OpenBrowserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBrowserRequest.swift; sourceTree = "<group>"; };
-		22BBD7252BB16F3900229FDD /* IPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPResponse.swift; sourceTree = "<group>"; };
 		22C216702B31BCD80023824E /* PostSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSessionRequest.swift; sourceTree = "<group>"; };
 		22C216722B31DEC10023824E /* ConnectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionResponse.swift; sourceTree = "<group>"; };
 		22C96ACB2B03BA4F0010CC0D /* XrayKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = XrayKit.xcframework; sourceTree = "<group>"; };
@@ -351,7 +349,6 @@
 			isa = PBXGroup;
 			children = (
 				22BBD7232BB16EC000229FDD /* OpenBrowserRequest.swift */,
-				22BBD7252BB16F3900229FDD /* IPResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -994,7 +991,6 @@
 				75CFB4EB2AD0418800DC395C /* LocalValue.swift in Sources */,
 				751ADBF82ACC66FA00CC736B /* NETunnelProviderManager+Ext.swift in Sources */,
 				75B28B642AD58956003BDD1D /* ProxyRouteCollection.swift in Sources */,
-				22BBD7262BB16F3900229FDD /* IPResponse.swift in Sources */,
 				228813AB2B7B9CAC00240DEE /* LogFile.swift in Sources */,
 				751ADBA72ACC62F400CC736B /* NETunnelProviderProtocol+Extension.swift in Sources */,
 				751ADBB82ACC62F400CC736B /* NetworkModel.swift in Sources */,
@@ -1288,7 +1284,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1327,7 +1323,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
