@@ -76,6 +76,7 @@ extension BlockchainRouteCollection: RouteCollection  {
         routes.get(constants.path, "wallet", use: getWalletAddress)
         routes.get(constants.path, "keywords", use: generateWallet)
         routes.post(constants.path, "wallet", use: storeWallet)
+        routes.delete(constants.path, "wallet", use: removeWallet)
         
         routes.get(constants.path, "wallet", ":address", "balance", use: getWalletBalance)
         routes.get(constants.path, "wallet", ":address", "subscriptions", use: getWalletSubscriptions)
@@ -163,6 +164,13 @@ private extension BlockchainRouteCollection {
         guard let wallet = signer.restoreAddress(for: mnemonic) else { throw Abort(.badRequest) }
         safeStorage.setObject(mnemonic, forKey: constants.walletKey)
         commonStorage.set(wallet: wallet)
+        return .init(status: .ok)
+    }
+    
+    func removeWallet(_ req: Request) async throws -> Response {
+        try req.validate()
+        safeStorage.removeObject(forKey: constants.walletKey)
+        commonStorage.set(wallet: nil)
         return .init(status: .ok)
     }
 }
