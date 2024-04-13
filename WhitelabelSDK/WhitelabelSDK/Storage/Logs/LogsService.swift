@@ -15,7 +15,8 @@ struct LogsService {
     
     static func getPlainFileURL() -> URL? {
         guard let fileURL = LogsService.fileDestinationURL else { return nil }
-        log.info("Device info. iOS: \(UIDevice.current.systemName) \(UIDevice.current.systemVersion)")
+        let deviceInfo = UIDevice.current.systemName + " " + UIDevice.current.systemVersion
+        log.info("Device info. iOS: \(deviceInfo). App version: \(Bundle.appVersion)")
         
         guard let data = LogFile(fullURL: fileURL)?.content.data else { return nil }
         
