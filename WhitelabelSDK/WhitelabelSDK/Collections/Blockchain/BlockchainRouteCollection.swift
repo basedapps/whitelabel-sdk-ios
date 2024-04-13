@@ -16,6 +16,7 @@ import GRPC
 private struct Constants {
     let chainHeaderKey = "x-chain-id"
     let gasHeaderKey = "x-gas-prices"
+    let granterHeaderKey = "x-fee-granter"
     
     let path: PathComponent = "blockchain"
     
@@ -291,8 +292,9 @@ private extension BlockchainRouteCollection {
             throw Abort(.badRequest)
         }
         guard let id = req.parameters.get("id", as: UInt64.self) else { throw Abort(.badRequest) }
+        let fee = Fee(for: gas, granter: req.headers.first(name: constants.granterHeaderKey))
         
-        return try await transactionProvider.subscribe(sender: sender, plan: id, details: body, fee: .init(for: gas))
+        return try await transactionProvider.subscribe(sender: sender, plan: id, details: body, fee: fee)
     }
     
     func subscribeToNode(_ req: Request) async throws -> String {
@@ -312,7 +314,9 @@ private extension BlockchainRouteCollection {
             throw Abort(.badRequest)
         }
         guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
-        return try await transactionProvider.subscribe(sender: sender, node: address, details: body, fee: .init(for: gas))
+        let fee = Fee(for: gas, granter: req.headers.first(name: constants.granterHeaderKey))
+        
+        return try await transactionProvider.subscribe(sender: sender, node: address, details: body, fee: fee)
     }
     
     func transfer(_ req: Request) async throws -> String {
@@ -332,12 +336,13 @@ private extension BlockchainRouteCollection {
             throw Abort(.badRequest)
         }
         guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
+        let fee = Fee(for: gas, granter: req.headers.first(name: constants.granterHeaderKey))
         
         return try await transactionProvider.transfer(
             sender: sender,
             recipient: address,
             details: body,
-            fee: .init(for: gas)
+            fee: fee
         )
     }
     
@@ -359,13 +364,14 @@ private extension BlockchainRouteCollection {
         }
         
         guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
+        let fee = Fee(for: gas, granter: req.headers.first(name: constants.granterHeaderKey))
         
         return try await transactionProvider.startSession(
             sender: sender,
             on: body.subscriptionID,
             activeSession: body.activeSession,
             node: body.node,
-            fee: .init(for: gas)
+            fee: fee
         )
     }
 }
