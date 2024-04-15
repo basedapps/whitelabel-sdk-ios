@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2262BD852BCD9DA700775193 /* DNSServerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2262BD842BCD9DA700775193 /* DNSServerType.swift */; };
 		228813A72B7B912C00240DEE /* LogHandler+Vapor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228813A62B7B912B00240DEE /* LogHandler+Vapor.swift */; };
 		228813AB2B7B9CAC00240DEE /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228813AA2B7B9CAC00240DEE /* LogFile.swift */; };
 		228813AD2B7B9CBA00240DEE /* LogsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228813AC2B7B9CBA00240DEE /* LogsService.swift */; };
@@ -100,7 +101,6 @@
 		751ADC512ACD886400CC736B /* PeersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751ADC102ACD886300CC736B /* PeersModel.swift */; };
 		751ADC522ACD886400CC736B /* TunnelSavingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751ADC112ACD886300CC736B /* TunnelSavingError.swift */; };
 		751ADC532ACD886400CC736B /* TunnelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751ADC122ACD886300CC736B /* TunnelModel.swift */; };
-		751ADC542ACD886400CC736B /* DNSServerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751ADC132ACD886300CC736B /* DNSServerType.swift */; };
 		751ADC552ACD886400CC736B /* TunnelStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751ADC152ACD886300CC736B /* TunnelStatus.swift */; };
 		751ADC562ACD886400CC736B /* TunnelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751ADC162ACD886300CC736B /* TunnelContainer.swift */; };
 		751ADC572ACD886400CC736B /* TunnelsServiceStatusDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751ADC172ACD886300CC736B /* TunnelsServiceStatusDelegate.swift */; };
@@ -140,7 +140,6 @@
 		75BE9EBA2ACC523600C01064 /* WireGuardExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 75BE9EB12ACC523600C01064 /* WireGuardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		75BE9EC22ACC53FB00C01064 /* WireGuardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 75BE9EC12ACC53FB00C01064 /* WireGuardKit */; };
 		75CFB4DE2AD0288C00DC395C /* PostDNSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFB4D12AD0288C00DC395C /* PostDNSResponse.swift */; };
-		75CFB4DF2AD0288C00DC395C /* PostDNSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFB4D22AD0288C00DC395C /* PostDNSRequest.swift */; };
 		75CFB4E02AD0288C00DC395C /* DNSRouteCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFB4D32AD0288C00DC395C /* DNSRouteCollection.swift */; };
 		75CFB4E22AD0291B00DC395C /* DefaultEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFB4E12AD0291B00DC395C /* DefaultEncoder.swift */; };
 		75CFB4E82AD0417900DC395C /* StorageRouteCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFB4E72AD0417900DC395C /* StorageRouteCollection.swift */; };
@@ -187,6 +186,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2262BD842BCD9DA700775193 /* DNSServerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSServerType.swift; sourceTree = "<group>"; };
 		228813A62B7B912B00240DEE /* LogHandler+Vapor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogHandler+Vapor.swift"; sourceTree = "<group>"; };
 		228813AA2B7B9CAC00240DEE /* LogFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
 		228813AC2B7B9CBA00240DEE /* LogsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsService.swift; sourceTree = "<group>"; };
@@ -247,7 +247,6 @@
 		751ADC102ACD886300CC736B /* PeersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeersModel.swift; sourceTree = "<group>"; };
 		751ADC112ACD886300CC736B /* TunnelSavingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunnelSavingError.swift; sourceTree = "<group>"; };
 		751ADC122ACD886300CC736B /* TunnelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunnelModel.swift; sourceTree = "<group>"; };
-		751ADC132ACD886300CC736B /* DNSServerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSServerType.swift; sourceTree = "<group>"; };
 		751ADC152ACD886300CC736B /* TunnelStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunnelStatus.swift; sourceTree = "<group>"; };
 		751ADC162ACD886300CC736B /* TunnelContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunnelContainer.swift; sourceTree = "<group>"; };
 		751ADC172ACD886300CC736B /* TunnelsServiceStatusDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunnelsServiceStatusDelegate.swift; sourceTree = "<group>"; };
@@ -290,7 +289,6 @@
 		75BE9EB62ACC523600C01064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75BE9EB72ACC523600C01064 /* WireGuardExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WireGuardExtension.entitlements; sourceTree = "<group>"; };
 		75CFB4D12AD0288C00DC395C /* PostDNSResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDNSResponse.swift; sourceTree = "<group>"; };
-		75CFB4D22AD0288C00DC395C /* PostDNSRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDNSRequest.swift; sourceTree = "<group>"; };
 		75CFB4D32AD0288C00DC395C /* DNSRouteCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSRouteCollection.swift; sourceTree = "<group>"; };
 		75CFB4E12AD0291B00DC395C /* DefaultEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEncoder.swift; sourceTree = "<group>"; };
 		75CFB4E72AD0417900DC395C /* StorageRouteCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRouteCollection.swift; sourceTree = "<group>"; };
@@ -550,7 +548,7 @@
 		751ADC0D2ACD886300CC736B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				751ADC132ACD886300CC736B /* DNSServerType.swift */,
+				2262BD842BCD9DA700775193 /* DNSServerType.swift */,
 				751ADC102ACD886300CC736B /* PeersModel.swift */,
 				751ADC0E2ACD886300CC736B /* TunnelChanges.swift */,
 				751ADC0F2ACD886300CC736B /* TunnelInterfaceModel.swift */,
@@ -762,7 +760,6 @@
 		75CFB4E52AD0410700DC395C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				75CFB4D22AD0288C00DC395C /* PostDNSRequest.swift */,
 				75CFB4D12AD0288C00DC395C /* PostDNSResponse.swift */,
 			);
 			path = Models;
@@ -978,7 +975,6 @@
 				751ADC662ACD886400CC736B /* DataRequest.swift in Sources */,
 				75CFB4E22AD0291B00DC395C /* DefaultEncoder.swift in Sources */,
 				75CFB4E02AD0288C00DC395C /* DNSRouteCollection.swift in Sources */,
-				751ADC542ACD886400CC736B /* DNSServerType.swift in Sources */,
 				75B89F362AE2A9F300B242B4 /* Wallet.swift in Sources */,
 				751ADBFD2ACC66FA00CC736B /* Encodable+Ext.swift in Sources */,
 				751ADBB12ACC62F400CC736B /* Fingerprint.swift in Sources */,
@@ -1000,7 +996,6 @@
 				751ADBF72ACC66FA00CC736B /* NotificationToken.swift in Sources */,
 				751ADBBA2ACC62F400CC736B /* NSError+Ext.swift in Sources */,
 				751ADC512ACD886400CC736B /* PeersModel.swift in Sources */,
-				75CFB4DF2AD0288C00DC395C /* PostDNSRequest.swift in Sources */,
 				75B89F382AE2AD2900B242B4 /* PostEndpointRequest.swift in Sources */,
 				75CFB4DE2AD0288C00DC395C /* PostDNSResponse.swift in Sources */,
 				751ADBB42ACC62F400CC736B /* Route.swift in Sources */,
@@ -1031,6 +1026,7 @@
 				751ADC572ACD886400CC736B /* TunnelsServiceStatusDelegate.swift in Sources */,
 				751ADC552ACD886400CC736B /* TunnelStatus.swift in Sources */,
 				75B89F322AE1A69600B242B4 /* PaginationKeys.swift in Sources */,
+				2262BD852BCD9DA700775193 /* DNSServerType.swift in Sources */,
 				75B28B5D2AD57373003BDD1D /* TunnelStatusResponse.swift in Sources */,
 				22C216732B31DEC10023824E /* ConnectionResponse.swift in Sources */,
 				751ADBBB2ACC62F400CC736B /* UserDefaults+Ext.swift in Sources */,
@@ -1284,7 +1280,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1323,7 +1319,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

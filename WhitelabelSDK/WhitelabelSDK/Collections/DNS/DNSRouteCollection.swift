@@ -41,8 +41,8 @@ extension DNSRouteCollection {
     private func getAvailableDNS(_ req: Request) async throws -> String {
         try req.validate()
         return try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
-            let servers = DNSServerType.allCases.map(AvailableDNSServer.init(from:))
-            let body = PostDNSResponse(servers: servers)
+            let servers = DNSServerType.allCases
+            let body = GetServersResponse(servers: servers)
             
             DefaultEncoder.encode(model: body, continuation: continuation)
         })
@@ -52,9 +52,7 @@ extension DNSRouteCollection {
         try req.validate()
         return try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
             let dnsServer = storage.selectedDNS
-            let body = AvailableDNSServer(from: dnsServer)
-            
-            DefaultEncoder.encode(model: body, continuation: continuation)
+            DefaultEncoder.encode(model: dnsServer, continuation: continuation)
         })
     }
     
@@ -62,14 +60,8 @@ extension DNSRouteCollection {
         try req.validate()
         
         do {
-            let body = try req.content.decode(PostDNSRequest.self)
-            let server = body.server
-            
-            guard let type = DNSServerType(rawValue: server) else {
-                return Response(status: .badRequest)
-            }
-            
-            storage.selectedDNS = type
+            let body = try req.content.decode(DNSServerType.self)
+            storage.selectedDNS = body
             return Response(status: .ok)
         } catch {
             return Response(status: .badRequest)

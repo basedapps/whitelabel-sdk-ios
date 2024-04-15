@@ -124,7 +124,7 @@ extension TunnelManager {
         tunnelModel.interfaceModel[.privateKey] = privateKey.base64Key
         tunnelModel.interfaceModel[.publicKey] = privateKey.publicKey.base64Key
 
-        tunnelModel.interfaceModel[.dns] = storage.selectedDNS.address
+        tunnelModel.interfaceModel[.dns] = storage.selectedDNS.addresses
 
         tunnelModel.interfaceModel[.addresses] = "\(data[0]).\(data[1]).\(data[2]).\(data[3])/32"
         let port = data.bytes[24...25]
