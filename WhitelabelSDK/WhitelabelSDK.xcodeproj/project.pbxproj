@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22627F162BCEAA0600A01884 /* ClipboardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22627F152BCEAA0600A01884 /* ClipboardResponse.swift */; };
 		2262BD852BCD9DA700775193 /* DNSServerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2262BD842BCD9DA700775193 /* DNSServerType.swift */; };
 		228813A72B7B912C00240DEE /* LogHandler+Vapor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228813A62B7B912B00240DEE /* LogHandler+Vapor.swift */; };
 		228813AB2B7B9CAC00240DEE /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228813AA2B7B9CAC00240DEE /* LogFile.swift */; };
@@ -186,6 +187,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		22627F152BCEAA0600A01884 /* ClipboardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardResponse.swift; sourceTree = "<group>"; };
 		2262BD842BCD9DA700775193 /* DNSServerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSServerType.swift; sourceTree = "<group>"; };
 		228813A62B7B912B00240DEE /* LogHandler+Vapor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogHandler+Vapor.swift"; sourceTree = "<group>"; };
 		228813AA2B7B9CAC00240DEE /* LogFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
@@ -777,6 +779,7 @@
 		75CFB4E92AD0417D00DC395C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				22627F152BCEAA0600A01884 /* ClipboardResponse.swift */,
 				75CFB4EA2AD0418800DC395C /* LocalValue.swift */,
 				22D0C7722B76761000E43752 /* VersionResponse.swift */,
 			);
@@ -1027,6 +1030,7 @@
 				751ADC552ACD886400CC736B /* TunnelStatus.swift in Sources */,
 				75B89F322AE1A69600B242B4 /* PaginationKeys.swift in Sources */,
 				2262BD852BCD9DA700775193 /* DNSServerType.swift in Sources */,
+				22627F162BCEAA0600A01884 /* ClipboardResponse.swift in Sources */,
 				75B28B5D2AD57373003BDD1D /* TunnelStatusResponse.swift in Sources */,
 				22C216732B31DEC10023824E /* ConnectionResponse.swift in Sources */,
 				751ADBBB2ACC62F400CC736B /* UserDefaults+Ext.swift in Sources */,

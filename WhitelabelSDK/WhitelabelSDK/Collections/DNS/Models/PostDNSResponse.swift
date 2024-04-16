@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import Vapor
 
-struct GetServersResponse: Codable {
+struct GetServersResponse: Codable, Content {
     let servers: [DNSServerType]
 }

@@ -38,33 +38,21 @@ extension DNSRouteCollection: RouteCollection  {
 // MARK: - Requests
 
 extension DNSRouteCollection {
-    private func getAvailableDNS(_ req: Request) async throws -> String {
+    private func getAvailableDNS(_ req: Request) async throws -> GetServersResponse {
         try req.validate()
-        return try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
-            let servers = DNSServerType.allCases
-            let body = GetServersResponse(servers: servers)
-            
-            DefaultEncoder.encode(model: body, continuation: continuation)
-        })
+        let servers = DNSServerType.allCases
+        return GetServersResponse(servers: servers)
     }
     
-    private func getSelectedDNS(_ req: Request) async throws -> String {
+    private func getSelectedDNS(_ req: Request) async throws -> DNSServerType {
         try req.validate()
-        return try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
-            let dnsServer = storage.selectedDNS
-            DefaultEncoder.encode(model: dnsServer, continuation: continuation)
-        })
+        return storage.selectedDNS
     }
     
     private func putDNS(_ req: Request) throws -> Response {
         try req.validate()
-        
-        do {
-            let body = try req.content.decode(DNSServerType.self)
-            storage.selectedDNS = body
-            return Response(status: .ok)
-        } catch {
-            return Response(status: .badRequest)
-        }
+        let body = try req.content.decode(DNSServerType.self)
+        storage.selectedDNS = body
+        return Response(status: .ok)
     }
 }

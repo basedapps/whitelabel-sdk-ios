@@ -5,9 +5,11 @@
 //  Created by Lika Vorobeva on 29.11.2021.
 //
 
+import Vapor
+
 // MARK: - DNSServerType
 
-struct DNSServerType {
+struct DNSServerType: Content {
     let name: String
     let addresses: String
 }

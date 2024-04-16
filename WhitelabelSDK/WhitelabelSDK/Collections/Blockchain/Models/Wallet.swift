@@ -5,12 +5,12 @@
 //  Created by Lika Vorobeva on 20.10.2023.
 //
 
-import Foundation
+import Vapor
 
-struct WalletAddressResponse: Codable {
+struct WalletAddressResponse: Content {
     let address: String
 }
 
-struct KeywordsResponse: Codable {
+struct KeywordsResponse: Content {
     let keywords: [String]
 }

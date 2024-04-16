@@ -36,6 +36,7 @@ extension StorageRouteCollection: RouteCollection  {
     func boot(routes: RoutesBuilder) throws {
         routes.get(constants.path, use: getValue)
         routes.get(constants.path, "version", use: getVersion)
+        routes.get(constants.path, "clipboard", use: getPasteboardText)
         routes.get(constants.path, "logs", use: getLogs)
         routes.post(constants.path, use: postValue)
         routes.delete(constants.path, use: deleteValue)
@@ -48,6 +49,11 @@ extension StorageRouteCollection {
     private func getVersion(_ req: Request) async throws -> VersionResponse {
         try req.validate()
         return VersionResponse(version: Bundle.appVersion)
+    }
+    
+    private func getPasteboardText(_ req: Request) async throws -> ClipboardResponse {
+        try req.validate()
+        return ClipboardResponse(text: UIPasteboard.general.string ?? "")
     }
     
     @MainActor
