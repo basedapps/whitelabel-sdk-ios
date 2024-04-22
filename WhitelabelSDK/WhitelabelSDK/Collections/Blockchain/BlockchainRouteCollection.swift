@@ -68,6 +68,7 @@ struct BlockchainRouteCollection {
 
 extension BlockchainRouteCollection: RouteCollection  {
     func boot(routes: RoutesBuilder) throws {
+        routes.get(constants.path, "endpoint", use: getEndpoint)
         routes.post(constants.path, "endpoint", use: changeEndpoint)
         
         routes.get(constants.path, "nodes", use: getAvailableNodes)
@@ -97,9 +98,13 @@ extension BlockchainRouteCollection: RouteCollection  {
 // MARK: - Requests: grpc endpoint
 
 private extension BlockchainRouteCollection {
+    func getEndpoint(_ req: Request) async throws -> EndpointModel {
+        EndpointModel(host: commonStorage.host, port: commonStorage.port)
+    }
+    
     func changeEndpoint(_ req: Request) async throws -> Response {
         try req.validate()
-        let body = try req.content.decode(PostEndpointRequest.self)
+        let body = try req.content.decode(EndpointModel.self)
         providers.forEach { $0.set(host: body.host, port: body.port) }
         commonStorage.set(host: body.host)
         commonStorage.set(port: body.port)

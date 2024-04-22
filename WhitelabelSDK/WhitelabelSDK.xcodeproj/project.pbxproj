@@ -130,7 +130,7 @@
 		75B89F322AE1A69600B242B4 /* PaginationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F312AE1A69600B242B4 /* PaginationKeys.swift */; };
 		75B89F342AE2A9C100B242B4 /* PostWalletRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F332AE2A9C100B242B4 /* PostWalletRequest.swift */; };
 		75B89F362AE2A9F300B242B4 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F352AE2A9F300B242B4 /* Wallet.swift */; };
-		75B89F382AE2AD2900B242B4 /* PostEndpointRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F372AE2AD2900B242B4 /* PostEndpointRequest.swift */; };
+		75B89F382AE2AD2900B242B4 /* EndpointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B89F372AE2AD2900B242B4 /* EndpointModel.swift */; };
 		75BE9E8C2ACACD2600C01064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BE9E8B2ACACD2600C01064 /* Assets.xcassets */; };
 		75BE9E8F2ACACD2600C01064 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BE9E8E2ACACD2600C01064 /* Preview Assets.xcassets */; };
 		75BE9EA02ACC522900C01064 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BE9E9F2ACC522900C01064 /* NetworkExtension.framework */; };
@@ -277,7 +277,7 @@
 		75B89F312AE1A69600B242B4 /* PaginationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationKeys.swift; sourceTree = "<group>"; };
 		75B89F332AE2A9C100B242B4 /* PostWalletRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWalletRequest.swift; sourceTree = "<group>"; };
 		75B89F352AE2A9F300B242B4 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
-		75B89F372AE2AD2900B242B4 /* PostEndpointRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEndpointRequest.swift; sourceTree = "<group>"; };
+		75B89F372AE2AD2900B242B4 /* EndpointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointModel.swift; sourceTree = "<group>"; };
 		75BE9E842ACACD2500C01064 /* WhitelabelSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhitelabelSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BE9E8B2ACACD2600C01064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75BE9E8E2ACACD2600C01064 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -661,7 +661,7 @@
 			children = (
 				22C216722B31DEC10023824E /* ConnectionResponse.swift */,
 				75B89F312AE1A69600B242B4 /* PaginationKeys.swift */,
-				75B89F372AE2AD2900B242B4 /* PostEndpointRequest.swift */,
+				75B89F372AE2AD2900B242B4 /* EndpointModel.swift */,
 				22C216702B31BCD80023824E /* PostSessionRequest.swift */,
 				75B89F332AE2A9C100B242B4 /* PostWalletRequest.swift */,
 				75B89F352AE2A9F300B242B4 /* Wallet.swift */,
@@ -999,7 +999,7 @@
 				751ADBF72ACC66FA00CC736B /* NotificationToken.swift in Sources */,
 				751ADBBA2ACC62F400CC736B /* NSError+Ext.swift in Sources */,
 				751ADC512ACD886400CC736B /* PeersModel.swift in Sources */,
-				75B89F382AE2AD2900B242B4 /* PostEndpointRequest.swift in Sources */,
+				75B89F382AE2AD2900B242B4 /* EndpointModel.swift in Sources */,
 				75CFB4DE2AD0288C00DC395C /* PostDNSResponse.swift in Sources */,
 				751ADBB42ACC62F400CC736B /* Route.swift in Sources */,
 				751ADC902AD0209000CC736B /* SceneDelegate.swift in Sources */,
@@ -1284,7 +1284,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1323,7 +1323,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

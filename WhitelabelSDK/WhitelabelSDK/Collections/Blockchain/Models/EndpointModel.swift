@@ -1,13 +1,13 @@
 //
-//  PostEndpointRequest.swift
+//  EndpointModel.swift
 //  WhitelabelSDK
 //
 //  Created by Lika Vorobeva on 20.10.2023.
 //
 
-import Foundation
+import Vapor
 
-struct PostEndpointRequest: Codable {
+struct EndpointModel: Content {
     let host: String
     let port: Int
 }
