@@ -80,6 +80,8 @@ extension BlockchainRouteCollection: RouteCollection  {
         routes.post(constants.path, "wallet", use: storeWallet)
         routes.delete(constants.path, "wallet", use: removeWallet)
         
+        routes.get(constants.path, "wallet", ":address", "grants", ":granter", use: getWalletGrants)
+        
         routes.get(constants.path, "wallet", ":address", "balance", use: getWalletBalance)
         routes.get(constants.path, "wallet", ":address", "subscriptions", use: getWalletSubscriptions)
         
@@ -180,6 +182,15 @@ private extension BlockchainRouteCollection {
 // MARK: - Requests: Wallet data
 
 private extension BlockchainRouteCollection {
+    func getWalletGrants(_ req: Request) async throws -> String {
+        try req.validate()
+        guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
+        guard let granter = req.parameters.get("granter", as: String.self) else { throw Abort(.badRequest) }
+        let limit = req.query[UInt64.self, at: PaginationKeys.limit.rawValue] ?? constants.defaultLimit
+        let offset = req.query[UInt64.self, at: PaginationKeys.offset.rawValue] ?? constants.defaultOffset
+        return try await subscriptionProvider.fetchGrants(for: address, granter: granter)
+    }
+    
     func getWalletBalance(_ req: Request) async throws -> String {
         try req.validate()
         guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
