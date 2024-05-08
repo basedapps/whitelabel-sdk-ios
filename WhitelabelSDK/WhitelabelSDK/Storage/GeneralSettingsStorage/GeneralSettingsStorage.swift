@@ -27,7 +27,7 @@ final class GeneralSettingsStorage {
 
 extension GeneralSettingsStorage: StoresGeneralInfo {
     var host: String {
-        settingsStorageStrategy.object(ofType: String.self, forKey: Keys.hostKey.rawValue) ?? "grpc.dvpn.me"
+        settingsStorageStrategy.object(ofType: String.self, forKey: Keys.hostKey.rawValue) ?? "rpc.sentinel.co"
     }
     
     func set(host: String) {
