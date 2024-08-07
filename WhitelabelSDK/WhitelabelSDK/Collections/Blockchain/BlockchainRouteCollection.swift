@@ -143,10 +143,10 @@ private extension BlockchainRouteCollection {
 // MARK: - Requests: Wallet storage
 
 private extension BlockchainRouteCollection {
-    func getWalletAddress(_ req: Request) async throws -> WalletAddressResponse {
+    func getWalletAddress(_ req: Request) async throws -> WalletAddressModel {
         try req.validate()
         guard let address = walletAddress else { throw Abort(.notFound) }
-        return WalletAddressResponse(address: address)
+        return WalletAddressModel(address: address)
     }
     
     func generateWallet(_ req: Request) async throws -> KeywordsResponse {
