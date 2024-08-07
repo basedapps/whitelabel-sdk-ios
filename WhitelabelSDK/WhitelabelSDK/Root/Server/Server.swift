@@ -34,6 +34,7 @@ extension Server {
                 try api.register(collection: StorageRouteCollection())
                 try api.register(collection: ProxyRouteCollection())
                 try api.register(collection: BlockchainRouteCollection())
+                try api.register(collection: PurchasesRouteCollection())
                 completion()
                 try await app.execute()
             } catch {
