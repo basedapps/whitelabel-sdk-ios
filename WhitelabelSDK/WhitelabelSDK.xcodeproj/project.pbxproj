@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		22627F162BCEAA0600A01884 /* ClipboardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22627F152BCEAA0600A01884 /* ClipboardResponse.swift */; };
 		2262BD852BCD9DA700775193 /* DNSServerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2262BD842BCD9DA700775193 /* DNSServerType.swift */; };
+		2280CF942C623CF600A95F03 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 2280CF932C623CF600A95F03 /* RevenueCat */; };
+		2280CF972C623EF300A95F03 /* PurchasesRouteCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280CF962C623EF300A95F03 /* PurchasesRouteCollection.swift */; };
+		2280CF9A2C623FF700A95F03 /* APIKeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280CF992C623FF700A95F03 /* APIKeyModel.swift */; };
+		2280CF9C2C624A7D00A95F03 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280CF9B2C624A7D00A95F03 /* Products.swift */; };
+		2280CF9E2C62576900A95F03 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2280CF9D2C62576900A95F03 /* StoreKit.framework */; };
 		228813A72B7B912C00240DEE /* LogHandler+Vapor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228813A62B7B912B00240DEE /* LogHandler+Vapor.swift */; };
 		228813AB2B7B9CAC00240DEE /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228813AA2B7B9CAC00240DEE /* LogFile.swift */; };
 		228813AD2B7B9CBA00240DEE /* LogsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228813AC2B7B9CBA00240DEE /* LogsService.swift */; };
@@ -189,6 +194,10 @@
 /* Begin PBXFileReference section */
 		22627F152BCEAA0600A01884 /* ClipboardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardResponse.swift; sourceTree = "<group>"; };
 		2262BD842BCD9DA700775193 /* DNSServerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSServerType.swift; sourceTree = "<group>"; };
+		2280CF962C623EF300A95F03 /* PurchasesRouteCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesRouteCollection.swift; sourceTree = "<group>"; };
+		2280CF992C623FF700A95F03 /* APIKeyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyModel.swift; sourceTree = "<group>"; };
+		2280CF9B2C624A7D00A95F03 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		2280CF9D2C62576900A95F03 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		228813A62B7B912B00240DEE /* LogHandler+Vapor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogHandler+Vapor.swift"; sourceTree = "<group>"; };
 		228813AA2B7B9CAC00240DEE /* LogFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
 		228813AC2B7B9CBA00240DEE /* LogsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsService.swift; sourceTree = "<group>"; };
@@ -304,6 +313,8 @@
 			files = (
 				751ADB762ACC60DC00CC736B /* KeychainAccess in Frameworks */,
 				751ADB7D2ACC611C00CC736B /* NetworkExtension.framework in Frameworks */,
+				2280CF942C623CF600A95F03 /* RevenueCat in Frameworks */,
+				2280CF9E2C62576900A95F03 /* StoreKit.framework in Frameworks */,
 				751ADB7C2ACC610500CC736B /* SwiftyBeaver in Frameworks */,
 				75B89F2C2AE1A53D00B242B4 /* SentinelWallet in Frameworks */,
 				751ADBE52ACC664E00CC736B /* Vapor in Frameworks */,
@@ -336,6 +347,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2280CF952C623EE300A95F03 /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				2280CF982C623FE400A95F03 /* Models */,
+				2280CF962C623EF300A95F03 /* PurchasesRouteCollection.swift */,
+			);
+			path = Purchases;
+			sourceTree = "<group>";
+		};
+		2280CF982C623FE400A95F03 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2280CF992C623FF700A95F03 /* APIKeyModel.swift */,
+				2280CF9B2C624A7D00A95F03 /* Products.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		228813A92B7B9C9F00240DEE /* Logs */ = {
 			isa = PBXGroup;
 			children = (
@@ -594,8 +623,9 @@
 			isa = PBXGroup;
 			children = (
 				75B89F2D2AE1A54400B242B4 /* Blockchain */,
-				75B28B622AD58870003BDD1D /* Proxy */,
 				75CFB4D02AD0288C00DC395C /* DNS */,
+				75B28B622AD58870003BDD1D /* Proxy */,
+				2280CF952C623EE300A95F03 /* Purchases */,
 				75CFB4E62AD0414B00DC395C /* Storage */,
 				75B28B582AD57177003BDD1D /* Tunnel */,
 			);
@@ -720,6 +750,7 @@
 		75BE9E9E2ACC522900C01064 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2280CF9D2C62576900A95F03 /* StoreKit.framework */,
 				22C96ACB2B03BA4F0010CC0D /* XrayKit.xcframework */,
 				751ADB7F2ACC61B500CC736B /* libresolv.9.tbd */,
 				75BE9E9F2ACC522900C01064 /* NetworkExtension.framework */,
@@ -828,6 +859,7 @@
 				751ADB7B2ACC610500CC736B /* SwiftyBeaver */,
 				751ADBE42ACC664E00CC736B /* Vapor */,
 				75B89F2B2AE1A53D00B242B4 /* SentinelWallet */,
+				2280CF932C623CF600A95F03 /* RevenueCat */,
 			);
 			productName = WhitelabelSDK;
 			productReference = 75BE9E842ACACD2500C01064 /* WhitelabelSDK.app */;
@@ -916,6 +948,7 @@
 				751ADBE32ACC664E00CC736B /* XCRemoteSwiftPackageReference "vapor" */,
 				75B89F2A2AE1A53D00B242B4 /* XCRemoteSwiftPackageReference "sentinel-wallet-sdk-ios" */,
 				22C96ACE2B03C7C40010CC0D /* XCRemoteSwiftPackageReference "Tun2SocksKit" */,
+				2280CF922C623CF600A95F03 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
 			);
 			productRefGroup = 75BE9E852ACACD2500C01064 /* Products */;
 			projectDirPath = "";
@@ -1006,6 +1039,7 @@
 				751ADC5D2ACD886400CC736B /* Serializer.swift in Sources */,
 				751ADC8A2ACD92F200CC736B /* Server.swift in Sources */,
 				75B28B672AD59B3D003BDD1D /* Request+Ext.swift in Sources */,
+				2280CF972C623EF300A95F03 /* PurchasesRouteCollection.swift in Sources */,
 				75B89F342AE2A9C100B242B4 /* PostWalletRequest.swift in Sources */,
 				75B28B612AD5881B003BDD1D /* ServerProtocol.swift in Sources */,
 				751ADC5B2ACD886400CC736B /* SettingsStorageStrategyType.swift in Sources */,
@@ -1021,9 +1055,11 @@
 				751ADC562ACD886400CC736B /* TunnelContainer.swift in Sources */,
 				751ADC502ACD886400CC736B /* TunnelInterfaceModel.swift in Sources */,
 				751ADC4D2ACD886400CC736B /* TunnelManager.swift in Sources */,
+				2280CF9C2C624A7D00A95F03 /* Products.swift in Sources */,
 				751ADC4E2ACD886400CC736B /* TunnelManagerType.swift in Sources */,
 				751ADC532ACD886400CC736B /* TunnelModel.swift in Sources */,
 				75B28B5A2AD5718C003BDD1D /* TunnelRouteCollection.swift in Sources */,
+				2280CF9A2C623FF700A95F03 /* APIKeyModel.swift in Sources */,
 				751ADC522ACD886400CC736B /* TunnelSavingError.swift in Sources */,
 				751ADC582ACD886400CC736B /* TunnelsService.swift in Sources */,
 				751ADC572ACD886400CC736B /* TunnelsServiceStatusDelegate.swift in Sources */,
@@ -1284,7 +1320,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1323,7 +1359,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1536,6 +1572,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2280CF922C623CF600A95F03 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
 		22C96ACE2B03C7C40010CC0D /* XCRemoteSwiftPackageReference "Tun2SocksKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/solarlabsteam/Tun2SocksKit";
@@ -1587,6 +1631,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2280CF932C623CF600A95F03 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2280CF922C623CF600A95F03 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
+			productName = RevenueCat;
+		};
 		22C96ACF2B03C7C40010CC0D /* Tun2SocksKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 22C96ACE2B03C7C40010CC0D /* XCRemoteSwiftPackageReference "Tun2SocksKit" */;
