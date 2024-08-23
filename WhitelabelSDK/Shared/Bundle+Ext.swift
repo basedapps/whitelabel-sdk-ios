@@ -9,7 +9,7 @@ import Foundation
 
 extension Bundle {
     public static var appID: String {
-        "co.sentinel.dvpnapp"
+        "co.sentinel.shield"
     }
     
     public static var suiteName: String {

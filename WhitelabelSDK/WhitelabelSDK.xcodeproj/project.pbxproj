@@ -20,6 +20,13 @@
 		228DC9452BBF035F00EFAAB9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 228DC9442BBF035F00EFAAB9 /* PrivacyInfo.xcprivacy */; };
 		228DC9472BBF0C0D00EFAAB9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 228DC9462BBF0C0D00EFAAB9 /* PrivacyInfo.xcprivacy */; };
 		228DC9492BBF0F6900EFAAB9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 228DC9482BBF0F6900EFAAB9 /* PrivacyInfo.xcprivacy */; };
+		22A37C2E2C7380BF00E4425F /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 22A37C272C7380BF00E4425F /* favicon.ico */; };
+		22A37C2F2C7380BF00E4425F /* service-worker.js in Resources */ = {isa = PBXBuildFile; fileRef = 22A37C282C7380BF00E4425F /* service-worker.js */; };
+		22A37C302C7380BF00E4425F /* robots.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22A37C292C7380BF00E4425F /* robots.txt */; };
+		22A37C312C7380BF00E4425F /* workbox-8afda3cc.js in Resources */ = {isa = PBXBuildFile; fileRef = 22A37C2A2C7380BF00E4425F /* workbox-8afda3cc.js */; };
+		22A37C322C7380BF00E4425F /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 22A37C2B2C7380BF00E4425F /* index.js */; };
+		22A37C332C7380BF00E4425F /* src in Resources */ = {isa = PBXBuildFile; fileRef = 22A37C2C2C7380BF00E4425F /* src */; };
+		22A37C342C7380BF00E4425F /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 22A37C2D2C7380BF00E4425F /* index.html */; };
 		22BBD7242BB16EC000229FDD /* OpenBrowserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBD7232BB16EC000229FDD /* OpenBrowserRequest.swift */; };
 		22C216712B31BCD80023824E /* PostSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C216702B31BCD80023824E /* PostSessionRequest.swift */; };
 		22C216732B31DEC10023824E /* ConnectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C216722B31DEC10023824E /* ConnectionResponse.swift */; };
@@ -204,6 +211,13 @@
 		228DC9442BBF035F00EFAAB9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		228DC9462BBF0C0D00EFAAB9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		228DC9482BBF0F6900EFAAB9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		22A37C272C7380BF00E4425F /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = favicon.ico; path = "../../../SolarLabs/sentinel-dvpn-app-ui/ui/favicon.ico"; sourceTree = "<group>"; };
+		22A37C282C7380BF00E4425F /* service-worker.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "service-worker.js"; path = "../../../SolarLabs/sentinel-dvpn-app-ui/ui/service-worker.js"; sourceTree = "<group>"; };
+		22A37C292C7380BF00E4425F /* robots.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = robots.txt; path = "../../../SolarLabs/sentinel-dvpn-app-ui/ui/robots.txt"; sourceTree = "<group>"; };
+		22A37C2A2C7380BF00E4425F /* workbox-8afda3cc.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "workbox-8afda3cc.js"; path = "../../../SolarLabs/sentinel-dvpn-app-ui/ui/workbox-8afda3cc.js"; sourceTree = "<group>"; };
+		22A37C2B2C7380BF00E4425F /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = index.js; path = "../../../SolarLabs/sentinel-dvpn-app-ui/ui/index.js"; sourceTree = "<group>"; };
+		22A37C2C2C7380BF00E4425F /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = "../../../SolarLabs/sentinel-dvpn-app-ui/ui/src"; sourceTree = "<group>"; };
+		22A37C2D2C7380BF00E4425F /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = "../../../SolarLabs/sentinel-dvpn-app-ui/ui/index.html"; sourceTree = "<group>"; };
 		22BBD7232BB16EC000229FDD /* OpenBrowserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBrowserRequest.swift; sourceTree = "<group>"; };
 		22C216702B31BCD80023824E /* PostSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSessionRequest.swift; sourceTree = "<group>"; };
 		22C216722B31DEC10023824E /* ConnectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionResponse.swift; sourceTree = "<group>"; };
@@ -702,6 +716,13 @@
 		75BE9E7B2ACACD2500C01064 = {
 			isa = PBXGroup;
 			children = (
+				22A37C272C7380BF00E4425F /* favicon.ico */,
+				22A37C2D2C7380BF00E4425F /* index.html */,
+				22A37C2B2C7380BF00E4425F /* index.js */,
+				22A37C292C7380BF00E4425F /* robots.txt */,
+				22A37C282C7380BF00E4425F /* service-worker.js */,
+				22A37C2C2C7380BF00E4425F /* src */,
+				22A37C2A2C7380BF00E4425F /* workbox-8afda3cc.js */,
 				751ADB872ACC62F400CC736B /* Shared */,
 				75BE9E862ACACD2500C01064 /* WhitelabelSDK */,
 				75BE9EA12ACC522900C01064 /* V2RayExtension */,
@@ -967,9 +988,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22A37C2F2C7380BF00E4425F /* service-worker.js in Resources */,
+				22A37C302C7380BF00E4425F /* robots.txt in Resources */,
 				75BE9E8C2ACACD2600C01064 /* Assets.xcassets in Resources */,
 				751ADCC02AD023F800CC736B /* LaunchScreen.storyboard in Resources */,
+				22A37C312C7380BF00E4425F /* workbox-8afda3cc.js in Resources */,
+				22A37C322C7380BF00E4425F /* index.js in Resources */,
+				22A37C2E2C7380BF00E4425F /* favicon.ico in Resources */,
+				22A37C332C7380BF00E4425F /* src in Resources */,
 				751ADCBD2AD023DC00CC736B /* Main.storyboard in Resources */,
+				22A37C342C7380BF00E4425F /* index.html in Resources */,
 				228DC9452BBF035F00EFAAB9 /* PrivacyInfo.xcprivacy in Resources */,
 				75BE9E8F2ACACD2600C01064 /* Preview Assets.xcassets in Resources */,
 			);
@@ -1305,7 +1333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhitelabelSDK/Preview Content\"";
-				DEVELOPMENT_TEAM = 5F44M2W7F4;
+				DEVELOPMENT_TEAM = 346ACXJVL8;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1320,8 +1348,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.6;
-				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
+				MARKETING_VERSION = 1.1.7;
+				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.shield;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1344,7 +1372,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhitelabelSDK/Preview Content\"";
-				DEVELOPMENT_TEAM = 5F44M2W7F4;
+				DEVELOPMENT_TEAM = 346ACXJVL8;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1359,8 +1387,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.6;
-				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.dvpnapp;
+				MARKETING_VERSION = 1.1.7;
+				PRODUCT_BUNDLE_IDENTIFIER = co.sentinel.shield;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1407,7 +1435,7 @@
 				CODE_SIGN_ENTITLEMENTS = V2RayExtension/V2RayExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5F44M2W7F4;
+				DEVELOPMENT_TEAM = 346ACXJVL8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = V2RayExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = V2RayExtension;
@@ -1419,7 +1447,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.sentinel.dvpnapp.v2ray-ne";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.sentinel.shield.v2ray-ne";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1437,7 +1465,7 @@
 				CODE_SIGN_ENTITLEMENTS = V2RayExtension/V2RayExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5F44M2W7F4;
+				DEVELOPMENT_TEAM = 346ACXJVL8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = V2RayExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = V2RayExtension;
@@ -1449,7 +1477,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.sentinel.dvpnapp.v2ray-ne";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.sentinel.shield.v2ray-ne";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1467,7 +1495,7 @@
 				CODE_SIGN_ENTITLEMENTS = WireGuardExtension/WireGuardExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5F44M2W7F4;
+				DEVELOPMENT_TEAM = 346ACXJVL8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WireGuardExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = WireGuardExtension;
@@ -1479,7 +1507,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.sentinel.dvpnapp.wireguard-ne";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.sentinel.shield.wireguard-ne";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1497,7 +1525,7 @@
 				CODE_SIGN_ENTITLEMENTS = WireGuardExtension/WireGuardExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5F44M2W7F4;
+				DEVELOPMENT_TEAM = 346ACXJVL8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WireGuardExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = WireGuardExtension;
@@ -1509,7 +1537,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.sentinel.dvpnapp.wireguard-ne";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.sentinel.shield.wireguard-ne";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
