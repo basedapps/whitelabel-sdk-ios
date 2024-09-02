@@ -50,7 +50,7 @@ extension Server {
     private func configure(_ app: Application) {
         app.http.server.configuration.hostname = ClientConstants.host
         app.http.server.configuration.port = ClientConstants.port
-        app.http.client.configuration.timeout = .init(connect: .seconds(120))
+        app.http.client.configuration.timeout = .init(connect: .minutes(24), read: nil, write: .hours(24))
         
         let fileMiddleware = try! FileMiddleware(bundle: .main, publicDirectory: "./", defaultFile: "index.html")
         app.middleware.use(fileMiddleware)
