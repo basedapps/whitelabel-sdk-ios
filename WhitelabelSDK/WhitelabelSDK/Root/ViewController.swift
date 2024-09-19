@@ -29,8 +29,6 @@ extension ViewController {
     private func setUpWebView() {
         let webConfiguration = WKWebViewConfiguration()
         
-        webConfiguration.setValue(true, forKey: "_allowUniversalAccessFromFileURLs")
-        
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
         webView.allowsBackForwardNavigationGestures = true
         webView.scrollView.bounces = false
