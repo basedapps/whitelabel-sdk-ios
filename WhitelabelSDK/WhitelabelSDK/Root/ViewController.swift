@@ -11,6 +11,7 @@ import WebKit
 final class ViewController: UIViewController {
     private let server = Server()
     private var webView: WKWebView!
+    private var appWillEnterForegroundTrigger = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,14 @@ final class ViewController: UIViewController {
                 self?.setUpWebView()
             }
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    @objc func appWillEnterForeground() {
+        if appWillEnterForegroundTrigger {
+            server.restart()
+        }
+        appWillEnterForegroundTrigger = true
     }
 }
 

@@ -9,11 +9,11 @@ import Foundation
 import Vapor
 
 final class Server {
-    let app: Application
+    var app: Application
     
     init() {
         #if DEBUG
-        app = Application(.development)
+        app = Application(.development, .shared(.singletonMultiThreadedEventLoopGroup))
         #else
         app = Application(.production)
         #endif
@@ -41,6 +41,15 @@ extension Server {
                 fatalError(error.localizedDescription)
             }
         }
+    }
+    
+    func restart() {
+        app.shutdown()
+        
+        app = Application(.development, .shared(.singletonMultiThreadedEventLoopGroup))
+        configure(app)
+        
+        start { log.info("Did restart server") }
     }
 }
 
