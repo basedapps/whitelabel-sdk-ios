@@ -186,8 +186,6 @@ private extension BlockchainRouteCollection {
         try req.validate()
         guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
         guard let granter = req.parameters.get("granter", as: String.self) else { throw Abort(.badRequest) }
-        let limit = req.query[UInt64.self, at: PaginationKeys.limit.rawValue] ?? constants.defaultLimit
-        let offset = req.query[UInt64.self, at: PaginationKeys.offset.rawValue] ?? constants.defaultOffset
         return try await subscriptionProvider.fetchGrants(for: address, granter: granter)
     }
     

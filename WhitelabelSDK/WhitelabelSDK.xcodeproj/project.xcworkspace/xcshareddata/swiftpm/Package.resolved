@@ -1,5 +1,5 @@
 {
-  "originHash" : "733b84baaf6cd5a4c477f73a9d27a188729de255999d0a89d14cc531bbe6f5ed",
+  "originHash" : "3eca5994520e53c42a1825e58120bbd068cc6b7fce90e773c50a1fc596ba3274",
   "pins" : [
     {
       "identity" : "async-http-client",
@@ -78,8 +78,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/RevenueCat/purchases-ios-spm.git",
       "state" : {
-        "revision" : "dab15ad6125f78c79f7397e7c9af8f5be00c0ad6",
-        "version" : "5.3.4"
+        "revision" : "c7058bfd80d7f42ca6aa392bf1fab769d1158bf1",
+        "version" : "5.5.0"
       }
     },
     {
@@ -231,8 +231,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-protobuf.git",
       "state" : {
-        "revision" : "edb6ed4919f7756157fe02f2552b7e3850a538e5",
-        "version" : "1.28.1"
+        "revision" : "ebc7251dd5b37f627c93698e4374084d98409633",
+        "version" : "1.28.2"
       }
     },
     {
@@ -267,8 +267,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vapor/vapor",
       "state" : {
-        "revision" : "67fe736c37b0ad958b9d248f010cff6c1baa5c3a",
-        "version" : "4.89.3"
+        "revision" : "a4d7d4d32ef4a21dd10bc6375f4d20da3c5594e4",
+        "version" : "4.105.2"
       }
     },
     {

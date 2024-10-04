@@ -38,7 +38,7 @@ extension PurchasesRouteCollection {
     private func login(_ req: Request) async throws -> Response {
         try req.validate()
         let body = try req.content.decode(WalletAddressModel.self)
-        let result = try await Purchases.shared.logIn(body.address)
+        let _ = try await Purchases.shared.logIn(body.address)
         
         return Response(status: .ok)
     } 

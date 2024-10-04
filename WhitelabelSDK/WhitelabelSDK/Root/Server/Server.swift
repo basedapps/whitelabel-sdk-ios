@@ -15,7 +15,7 @@ final class Server {
         #if DEBUG
         app = Application(.development, .shared(.singletonMultiThreadedEventLoopGroup))
         #else
-        app = Application(.production)
+        app = Application(.production, .shared(.singletonMultiThreadedEventLoopGroup))
         #endif
         Config.setup()
         LoggingSystem.bootstrap { VaporLogHandler($0) }

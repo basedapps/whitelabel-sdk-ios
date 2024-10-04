@@ -21,13 +21,18 @@ final class ViewController: UIViewController {
                 self?.setUpWebView()
             }
         }
-        NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(appWillEnterForeground),
+            name: UIApplication.willEnterForegroundNotification,
+            object: nil
+        )
     }
     
     @objc func appWillEnterForeground() {
-        if appWillEnterForegroundTrigger {
-            server.restart()
-        }
+        log.info("appWillEnterForeground")
+        if appWillEnterForegroundTrigger { server.restart() }
         appWillEnterForegroundTrigger = true
     }
 }
