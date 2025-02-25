@@ -11,7 +11,9 @@ import WebKit
 final class ViewController: UIViewController {
     private let server = Server()
     private var webView: WKWebView!
+    
     private var appWillEnterForegroundTrigger = false
+    private let backgroundTimeKey = "backgroundTime"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,19 +30,56 @@ final class ViewController: UIViewController {
             name: UIApplication.willEnterForegroundNotification,
             object: nil
         )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(applicationWillEnterBackground),
+            name: UIApplication.willResignActiveNotification,
+            object: nil
+        )
+    }
+    
+    @objc func applicationWillEnterBackground() {
+        log.info("applicationWillEnterBackground")
+        UserDefaults.standard.set(Date(), forKey: backgroundTimeKey)
     }
     
     @objc func appWillEnterForeground() {
         log.info("appWillEnterForeground")
-        if appWillEnterForegroundTrigger { server.restart() }
+        if appWillEnterForegroundTrigger {
+            server.restart()
+            loadWebViewIfNeeded()
+        }
         appWillEnterForegroundTrigger = true
     }
 }
 
 // MARK: Private
 
-extension ViewController {
-    private func setUpWebView() {
+private extension ViewController {
+    func loadWebViewIfNeeded() {
+        guard let backgroundTime = UserDefaults.standard.object(forKey: backgroundTimeKey) as? Date else {
+            return
+        }
+        
+        guard Date().timeIntervalSince(backgroundTime) > 1800 else { return }
+        UserDefaults.standard.removeObject(forKey: backgroundTimeKey)
+        
+        guard let webView = view as? WKWebView else { return }
+        
+        loadRequest(in: webView)
+    }
+    
+    func loadRequest(in webView: WKWebView) {
+        let urlRequest = URLRequest(
+            url: URL(string: ("http://" + ClientConstants.host + ":" + "\(ClientConstants.port)" + "/"))!,
+            cachePolicy: .reloadIgnoringLocalAndRemoteCacheData
+        )
+        
+        webView.load(urlRequest)
+    }
+    
+    func setUpWebView() {
         let webConfiguration = WKWebViewConfiguration()
         
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
@@ -60,12 +99,6 @@ extension ViewController {
         webView.isOpaque = false
         
         view = webView
-        
-        let urlRequest = URLRequest(
-            url: URL(string: ("http://" + ClientConstants.host + ":" + "\(ClientConstants.port)" + "/"))!,
-            cachePolicy: .reloadIgnoringLocalAndRemoteCacheData
-        )
-        
-        webView.load(urlRequest)
+        loadRequest(in: webView)
     }
 }
