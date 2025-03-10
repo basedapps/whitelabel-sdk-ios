@@ -10,6 +10,14 @@
 		22627F162BCEAA0600A01884 /* ClipboardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22627F152BCEAA0600A01884 /* ClipboardResponse.swift */; };
 		2262BD852BCD9DA700775193 /* DNSServerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2262BD842BCD9DA700775193 /* DNSServerType.swift */; };
 		227652E82CAED9CB003AB02F /* SentinelWallet in Frameworks */ = {isa = PBXBuildFile; productRef = 227652E72CAED9CB003AB02F /* SentinelWallet */; };
+		2278D9272D7EEFE1006DF05A /* BranchSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 2278D9262D7EEFE1006DF05A /* BranchSDK */; };
+		2278D9292D7EEFFA006DF05A /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2278D9282D7EEFFA006DF05A /* Config.xcconfig */; };
+		2278D92B2D7EF120006DF05A /* LinkPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2278D92A2D7EF120006DF05A /* LinkPresentation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2278D92D2D7EF127006DF05A /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2278D92C2D7EF127006DF05A /* CoreSpotlight.framework */; };
+		2278D92F2D7EF12F006DF05A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2278D92E2D7EF12F006DF05A /* WebKit.framework */; };
+		2278D9312D7EF135006DF05A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2278D9302D7EF135006DF05A /* SystemConfiguration.framework */; };
+		2278D9332D7EF142006DF05A /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2278D9322D7EF142006DF05A /* CoreServices.framework */; };
+		2278D9352D7F1513006DF05A /* InviteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278D9342D7F150D006DF05A /* InviteRequest.swift */; };
 		2280CF942C623CF600A95F03 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 2280CF932C623CF600A95F03 /* RevenueCat */; };
 		2280CF972C623EF300A95F03 /* PurchasesRouteCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280CF962C623EF300A95F03 /* PurchasesRouteCollection.swift */; };
 		2280CF9A2C623FF700A95F03 /* APIKeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280CF992C623FF700A95F03 /* APIKeyModel.swift */; };
@@ -21,6 +29,7 @@
 		228DC9452BBF035F00EFAAB9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 228DC9442BBF035F00EFAAB9 /* PrivacyInfo.xcprivacy */; };
 		228DC9472BBF0C0D00EFAAB9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 228DC9462BBF0C0D00EFAAB9 /* PrivacyInfo.xcprivacy */; };
 		228DC9492BBF0F6900EFAAB9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 228DC9482BBF0F6900EFAAB9 /* PrivacyInfo.xcprivacy */; };
+		22950DD22D2EAA8F0051CB6C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 22950DD12D2EAA8F0051CB6C /* Alamofire */; };
 		22BBD7242BB16EC000229FDD /* OpenBrowserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBD7232BB16EC000229FDD /* OpenBrowserRequest.swift */; };
 		22C216712B31BCD80023824E /* PostSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C216702B31BCD80023824E /* PostSessionRequest.swift */; };
 		22C216732B31DEC10023824E /* ConnectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C216722B31DEC10023824E /* ConnectionResponse.swift */; };
@@ -194,6 +203,13 @@
 /* Begin PBXFileReference section */
 		22627F152BCEAA0600A01884 /* ClipboardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardResponse.swift; sourceTree = "<group>"; };
 		2262BD842BCD9DA700775193 /* DNSServerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSServerType.swift; sourceTree = "<group>"; };
+		2278D9282D7EEFFA006DF05A /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		2278D92A2D7EF120006DF05A /* LinkPresentation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LinkPresentation.framework; path = System/Library/Frameworks/LinkPresentation.framework; sourceTree = SDKROOT; };
+		2278D92C2D7EF127006DF05A /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
+		2278D92E2D7EF12F006DF05A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		2278D9302D7EF135006DF05A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2278D9322D7EF142006DF05A /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		2278D9342D7F150D006DF05A /* InviteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteRequest.swift; sourceTree = "<group>"; };
 		2280CF962C623EF300A95F03 /* PurchasesRouteCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesRouteCollection.swift; sourceTree = "<group>"; };
 		2280CF992C623FF700A95F03 /* APIKeyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyModel.swift; sourceTree = "<group>"; };
 		2280CF9B2C624A7D00A95F03 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
@@ -311,10 +327,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2278D9332D7EF142006DF05A /* CoreServices.framework in Frameworks */,
+				2278D9312D7EF135006DF05A /* SystemConfiguration.framework in Frameworks */,
+				2278D92F2D7EF12F006DF05A /* WebKit.framework in Frameworks */,
+				2278D92D2D7EF127006DF05A /* CoreSpotlight.framework in Frameworks */,
+				2278D92B2D7EF120006DF05A /* LinkPresentation.framework in Frameworks */,
+				22950DD22D2EAA8F0051CB6C /* Alamofire in Frameworks */,
 				751ADB762ACC60DC00CC736B /* KeychainAccess in Frameworks */,
 				227652E82CAED9CB003AB02F /* SentinelWallet in Frameworks */,
 				751ADB7D2ACC611C00CC736B /* NetworkExtension.framework in Frameworks */,
 				2280CF942C623CF600A95F03 /* RevenueCat in Frameworks */,
+				2278D9272D7EEFE1006DF05A /* BranchSDK in Frameworks */,
 				2280CF9E2C62576900A95F03 /* StoreKit.framework in Frameworks */,
 				751ADB7C2ACC610500CC736B /* SwiftyBeaver in Frameworks */,
 				751ADBE52ACC664E00CC736B /* Vapor in Frameworks */,
@@ -690,8 +713,9 @@
 			isa = PBXGroup;
 			children = (
 				22C216722B31DEC10023824E /* ConnectionResponse.swift */,
-				75B89F312AE1A69600B242B4 /* PaginationKeys.swift */,
 				75B89F372AE2AD2900B242B4 /* EndpointModel.swift */,
+				2278D9342D7F150D006DF05A /* InviteRequest.swift */,
+				75B89F312AE1A69600B242B4 /* PaginationKeys.swift */,
 				22C216702B31BCD80023824E /* PostSessionRequest.swift */,
 				75B89F332AE2A9C100B242B4 /* PostWalletRequest.swift */,
 				75B89F352AE2A9F300B242B4 /* Wallet.swift */,
@@ -702,6 +726,7 @@
 		75BE9E7B2ACACD2500C01064 = {
 			isa = PBXGroup;
 			children = (
+				2278D9282D7EEFFA006DF05A /* Config.xcconfig */,
 				751ADB872ACC62F400CC736B /* Shared */,
 				75BE9E862ACACD2500C01064 /* WhitelabelSDK */,
 				75BE9EA12ACC522900C01064 /* V2RayExtension */,
@@ -726,15 +751,15 @@
 			children = (
 				751ADC782ACD88C300CC736B /* Collections */,
 				751ADBE62ACC66FA00CC736B /* Common */,
-				751ADCBA2AD0236900CC736B /* Info.plist */,
-				751ADCBE2AD023F800CC736B /* LaunchScreen.storyboard */,
-				751ADCBB2AD023DC00CC736B /* Main.storyboard */,
 				75BE9E8D2ACACD2600C01064 /* Preview Content */,
-				228DC9442BBF035F00EFAAB9 /* PrivacyInfo.xcprivacy */,
 				751ADC012ACC671000CC736B /* Resources */,
 				751ADC002ACC670400CC736B /* Root */,
 				751ADC022ACD886300CC736B /* Storage */,
 				751ADB7E2ACC616A00CC736B /* WhitelabelSDK.entitlements */,
+				751ADCBA2AD0236900CC736B /* Info.plist */,
+				228DC9442BBF035F00EFAAB9 /* PrivacyInfo.xcprivacy */,
+				751ADCBE2AD023F800CC736B /* LaunchScreen.storyboard */,
+				751ADCBB2AD023DC00CC736B /* Main.storyboard */,
 			);
 			path = WhitelabelSDK;
 			sourceTree = "<group>";
@@ -750,6 +775,11 @@
 		75BE9E9E2ACC522900C01064 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2278D9322D7EF142006DF05A /* CoreServices.framework */,
+				2278D9302D7EF135006DF05A /* SystemConfiguration.framework */,
+				2278D92E2D7EF12F006DF05A /* WebKit.framework */,
+				2278D92C2D7EF127006DF05A /* CoreSpotlight.framework */,
+				2278D92A2D7EF120006DF05A /* LinkPresentation.framework */,
 				2280CF9D2C62576900A95F03 /* StoreKit.framework */,
 				22C96ACB2B03BA4F0010CC0D /* XrayKit.xcframework */,
 				751ADB7F2ACC61B500CC736B /* libresolv.9.tbd */,
@@ -860,6 +890,8 @@
 				751ADBE42ACC664E00CC736B /* Vapor */,
 				2280CF932C623CF600A95F03 /* RevenueCat */,
 				227652E72CAED9CB003AB02F /* SentinelWallet */,
+				22950DD12D2EAA8F0051CB6C /* Alamofire */,
+				2278D9262D7EEFE1006DF05A /* BranchSDK */,
 			);
 			productName = WhitelabelSDK;
 			productReference = 75BE9E842ACACD2500C01064 /* WhitelabelSDK.app */;
@@ -949,6 +981,8 @@
 				22C96ACE2B03C7C40010CC0D /* XCRemoteSwiftPackageReference "Tun2SocksKit" */,
 				2280CF922C623CF600A95F03 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
 				227652E62CAED9CB003AB02F /* XCRemoteSwiftPackageReference "sentinel-wallet-sdk-ios" */,
+				22950DD02D2EAA8F0051CB6C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2278D9252D7EEFE1006DF05A /* XCRemoteSwiftPackageReference "ios-branch-sdk-spm" */,
 			);
 			productRefGroup = 75BE9E852ACACD2500C01064 /* Products */;
 			projectDirPath = "";
@@ -969,6 +1003,7 @@
 			files = (
 				75BE9E8C2ACACD2600C01064 /* Assets.xcassets in Resources */,
 				751ADCC02AD023F800CC736B /* LaunchScreen.storyboard in Resources */,
+				2278D9292D7EEFFA006DF05A /* Config.xcconfig in Resources */,
 				751ADCBD2AD023DC00CC736B /* Main.storyboard in Resources */,
 				228DC9452BBF035F00EFAAB9 /* PrivacyInfo.xcprivacy in Resources */,
 				75BE9E8F2ACACD2600C01064 /* Preview Assets.xcassets in Resources */,
@@ -1032,6 +1067,7 @@
 				751ADBF72ACC66FA00CC736B /* NotificationToken.swift in Sources */,
 				751ADBBA2ACC62F400CC736B /* NSError+Ext.swift in Sources */,
 				751ADC512ACD886400CC736B /* PeersModel.swift in Sources */,
+				2278D9352D7F1513006DF05A /* InviteRequest.swift in Sources */,
 				75B89F382AE2AD2900B242B4 /* EndpointModel.swift in Sources */,
 				75CFB4DE2AD0288C00DC395C /* PostDNSResponse.swift in Sources */,
 				751ADBB42ACC62F400CC736B /* Route.swift in Sources */,
@@ -1296,6 +1332,7 @@
 		};
 		75BE9E932ACACD2600C01064 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2278D9282D7EEFFA006DF05A /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1335,6 +1372,7 @@
 		};
 		75BE9E942ACACD2600C01064 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2278D9282D7EEFFA006DF05A /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1580,12 +1618,28 @@
 				kind = branch;
 			};
 		};
+		2278D9252D7EEFE1006DF05A /* XCRemoteSwiftPackageReference "ios-branch-sdk-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BranchMetrics/ios-branch-sdk-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.10.0;
+			};
+		};
 		2280CF922C623CF600A95F03 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RevenueCat/purchases-ios-spm.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.5.0;
+			};
+		};
+		22950DD02D2EAA8F0051CB6C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
 			};
 		};
 		22C96ACE2B03C7C40010CC0D /* XCRemoteSwiftPackageReference "Tun2SocksKit" */ = {
@@ -1636,10 +1690,20 @@
 			package = 227652E62CAED9CB003AB02F /* XCRemoteSwiftPackageReference "sentinel-wallet-sdk-ios" */;
 			productName = SentinelWallet;
 		};
+		2278D9262D7EEFE1006DF05A /* BranchSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2278D9252D7EEFE1006DF05A /* XCRemoteSwiftPackageReference "ios-branch-sdk-spm" */;
+			productName = BranchSDK;
+		};
 		2280CF932C623CF600A95F03 /* RevenueCat */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2280CF922C623CF600A95F03 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
 			productName = RevenueCat;
+		};
+		22950DD12D2EAA8F0051CB6C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22950DD02D2EAA8F0051CB6C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		22C96ACF2B03C7C40010CC0D /* Tun2SocksKit */ = {
 			isa = XCSwiftPackageProductDependency;

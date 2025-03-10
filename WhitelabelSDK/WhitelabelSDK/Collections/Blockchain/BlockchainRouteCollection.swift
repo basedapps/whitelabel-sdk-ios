@@ -10,6 +10,7 @@ import SentinelWallet
 import HDWallet
 import WireGuardKit
 import GRPC
+import BranchSDK
 
 // MARK: - Constants
 
@@ -74,6 +75,8 @@ extension BlockchainRouteCollection: RouteCollection  {
         routes.get(constants.path, "nodes", use: getAvailableNodes)
         routes.get(constants.path, "plans", use: getAvailablePlans)
         routes.get(constants.path, "plans", ":id", "nodes", use: getAvailableNodesForPlan)
+        
+        routes.post(constants.path, "wallet", "invite", use: postInviteSheet)
         
         routes.get(constants.path, "wallet", use: getWalletAddress)
         routes.get(constants.path, "keywords", use: generateWallet)
@@ -175,6 +178,25 @@ private extension BlockchainRouteCollection {
         try req.validate()
         safeStorage.removeObject(forKey: constants.walletKey)
         commonStorage.set(wallet: nil)
+        return .init(status: .ok)
+    }
+}
+
+// MARK: - Requests: Wallet invite
+
+private extension BlockchainRouteCollection {
+    @MainActor
+    func postInviteSheet(_ req: Request) async throws -> Response {
+        try req.validate()
+        let body = try req.content.decode(InviteRequest.self)
+        
+        let buo = BranchUniversalObject(canonicalIdentifier: body.canonicalIdentifier)
+        body.customMetadata.forEach { key, value in
+            buo.contentMetadata.customMetadata[key] = value
+        }
+
+        try await buo.showShareSheet(withShareText: body.title)
+        
         return .init(status: .ok)
     }
 }

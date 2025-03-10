@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import BranchSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,6 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        Branch.getInstance().initSession(launchOptions: launchOptions) { (params, error) in
+            if let error = error {
+                log.error("Branch Error: \(error.localizedDescription)")
+            }
+            guard let params = params as? [String: AnyObject] else {
+                log.info("Branch: no parameters found")
+                return
+            }
+            if let invite = params["u"] as? String {
+                UserDefaults.standard.set(invite, forKey: "u")
+            }
+        }
         return true
     }
 

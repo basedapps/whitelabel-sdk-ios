@@ -1,5 +1,5 @@
 {
-  "originHash" : "16e4c10040b6a898cf391eb041bf82a98cb4a071d6dad2cc26ab6d6110fe30b6",
+  "originHash" : "0746d4f09d0aa072e29d24930dd9e1edc6f3fd370a377f62eac1dc37dc4ea531",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -62,6 +62,15 @@
       "state" : {
         "branch" : "spm",
         "revision" : "2451e03144551c4650aa7ec434d1042d5bd5ff24"
+      }
+    },
+    {
+      "identity" : "ios-branch-sdk-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BranchMetrics/ios-branch-sdk-spm",
+      "state" : {
+        "revision" : "e3b2b380f483ab16e072ad329c6e2c019a2e88c5",
+        "version" : "3.10.0"
       }
     },
     {

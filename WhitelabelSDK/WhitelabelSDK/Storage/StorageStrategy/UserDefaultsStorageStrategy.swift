@@ -19,6 +19,9 @@ extension UserDefaultsStorageStrategy: SettingsStorageStrategyType {
            let object = Serializer.fromData(data, withType: type.self) {
             return object
         }
+        if let data = defaults.value(forKey: key) as? T {
+            return data
+        }
         return nil
     }
 
