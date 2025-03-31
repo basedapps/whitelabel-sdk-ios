@@ -10,28 +10,31 @@ import Foundation
 // MARK: - Credentials
 
 struct ConnectionCredentials: Equatable {
-     let vpnProtocol: ServerProtocol
-
-     let payload: String
-     let privateKey: String?
-     let uid: String?
-
-     init(from decoder: Decoder) throws {
+    let vpnProtocol: ServerProtocol
+    
+    let payload: String
+    let privateKey: String?
+    let uid: String?
+    let onDemandEnabled: Bool?
+    
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-
+        
         let rawType = try container.decode(String.self, forKey: .vpnProtocol)
         vpnProtocol = .init(rawValue: rawType) ?? .wireguard
-
+        
         payload = try container.decode(String.self, forKey: .payload)
         privateKey = try? container.decode(String.self, forKey: .privateKey)
         uid = try? container.decode(String.self, forKey: .uid)
+        onDemandEnabled = try? container.decode(Bool.self, forKey: .onDemandEnabled)
     }
-
-    init(vpnProtocol: ServerProtocol, payload: String, uid: String? = nil, privateKey: String? = nil) {
+    
+    init(vpnProtocol: ServerProtocol, payload: String, uid: String? = nil, privateKey: String? = nil, onDemandEnabled: Bool = true) {
         self.vpnProtocol = vpnProtocol
         self.payload = payload
         self.uid = uid
         self.privateKey = privateKey
+        self.onDemandEnabled = onDemandEnabled
     }
 }
 
@@ -43,5 +46,6 @@ extension ConnectionCredentials: Codable {
         case payload
         case privateKey = "private_key"
         case uid
+        case onDemandEnabled = "on_demand"
     }
 }

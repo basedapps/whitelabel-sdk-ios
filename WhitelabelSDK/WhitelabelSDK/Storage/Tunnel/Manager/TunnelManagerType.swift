@@ -20,7 +20,7 @@ protocol TunnelManagerType: AnyObject {
     @discardableResult
     func startDeactivationOfActiveTunnel() -> Bool
     
-    func startActivation(of tunnel: TunnelContainer)
+    func startActivation(of tunnel: TunnelContainer, onDemandEnabled: Bool)
     
     func startDeactivation(of tunnel: TunnelContainer)
     

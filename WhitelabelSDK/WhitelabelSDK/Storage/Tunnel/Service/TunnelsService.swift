@@ -116,13 +116,13 @@ final public class TunnelsService {
             configuration.excludeLocalNetworks = true
             return configuration
         }()
-        tunnelProviderManager.isEnabled = onDemandEnabled
+        tunnelProviderManager.isEnabled = true
 
         let rule = NEOnDemandRuleConnect()
         rule.interfaceTypeMatch = .any
 
         tunnelProviderManager.onDemandRules = [rule]
-        tunnelProviderManager.isOnDemandEnabled = true
+        tunnelProviderManager.isOnDemandEnabled = onDemandEnabled
 
         let activeTunnel = tunnels.first { $0.status == .connected || $0.status == .connecting }
 
@@ -177,7 +177,7 @@ final public class TunnelsService {
         rule.interfaceTypeMatch = .any
 
         tunnelProviderManager.onDemandRules = [rule]
-        tunnelProviderManager.isOnDemandEnabled = true
+        tunnelProviderManager.isOnDemandEnabled = onDemandEnabled
 
         let activeTunnel = tunnels.first { $0.status == .connected || $0.status == .connecting }
 

@@ -69,8 +69,8 @@ extension TunnelManager: TunnelManagerType {
         tunnelsService?.startDeactivationOfActiveTunnel() ?? false
     }
 
-    func startActivation(of tunnel: TunnelContainer) {
-        tunnelsService?.set(onDemandEnabled: true, for: tunnel) { [weak self] _ in
+    func startActivation(of tunnel: TunnelContainer, onDemandEnabled: Bool) {
+        tunnelsService?.set(onDemandEnabled: onDemandEnabled, for: tunnel) { [weak self] _ in
             self?.tunnelsService?.startActivation(of: tunnel)
         }
     }
@@ -91,7 +91,7 @@ extension TunnelManager: TunnelManagerType {
             UserDefaults.shared.setValue(storage.selectedDNS.addresses, forKey: XConstant.dnsKey)
         case .wireguard:
             tunnelModel.interfaceModel[.dns] = server
-            upsertTunnel(startActivation: false)
+            upsertTunnel(startActivation: false, onDemandEnabled: false)
         default:
             log.error("Unsupported protocol")
         }
@@ -142,7 +142,7 @@ extension TunnelManager {
         let peerPubKey = PublicKey(rawValue: peerPubKeyData)
         tunnelModel.peersModel[0][.publicKey] = peerPubKey?.base64Key ?? ""
 
-        upsertTunnel()
+        upsertTunnel(onDemandEnabled: credentials.onDemandEnabled ?? true)
         
         return nil
     }
@@ -180,7 +180,7 @@ extension TunnelManager {
         tunnelModel.peersModel[0][.persistentKeepAlive] = constants.persistentKeepAlive
     }
 
-    private func upsertTunnel(startActivation: Bool = true) {
+    private func upsertTunnel(startActivation: Bool = true, onDemandEnabled: Bool) {
         delegate?.handleTunnelUpdatingStatus()
 
         switch tunnelModel.save() {
@@ -191,12 +191,14 @@ extension TunnelManager {
             guard let tunnel = tunnelsService?.tunnels.last else {
                 addTunnel(
                     tunnelConfiguration: tunnelConfiguration,
+                    onDemandEnabled: onDemandEnabled,
                     startActivation: startActivation
                 )
                 return
             }
             modifyTunnel(
                 tunnel: tunnel,
+                onDemandEnabled: onDemandEnabled,
                 with: tunnelConfiguration,
                 startActivation: startActivation
             )
@@ -205,11 +207,12 @@ extension TunnelManager {
 
     private func addTunnel(
         tunnelConfiguration: TunnelConfiguration,
+        onDemandEnabled: Bool,
         startActivation: Bool
     ) {
         tunnelsService?.add(
             tunnelConfiguration: tunnelConfiguration,
-            onDemandEnabled: true
+            onDemandEnabled: onDemandEnabled
         ) { [weak self] result in
             guard let self = self else { return }
 
@@ -229,12 +232,13 @@ extension TunnelManager {
 
     private func modifyTunnel(
         tunnel: TunnelContainer,
+        onDemandEnabled: Bool,
         with tunnelConfiguration: TunnelConfiguration,
         startActivation: Bool
     ) {
         tunnelsService?.modify(
             tunnel: tunnel,
-            isOnDemandEnabled: true,
+            isOnDemandEnabled: onDemandEnabled,
             tunnelConfiguration: tunnelConfiguration
         ) { [weak self] result in
             guard let self = self else { return }
@@ -266,7 +270,7 @@ extension TunnelManager {
             return error
         }
         delegate?.handleTunnelUpdatingStatus()
-        tunnelsService?.startXray(onDemandEnabled: true) {[weak self] result in
+        tunnelsService?.startXray(onDemandEnabled: credentials.onDemandEnabled ?? true) {[weak self] result in
             guard let self = self else { return }
             
             switch result {
