@@ -11,7 +11,6 @@
 		2262BD852BCD9DA700775193 /* DNSServerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2262BD842BCD9DA700775193 /* DNSServerType.swift */; };
 		227652E82CAED9CB003AB02F /* SentinelWallet in Frameworks */ = {isa = PBXBuildFile; productRef = 227652E72CAED9CB003AB02F /* SentinelWallet */; };
 		2278D9272D7EEFE1006DF05A /* BranchSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 2278D9262D7EEFE1006DF05A /* BranchSDK */; };
-		2278D9292D7EEFFA006DF05A /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2278D9282D7EEFFA006DF05A /* Config.xcconfig */; };
 		2278D92B2D7EF120006DF05A /* LinkPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2278D92A2D7EF120006DF05A /* LinkPresentation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		2278D92D2D7EF127006DF05A /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2278D92C2D7EF127006DF05A /* CoreSpotlight.framework */; };
 		2278D92F2D7EF12F006DF05A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2278D92E2D7EF12F006DF05A /* WebKit.framework */; };
@@ -203,7 +202,6 @@
 /* Begin PBXFileReference section */
 		22627F152BCEAA0600A01884 /* ClipboardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardResponse.swift; sourceTree = "<group>"; };
 		2262BD842BCD9DA700775193 /* DNSServerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSServerType.swift; sourceTree = "<group>"; };
-		2278D9282D7EEFFA006DF05A /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		2278D92A2D7EF120006DF05A /* LinkPresentation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LinkPresentation.framework; path = System/Library/Frameworks/LinkPresentation.framework; sourceTree = SDKROOT; };
 		2278D92C2D7EF127006DF05A /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
 		2278D92E2D7EF12F006DF05A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -726,7 +724,6 @@
 		75BE9E7B2ACACD2500C01064 = {
 			isa = PBXGroup;
 			children = (
-				2278D9282D7EEFFA006DF05A /* Config.xcconfig */,
 				751ADB872ACC62F400CC736B /* Shared */,
 				75BE9E862ACACD2500C01064 /* WhitelabelSDK */,
 				75BE9EA12ACC522900C01064 /* V2RayExtension */,
@@ -1003,7 +1000,6 @@
 			files = (
 				75BE9E8C2ACACD2600C01064 /* Assets.xcassets in Resources */,
 				751ADCC02AD023F800CC736B /* LaunchScreen.storyboard in Resources */,
-				2278D9292D7EEFFA006DF05A /* Config.xcconfig in Resources */,
 				751ADCBD2AD023DC00CC736B /* Main.storyboard in Resources */,
 				228DC9452BBF035F00EFAAB9 /* PrivacyInfo.xcprivacy in Resources */,
 				75BE9E8F2ACACD2600C01064 /* Preview Assets.xcassets in Resources */,
@@ -1332,7 +1328,6 @@
 		};
 		75BE9E932ACACD2600C01064 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2278D9282D7EEFFA006DF05A /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1372,7 +1367,6 @@
 		};
 		75BE9E942ACACD2600C01064 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2278D9282D7EEFFA006DF05A /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1614,7 +1608,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/solarlabsteam/sentinel-wallet-sdk-ios";
 			requirement = {
-				branch = develop;
+				branch = v3;
 				kind = branch;
 			};
 		};

@@ -90,7 +90,6 @@ extension BlockchainRouteCollection: RouteCollection  {
         
         routes.get(constants.path, "transactions", ":txHash", use: getTransaction)
         routes.post(constants.path, "plans", ":id", "subscription", use: subscribeToPlan)
-        routes.post(constants.path, "nodes", ":address", "subscription", use: subscribeToNode)
         routes.post(constants.path, "wallet", ":address", "balance", use: transfer)
         
         routes.get(constants.path, "wallet", ":address", "session", use: getWalletSession)
@@ -327,28 +326,6 @@ private extension BlockchainRouteCollection {
         let fee = Fee(for: gas, granter: req.headers.first(name: constants.granterHeaderKey))
         
         return try await transactionProvider.subscribe(sender: sender, plan: id, details: body, fee: fee)
-    }
-    
-    func subscribeToNode(_ req: Request) async throws -> String {
-        try req.validate()
-        let body = try req.content.decode(NodePaymentDetails.self)
-        guard
-            let chainHeader = req.headers.first(name: constants.chainHeaderKey),
-            let sender = sender(for: chainHeader)
-        else {
-            throw Abort(.unauthorized)
-        }
-        
-        guard 
-            let gasHeader = req.headers.first(name: constants.gasHeaderKey),
-            let gas = Int(gasHeader)
-        else {
-            throw Abort(.badRequest)
-        }
-        guard let address = req.parameters.get("address", as: String.self) else { throw Abort(.badRequest) }
-        let fee = Fee(for: gas, granter: req.headers.first(name: constants.granterHeaderKey))
-        
-        return try await transactionProvider.subscribe(sender: sender, node: address, details: body, fee: fee)
     }
     
     func transfer(_ req: Request) async throws -> String {
